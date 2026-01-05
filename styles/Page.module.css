@@ -1,0 +1,131 @@
+
+/* Section Home */
+.homeContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-image: url("../images/background.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 9rem;
+    margin-bottom: 2rem;
+}
+
+.descriptionContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.description {
+    font-size: 1.85rem;
+    letter-spacing: 1.2px;
+    margin-bottom: 0.5rem;
+}
+
+.projetButton {
+    padding: 1rem 4rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: white;
+    -webkit-text-stroke: 1px black;
+    background-color: #0070f3;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-bottom: 5.7rem;
+}
+
+.projetButton:hover {
+    cursor: pointer;
+    transition: transform 0.5s ease;
+    transform: scale(1.05);
+}
+
+/* Section About */
+.aboutContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #FAFAFA;
+}
+
+.aboutContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 5rem 0;
+}
+
+.aboutProfil {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 5rem;
+}
+
+.profilDescription {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding-left: 4rem;
+}
+
+.contactButton {
+    width: fit-content;
+    padding: 0.8rem 3rem;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    color: white;
+    background-color: #0070f3;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 1rem;
+}
+
+.contactButton:hover {
+    cursor: pointer;
+    transition: transform 0.5s ease;
+    transform: scale(1.05);
+}
+
+.profilSkills {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding-left: 6rem;
+    padding-right: 4rem;
+}
+
+.skillsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem 1rem;
+    text-align: center;
+}
+
+.skillsGrid span {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    background-color: #E7E7E7;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
