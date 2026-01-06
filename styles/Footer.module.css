@@ -1,0 +1,64 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    background-color: black;
+    color: white;
+}
+
+.footerContainer {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    padding: 3rem 0;
+}
+
+.footerProfile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footerTitle {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.footerDescription {
+    font-size: 0.8rem;
+    line-height: 0.5rem;
+}
+
+.footerSocials {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-items: center;
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    gap: 15px;
+}
+
+.linkedin {
+    background-color: white;
+    border-radius: 50%;
+}
+
+.footerDivider {
+    width: 90%;
+    height: 0.2px;
+    background-color: gray;
+    margin: 2.5rem 0;
+}

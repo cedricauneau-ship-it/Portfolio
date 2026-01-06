@@ -1,6 +1,22 @@
+"use client";
+/* eslint-disable react/no-unescaped-entities */
+
 import Style from "../styles/Page.module.css"
 
+import Image from "next/image";
+import ffc from "../public/images/EcranFFC.png";
+import noPicture from "../public/images/noPicture.png";
+
 export default function Home() {
+
+  {/* Fonction pour faire défiler vers une section spécifique */}
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       {/* Section d'accueil */}
@@ -11,15 +27,16 @@ export default function Home() {
           <p className={Style.description}>des applications et sites web et mobile</p>
           <p className={Style.description}>Bienvenue sur mon portfolio !</p>
         </div>
-        <button className={Style.projetButton}>PROJETS</button>
+        <button className={Style.projetButton} onClick={() => scrollToSection("projects")}>PROJETS</button>
       </section>
 
       {/* Section À propos de moi */}
       <section className={Style.aboutContainer} id="about">
         <div className={Style.aboutContent}>
           <h2>À propos de moi</h2>
-          <p>Vous trouverez ici plus d'informations sur moi, ce que je fais et mes</p>
-          <p>compétences actuelles en tant que développeur full-stack</p>
+          <div className={Style.underline}></div>
+          <p className={Style.pBold}>Vous trouverez ici plus d'informations sur moi, ce que je fais et mes</p>
+          <p className={Style.pBold}>compétences actuelles en tant que développeur full-stack</p>
         </div>
         <div className={Style.aboutProfil}>
           <div className={Style.profilDescription}>
@@ -29,7 +46,7 @@ export default function Home() {
               collaborer avec d'autres passionnés de technologie. Mon objectif est de continuer à évoluer en tant que développeur et
               de créer des solutions innovantes qui font une différence.
             </p>
-            <button className={Style.contactButton}>CONTACT</button>
+            <button className={Style.contactButton} onClick={() => scrollToSection("contact")}>CONTACT</button>
           </div>
           <div className={Style.profilSkills}>
             <h3>Compétences</h3>
@@ -52,8 +69,60 @@ export default function Home() {
           </div>    
         </div>
       </section>
+      <div className={Style.separator}></div>
 
+      {/* Section Projets */}
+      <section className={Style.projectsContainer} id="projects">
+        <div className={Style.projectsContent}>
+          <h2>Projets</h2>
+          <div className={Style.underline}></div>
+          <p className={Style.pBold}>Découvrez quelques-uns de mes projets récents en</p>
+          <p className={Style.pBold}>développement web et mobile.</p>
+        </div>
+        {/* Projet 1 */}
+        <div className={Style.projectsCards}>
+          <div className={Style.projectsImgContainer}>
+            <Image src={ffc} alt="Site FFC" width={400} height={250} className={Style.projectsImg} />
+          </div>
+          <div className={Style.projectDescription}>
+            <h3>Site du Club FFC</h3>
+            <p>Un site web pour le club de football de la ville de Fontenay-en-parisis.</p>
+            <button className={Style.viewProjectButton}>VOIR LE PROJET</button>
+          </div>
+        </div>
 
+        {/* Projet 2 */}
+        <div className={Style.projectsCards}>
+          <div className={Style.projectsImgContainer}>
+            <Image src={noPicture} alt="Pas de photo disponible" width={400} height={250} className={Style.projectsImg} />
+          </div>
+          <div className={Style.projectDescription}>
+            <h3>SHELTER</h3>
+            <p>Un Jeu de carte a choix binaire dans un monde post apocalypste entiérement développer en JavaScript.</p>
+            <button className={Style.viewProjectButton}>VOIR LE PROJET</button>
+          </div>
+        </div>
+      </section>
+      <div className={Style.separator}></div>
+
+      {/* Section Contact */}
+      <section className={Style.contactContainer} id="contact">
+        <div className={Style.contactContent}>
+          <h2>Contact</h2>
+          <div className={Style.underline}></div>
+          <p className={Style.pBold}>Vous avez un projet en tête ou souhaitez simplement discuter ?</p>
+          <p className={Style.pBold}>N'hésitez pas à me contacter !</p>
+        </div>
+        {/* Formulaire de contact */}
+        <div className={Style.contactFormContainer}>
+          <form className={Style.contactForm}>
+            <input type="text" placeholder="Votre nom" className={Style.inputField} />
+            <input type="email" placeholder="Votre email" className={Style.inputField} />
+            <textarea placeholder="Votre message" className={Style.textAreaField}></textarea>
+            <button className={Style.sendButton}>Envoyer</button>
+          </form>
+        </div>
+      </section>
     </>
   );
 }

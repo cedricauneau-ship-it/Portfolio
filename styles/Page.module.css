@@ -1,4 +1,24 @@
 
+/* Global Styles */
+.separator {
+    width: 80%;
+    height: 1px;
+    background-color: #E0E0E0;
+    margin: 0 auto;
+}
+
+.underline {
+    width: 3rem;
+    height: 0.4rem;
+    background-color: #0070f3;
+    margin: 0.5rem auto 2rem auto;
+    border-radius: 3px;
+}
+
+.pBold {
+    font-weight: bold;
+}
+
 /* Section Home */
 .homeContainer {
     display: flex;
@@ -6,7 +26,8 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-image: url("../images/background.png");
+    height: 100vh;
+    background-image: url("../public/images/background.png");
     background-size: cover;
     background-position: center;
 }
@@ -41,7 +62,7 @@
     color: white;
     -webkit-text-stroke: 1px black;
     background-color: #0070f3;
-    border: none;
+    border: 1px solid black;
     border-radius: 5px;
     text-decoration: none;
     margin-bottom: 5.7rem;
@@ -60,7 +81,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: #FAFAFA;
+    background-color: #FDFDFD;
 }
 
 .aboutContent {
@@ -95,7 +116,7 @@
     letter-spacing: 1.2px;
     color: white;
     background-color: #0070f3;
-    border: none;
+    border: 0.1px solid black;
     border-radius: 5px;
     text-decoration: none;
     margin-top: 1rem;
@@ -128,4 +149,156 @@
     background-color: #E7E7E7;
     padding: 0.5rem 1rem;
     border-radius: 5px;
+}
+
+/* Section Projects */
+
+.projectsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #FDFDFD;
+}
+
+.projectsContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 5rem 0;
+}
+
+.projectsCards {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 5rem;
+}
+
+.projectsImgContainer {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+.projectsImg {
+    border-radius: 5px;
+}
+
+.projectDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    padding-left: 4rem;
+    padding-right: 10rem;
+
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+.viewProjectButton {
+    width: fit-content;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    color: white;
+    background-color: #0070f3;
+    border: 0.1px solid black;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 1rem;
+}
+
+.viewProjectButton:hover {
+    cursor: pointer;
+    transition: transform 0.5s ease;
+    transform: scale(1.05);
+}
+
+/* Section Contact */
+
+.contactContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #FDFDFD;
+    margin-bottom: 5rem;
+}
+
+.contactContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.contactFormContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.contactForm {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+}
+
+.inputField {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.textAreaField {
+    width: 100%;
+    height: 250px;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+.sendButton {
+    width: fit-content;
+    padding: 0.8rem 3rem;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    color: white;
+    background-color: #0070f3;
+    border: 0.1px solid black;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 1rem;
+}
+
+.sendButton:hover {
+    cursor: pointer;
+    transition: transform 0.5s ease;
+    transform: scale(1.05);
 }

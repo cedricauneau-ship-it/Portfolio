@@ -6,7 +6,7 @@ export default function Navbar() {
     <nav className={Style.container}>
         <div className={Style.leftSection}>
             <Image src="/favicon.ico" alt="Logo" width={35} height={35} />
-            <span>Cédric Auneau</span>
+            <span className={Style.name}>Cédric Auneau</span>
         </div>
         <div className={Style.rightSection}>
             <a href="#home">Accueil</a>
