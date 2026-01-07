@@ -21,13 +21,11 @@ export default function Home() {
     <>
       {/* Section d'accueil */}
       <section className={Style.homeContainer} id="home">
-        <h1 className={Style.title}>Salut, moi c'est Cédric Auneau</h1>
-        <div className={Style.descriptionContainer}>
-          <p className={Style.description}>Un développeur full-stack qui crée et gère</p>
-          <p className={Style.description}>des applications et sites web et mobile</p>
-          <p className={Style.description}>Bienvenue sur mon portfolio !</p>
-        </div>
-        <button className={Style.projetButton} onClick={() => scrollToSection("projects")}>PROJETS</button>
+        <div className={Style.btnContainer}>
+          <button className="btnsecondary" onClick={() => scrollToSection("about")}>À PROPOS DE MOI</button>
+          <button className="btnsecondary" onClick={() => scrollToSection("projects")}>MES PROJETS</button>
+          <button className="btnsecondary" onClick={() => scrollToSection("contact")}>CONTACT</button>
+        </div>  
       </section>
 
       {/* Section À propos de moi */}
@@ -101,26 +99,6 @@ export default function Home() {
             <p>Un Jeu de carte a choix binaire dans un monde post apocalypste entiérement développer en JavaScript.</p>
             <button className={Style.viewProjectButton}>VOIR LE PROJET</button>
           </div>
-        </div>
-      </section>
-      <div className={Style.separator}></div>
-
-      {/* Section Contact */}
-      <section className={Style.contactContainer} id="contact">
-        <div className={Style.contactContent}>
-          <h2>Contact</h2>
-          <div className={Style.underline}></div>
-          <p className={Style.pBold}>Vous avez un projet en tête ou souhaitez simplement discuter ?</p>
-          <p className={Style.pBold}>N'hésitez pas à me contacter !</p>
-        </div>
-        {/* Formulaire de contact */}
-        <div className={Style.contactFormContainer}>
-          <form className={Style.contactForm}>
-            <input type="text" placeholder="Votre nom" className={Style.inputField} />
-            <input type="email" placeholder="Votre email" className={Style.inputField} />
-            <textarea placeholder="Votre message" className={Style.textAreaField}></textarea>
-            <button className={Style.sendButton}>Envoyer</button>
-          </form>
         </div>
       </section>
     </>
