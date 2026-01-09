@@ -127,13 +127,38 @@
 .aboutTableText {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    padding: 1.5rem 2rem;
+    width: 95%;
+    height: 75%;
+    margin: auto;
+    overflow-y: auto;
 }
 
+.aboutTableText {
+  scrollbar-width: 10px;              /* Firefox */
+  scrollbar-color: #525870 #252835;      /* thumb / track */
+}
+
+/* Chrome, Edge, Safari */
+.aboutTableText::-webkit-scrollbar {
+  width: 8px;
+}
+
+.aboutTableText::-webkit-scrollbar-track {
+  background: #252835;
+}
+
+.aboutTableText::-webkit-scrollbar-thumb {
+  background-color: #525870;
+  border-radius: 8px;
+}
+
+.aboutTableText::-webkit-scrollbar-thumb:hover {
+  background-color: #666;
+}
+
+
 .aboutTableText h3 {
+    text-align: center;
     margin-bottom: 1rem;
 }
 

@@ -179,3 +179,59 @@ span {
     background-position: 300% 50%;
   }
 }
+
+/* AboutPersonnage */
+
+.about-wrapper {
+  display: grid;
+  grid-template-columns: 1.65fr 1fr;
+  width: 100%;
+}
+
+.about-visual {
+  position: sticky;
+  top: 95px;
+  height: fit-content;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 2rem;
+  background: transparent;
+}
+
+.about-image {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  border-radius: 15px;
+  border: 2px solid rgba(0, 0, 0, 0.75);
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-section {
+  min-height: 40vh;
+  margin-bottom: 1rem;
+}
+
+.about-section h3 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.about-section p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .about-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .about-visual {
+    position: relative;
+    top: 0;
+    margin-bottom: 40px;
+  }
+}

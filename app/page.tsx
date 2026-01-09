@@ -3,19 +3,21 @@
 
 import Style from "../styles/Page.module.css"
 
+import AboutPersonnage from "../components/AboutPersonnage";
+
 import Image from "next/image";
 import diplome from "../public/images/Formation.png"
 import shelter from "../public/images/ProjetShelter.png"
-import portfolio from "../public/images/ProjetPortfolio.png"
-import ffc from "../public/images/ProjetFFC.png"
 import noPicture from "../public/images/noPicture.png"
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 export default function Home() {
 
   const [active, setActive] = useState<number | null>(0);
   const [activeProject, setActiveProject] = useState<number | null>(0);
+
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   {/* Fonction pour faire défiler vers une section spécifique */}
   const scrollToSection = (id: string) => {
@@ -57,10 +59,8 @@ export default function Home() {
               <div className="separatorMenu"></div>
                 {/* Contenu dynamique en fonction du bouton actif */}
                 {active === 0 && 
-                  <div className={Style.aboutTableText}>
-                    <h3>Salut moi c'est Cédric</h3>
-                    <p>Un jeune développeur nouvelement diplomer, passionné par la conception et le développement d'applications web et mobile.</p>
-                    <p></p>
+                  <div className={Style.aboutTableText} ref={scrollRef}>
+                    <AboutPersonnage scrollContainerRef={scrollRef} />
                   </div>
                 }
                 {active === 1 &&
@@ -134,7 +134,7 @@ export default function Home() {
                     <Image src={noPicture} alt="FFC" className={Style.projectsImg} />
                     <div className={Style.textDescription}>
                       <p>Le site de mon club de foot formateur, il me tenai a coeur d'offrir se site a l'association. </p>
-                      <p>Dans un soucis d'urgence le site est fonctionelle mais encore en dévelopement. </p>
+                      <p>Dans un soucis d'urgence le site est fonctionelle mais encore en dévelopement.</p>
                       <button className="btnprimary">découvrir</button>
                     </div>
                   </div>
