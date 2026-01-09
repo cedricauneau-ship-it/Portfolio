@@ -8,6 +8,7 @@ import diplome from "../public/images/Formation.png"
 import shelter from "../public/images/ProjetShelter.png"
 import portfolio from "../public/images/ProjetPortfolio.png"
 import ffc from "../public/images/ProjetFFC.png"
+import noPicture from "../public/images/noPicture.png"
 
 import { useState } from "react";
 
@@ -120,9 +121,9 @@ export default function Home() {
                 }
                 {activeProject === 1 &&
                   <div className={Style.projectsTableText}>
-                    <Image src={portfolio} alt="Portfolio" className={Style.projectsImg} />
+                    <Image src={noPicture} alt="Portfolio" className={Style.projectsImg} />
                     <div className={Style.textDescription}>
-                      <p>Mon Portfolio est un projet en soi, je suis particuliérement fiére de se que je vous propose.</p>
+                      <p>Mon Portfolio est un projet en soi, je suis particuliérement fiére du designe.</p>
                       <p>J'éspere que la majorité sera du même avis.</p>
                       <button className="btnprimary">Vous êtes dessus</button>
                     </div>
@@ -130,10 +131,10 @@ export default function Home() {
                 }
                 {activeProject === 2 &&
                   <div className={Style.projectsTableText}>
-                    <Image src={ffc} alt="FFC" className={Style.projectsImg} />
+                    <Image src={noPicture} alt="FFC" className={Style.projectsImg} />
                     <div className={Style.textDescription}>
-                      <p>Le site de mon club de foot formateur, </p>
-                      <p>J'éspere que la majorité sera du même avis.</p>
+                      <p>Le site de mon club de foot formateur, il me tenai a coeur d'offrir se site a l'association. </p>
+                      <p>Dans un soucis d'urgence le site est fonctionelle mais encore en dévelopement. </p>
                       <button className="btnprimary">découvrir</button>
                     </div>
                   </div>
