@@ -33,7 +33,7 @@ export default function Footer() {
         </div>
       </div>
       <div className={Style.footerDivider}></div>
-      <p className={Style.footerDescription}>© Copyright 2026 - Créer par Cédric Auneau</p>
+      <p className={Style.footerDescription}>© Copyright {new Date().getFullYear()} - Créer par Cédric Auneau</p>
     </footer>
   );
 }

@@ -4,10 +4,17 @@
 import Style from "../styles/Page.module.css"
 
 import Image from "next/image";
-import ffc from "../public/images/EcranFFC.png";
-import noPicture from "../public/images/noPicture.png";
+import diplome from "../public/images/Formation.png"
+import shelter from "../public/images/ProjetShelter.png"
+import portfolio from "../public/images/ProjetPortfolio.png"
+import ffc from "../public/images/ProjetFFC.png"
+
+import { useState } from "react";
 
 export default function Home() {
+
+  const [active, setActive] = useState<number | null>(0);
+  const [activeProject, setActiveProject] = useState<number | null>(0);
 
   {/* Fonction pour faire défiler vers une section spécifique */}
   const scrollToSection = (id: string) => {
@@ -17,90 +24,138 @@ export default function Home() {
     }
   };
 
+  {/* Fonction pour envoyer un email */}
+  const sendEmail = () => {
+    window.open("mailto:auneau.dev@gmail.com?subject=Contact%20Portfolio&", "_blank");
+  };
+
   return (
     <>
       {/* Section d'accueil */}
       <section className={Style.homeContainer} id="home">
         <div className={Style.btnContainer}>
-          <button className="btnsecondary" onClick={() => scrollToSection("about")}>À PROPOS DE MOI</button>
+          <button className="btnsecondary" onClick={() => scrollToSection("about")}>savoir qui je suis</button>
           <button className="btnsecondary" onClick={() => scrollToSection("projects")}>MES PROJETS</button>
           <button className="btnsecondary" onClick={() => scrollToSection("contact")}>CONTACT</button>
         </div>  
       </section>
 
+      <div className="separator"></div>
+
       {/* Section À propos de moi */}
       <section className={Style.aboutContainer} id="about">
-        <div className={Style.aboutContent}>
-          <h2>À propos de moi</h2>
-          <div className={Style.underline}></div>
-          <p className={Style.pBold}>Vous trouverez ici plus d'informations sur moi, ce que je fais et mes</p>
-          <p className={Style.pBold}>compétences actuelles en tant que développeur full-stack</p>
-        </div>
-        <div className={Style.aboutProfil}>
-          <div className={Style.profilDescription}>
-            <h3>Apprenez à me connaître !</h3>
-            <p>
-              En dehors du codage, j'aime explorer les dernières tendances technologiques, contribuer à des projets open-source et
-              collaborer avec d'autres passionnés de technologie. Mon objectif est de continuer à évoluer en tant que développeur et
-              de créer des solutions innovantes qui font une différence.
-            </p>
-            <button className={Style.contactButton} onClick={() => scrollToSection("contact")}>CONTACT</button>
+        <h2 className="animated-border">Présentation</h2>
+        <div className={Style.tableBtnPos}>
+          <div className={Style.aboutContent}>
+            <div className={Style.aboutContentTable}>
+              <div className={Style.aboutBtnContainer}>
+                <button className={active === 0 ? "btntertiaryActive" : "btntertiary"} onClick={() => setActive(0)}>Qui suis-je ?</button>
+                <button className={active === 1 ? "btntertiaryActive" : "btntertiary"} onClick={() => setActive(1)}>Mes compétences</button>
+                <button className={active === 2 ? "btntertiaryActive" : "btntertiary"} onClick={() => setActive(2)}>Ma formation</button>
+              </div>
+              <div className="separatorMenu"></div>
+                {/* Contenu dynamique en fonction du bouton actif */}
+                {active === 0 && 
+                  <div className={Style.aboutTableText}>
+                    <h3>Salut moi c'est Cédric</h3>
+                    <p>Un jeune développeur nouvelement diplomer, passionné par la conception et le développement d'applications web et mobile.</p>
+                    <p></p>
+                  </div>
+                }
+                {active === 1 &&
+                  <div className={Style.aboutTableText}>
+                    <h3>Se que je maîtrise actuellement :</h3>
+                    <div className={Style.skillsGrid}>
+                      <span style={{ backgroundColor: "#FF8A00" }}>HTML</span>
+                      <span style={{ backgroundColor: "#FF8A00" }}>CSS</span>
+                      <span style={{ backgroundColor: "#FF8A00" }}>JavaScript</span>
+                      <span style={{ backgroundColor: "#FF8A00" }}>TypeScript</span>
+                      <span style={{ backgroundColor: "#E13A8B" }}>React</span>
+                      <span style={{ backgroundColor: "#E13A8B" }}>Next.js</span>
+                      <span style={{ backgroundColor: "#E13A8B" }}>Node.js</span>
+                      <span style={{ backgroundColor: "#E13A8B" }}>Express.js</span>
+                      <span style={{ backgroundColor: "#19C3D3" }}>MongoDB</span>
+                      <span style={{ backgroundColor: "#19C3D3" }}>Git</span>
+                      <span style={{ backgroundColor: "#19C3D3" }}>GitHub</span>
+                      <span style={{ backgroundColor: "#19C3D3" }}>Figma</span>
+                    </div>
+                  </div>
+                }
+                {active === 2 &&
+                  <div className={Style.aboutTableText}>
+                    <Image src={diplome} alt="diplome" className={Style.imgDiplome}/>
+                  </div>
+                }
+            </div>  
           </div>
-          <div className={Style.profilSkills}>
-            <h3>Compétences</h3>
-            <div className={Style.skillsGrid}>
-              <span>JavaScript</span>
-              <span>TypeScript</span>
-              <span>React</span>
-              <span>Next.js</span>
-              <span>Node.js</span>
-              <span>Express.js</span>
-              <span>MongoDB</span>
-              <span>SQL</span>
-              <span>HTML5</span>
-              <span>CSS3</span>
-              <span>Git</span>
-              <span>Github</span>
-              <span>Responsive</span>
-              <span>SEO</span>
-            </div>
-          </div>    
-        </div>
+          <div className={Style.btnRight}>  
+            <button className={Style.projectBtn} onClick={() => scrollToSection("projects")}>Mes projets</button> 
+          </div>
+        </div>  
       </section>
-      <div className={Style.separator}></div>
+
+      <div className="separator"></div>
 
       {/* Section Projets */}
       <section className={Style.projectsContainer} id="projects">
-        <div className={Style.projectsContent}>
-          <h2>Projets</h2>
-          <div className={Style.underline}></div>
-          <p className={Style.pBold}>Découvrez quelques-uns de mes projets récents en</p>
-          <p className={Style.pBold}>développement web et mobile.</p>
-        </div>
-        {/* Projet 1 */}
-        <div className={Style.projectsCards}>
-          <div className={Style.projectsImgContainer}>
-            <Image src={ffc} alt="Site FFC" width={400} height={250} className={Style.projectsImg} />
-          </div>
-          <div className={Style.projectDescription}>
-            <h3>Site du Club FFC</h3>
-            <p>Un site web pour le club de football de la ville de Fontenay-en-parisis.</p>
-            <button className={Style.viewProjectButton}>VOIR LE PROJET</button>
-          </div>
-        </div>
+        <h2 className="animated-border">Mes projets</h2>
+        <div className={Style.projectsRight}>
+          <div className={Style.projectsContent}>
+            <div className={Style.aboutContentTable}>
+              <div className={Style.projectsBtnContainer}>
+                <button className={activeProject === 0 ? "btntertiaryActive" : "btntertiary"} onClick={() => setActiveProject(0)}>SHELTER</button>
+                <button className={activeProject === 1 ? "btntertiaryActive" : "btntertiary"} onClick={() => setActiveProject(1)}>Portfolio</button>
+                <button className={activeProject === 2 ? "btntertiaryActive" : "btntertiary"} onClick={() => setActiveProject(2)}>Site FFC</button>
+              </div>
+              <div className="separatorMenu"></div>
+                {/* Contenu dynamique en fonction du bouton actif */}
+                {activeProject === 0 &&
+                  <div className={Style.projectsTableText}>
+                    <Image src={shelter} alt="SHELTER" className={Style.projectsImg} />
+                    <div className={Style.textDescription}>
+                      <p>SHELTER est un projet de jeu sur mobile de survie à choix binaire inspiré de REIGNS dans un monde post apocalypse en collaboration avec 3 autres élèves de LaCapsule.</p>
+                      <button className="btnprimary">découvrir</button>
+                    </div>
+                  </div>
+                }
+                {activeProject === 1 &&
+                  <div className={Style.projectsTableText}>
+                    <Image src={portfolio} alt="Portfolio" className={Style.projectsImg} />
+                    <div className={Style.textDescription}>
+                      <p>Mon Portfolio est un projet en soi, je suis particuliérement fiére de se que je vous propose.</p>
+                      <p>J'éspere que la majorité sera du même avis.</p>
+                      <button className="btnprimary">Vous êtes dessus</button>
+                    </div>
+                  </div>
+                }
+                {activeProject === 2 &&
+                  <div className={Style.projectsTableText}>
+                    <Image src={ffc} alt="FFC" className={Style.projectsImg} />
+                    <div className={Style.textDescription}>
+                      <p>Le site de mon club de foot formateur, </p>
+                      <p>J'éspere que la majorité sera du même avis.</p>
+                      <button className="btnprimary">découvrir</button>
+                    </div>
+                  </div>
+                }
+            </div>  
+          </div>    
+        </div>  
+      </section>
 
-        {/* Projet 2 */}
-        <div className={Style.projectsCards}>
-          <div className={Style.projectsImgContainer}>
-            <Image src={noPicture} alt="Pas de photo disponible" width={400} height={250} className={Style.projectsImg} />
+      <div className="separator"></div>
+
+      {/* Section Contact */}
+      <section className={Style.contactContainer} id="contact">
+        <div className={Style.contactContent}>
+          <div className={Style.contactText}>
+            <p>Des questions, un projet ? Ou juste envie de discuter ?</p>
+            <p>Vous pouvez me contacter via le réseau Linkdin ou par email.</p>
           </div>
-          <div className={Style.projectDescription}>
-            <h3>SHELTER</h3>
-            <p>Un Jeu de carte a choix binaire dans un monde post apocalypste entiérement développer en JavaScript.</p>
-            <button className={Style.viewProjectButton}>VOIR LE PROJET</button>
-          </div>
+          <button className={Style.contactButton} onClick={sendEmail}>Me contacter</button>
         </div>
       </section>
+
     </>
   );
 }

@@ -5,7 +5,8 @@
     justify-content: center;
     text-align: center;
     width: 100%;
-    background-color: black;
+    height: 36vh;
+    background-color: #0B0F18;
     color: white;
 }
 
@@ -60,5 +61,5 @@
     width: 90%;
     height: 0.2px;
     background-color: gray;
-    margin: 2.5rem 0;
+    margin: 1rem 0;
 }
