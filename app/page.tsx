@@ -17,7 +17,7 @@ export default function Home() {
   const [active, setActive] = useState<number | null>(0);
   const [activeProject, setActiveProject] = useState<number | null>(0);
 
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
 
   {/* Fonction pour faire défiler vers une section spécifique */}
   const scrollToSection = (id: string) => {

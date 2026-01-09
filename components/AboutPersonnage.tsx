@@ -11,8 +11,9 @@ type Section = {
 };
 
 type Props = {
-  scrollContainerRef: React.RefObject<HTMLDivElement>;
-}
+  scrollContainerRef: React.RefObject<HTMLDivElement | null>;
+};
+
 
 const sections: Section[] = [
   {
@@ -34,27 +35,27 @@ export default function AboutPersonnage({ scrollContainerRef }: Props) {
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    if (!scrollContainerRef.current) return;
+  const container = scrollContainerRef.current;
+  if (!container) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const img = entry.target.getAttribute("data-image");
-            if (img) setActiveImage(img);
-          }
-        });
-      },
-      {
-        root: scrollContainerRef.current,
-        threshold: 0.6,
-      }
-    );
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const img = entry.target.getAttribute("data-image");
+          if (img) setActiveImage(img);
+        }
+      });
+    },
+    {
+      root: container,
+      threshold: 0.6,
+    }
+  );
 
-    sectionRefs.current.forEach((el) => el && observer.observe(el));
+  return () => observer.disconnect();
+}, [scrollContainerRef]);
 
-    return () => observer.disconnect();
-  }, [scrollContainerRef]);
 
 
   return (
