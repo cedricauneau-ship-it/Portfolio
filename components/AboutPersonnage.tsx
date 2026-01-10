@@ -3,89 +3,84 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
-type Section = {
-  id: string;
-  title: string;
-  text: string;
-  image: string;
-};
-
 type Props = {
   scrollContainerRef: React.RefObject<HTMLDivElement | null>;
 };
 
-
-const sections: Section[] = [
+const sections = [
   {
-    id: "identite",
+    id: "a",
     title: "Le personnage",
-    text: "..........................",
+    text: "Passionné par le développement web, j’ai choisi ce domaine pour son équilibre entre logique, créativité et résolution de problèmes. Chaque projet est pour moi une occasion d’apprendre, d’expérimenter et d’améliorer mes pratiques, que ce soit sur l’architecture, le design ou l’optimisation. Motivé et investi, je cherche aujourd’hui à transformer cette passion en expérience professionnelle solide.",
     image: "/images/DevCofee.png",
   },
   {
-    id: "vision",
-    title: "Mes objéctifs",
-    text: "Texte sur ta vision...",
+    id: "b",
+    title: "Mes objectifs",
+    text: "Continuer à apprendre, expérimenter et progresser chaque jour fait partie de mes priorités. Je souhaite évoluer dans un environnement stimulant, où je pourrai renforcer mes compétences techniques tout en développant une vision plus globale des projets. Mon objectif est de devenir un développeur capable de comprendre les enjeux techniques autant que les besoins utilisateurs.",
     image: "/images/DevPresentation.png",
   },
 ];
 
-export default function AboutPersonnage({ scrollContainerRef }: Props) {
-  const [activeImage, setActiveImage] = useState("/images/DevCofee.png");
+export default function AboutPersonnage({
+  scrollContainerRef,
+}: Props) {
+  const [activeImage, setActiveImage] = useState(sections[0].image);
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-  const container = scrollContainerRef.current;
-  if (!container) return;
+    const root = scrollContainerRef.current;
+    if (!root) return;
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const img = entry.target.getAttribute("data-image");
-          if (img) setActiveImage(img);
-        }
-      });
-    },
-    {
-      root: container,
-      threshold: 0.6,
-    }
-  );
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const img = entry.target.getAttribute("data-image");
+            if (img) setActiveImage(img);
+          }
+        });
+      },
+      {
+        root,
+        threshold: 0.8,
+      }
+    );
 
-  return () => observer.disconnect();
-}, [scrollContainerRef]);
+    sectionRefs.current.forEach((el) => {
+      if (el) observer.observe(el);
+    });
 
-
+    return () => observer.disconnect();
+  }, [scrollContainerRef]);
 
   return (
     <section className="about-wrapper">
-
-
-      {/* Texte scroll */}
+      
+      {/* TEXTE */}
       <div className="about-content">
-        {sections.map((section, index) => (
+        {sections.map((s, i) => (
           <div
-            key={section.id}
+            key={s.id}
             ref={(el) => {
-              sectionRefs.current[index] = el;
+              sectionRefs.current[i] = el;
             }}
-            data-image={section.image}
+            data-image={s.image}
             className="about-section"
           >
-            <h3>{section.title}</h3>
-            <p>{section.text}</p>
+            <h3>{s.title}</h3>
+            <span className="about-description">{s.text}</span>
           </div>
         ))}
       </div>
 
-      {/* Illustration sticky */}
+      {/* IMAGE STICKY */}
       <div className="about-visual">
         <Image
           src={activeImage}
           alt=""
-          width={150}
-          height={150}
+          width={200}
+          height={200}
           className="about-image"
           priority
         />

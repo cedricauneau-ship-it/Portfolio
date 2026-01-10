@@ -22,6 +22,28 @@
     gap: 3rem;
 }
 
+.btnsecondary {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  padding: 20px 45px;
+  border-radius: 10px;
+  border: 1.5px solid rgba(255,255,255,.25);
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  cursor: pointer;
+  transition: .5s;
+  text-transform: uppercase;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+.btnsecondary:hover {
+  animation: none;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+  transform: scale(1.2);
+}
+
 .descriptionContainer {
     display: flex;
     flex-direction: column;
@@ -127,6 +149,7 @@
 .aboutTableText {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 95%;
     height: 75%;
     margin: auto;
@@ -210,13 +233,28 @@
     font-weight: bold;
     letter-spacing: 1px;
     transition: .5s;
+    animation: pulse 2.5s ease-in-out infinite;
 }
 
 .projectBtn:hover {
+    animation: none;
     cursor: pointer;
     transition: transform 0.5s ease;
     transform: scale(1.2);
 }
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 
 /* Section Projects */
 

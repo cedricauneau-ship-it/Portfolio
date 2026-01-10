@@ -37,9 +37,9 @@ export default function Home() {
       {/* Section d'accueil */}
       <section className={Style.homeContainer} id="home">
         <div className={Style.btnContainer}>
-          <button className="btnsecondary" onClick={() => scrollToSection("about")}>savoir qui je suis</button>
-          <button className="btnsecondary" onClick={() => scrollToSection("projects")}>MES PROJETS</button>
-          <button className="btnsecondary" onClick={() => scrollToSection("contact")}>CONTACT</button>
+          <button className={Style.btnsecondary} onClick={() => scrollToSection("about")}>savoir qui je suis</button>
+          <button className={Style.btnsecondary} onClick={() => scrollToSection("projects")}>MES PROJETS</button>
+          <button className={Style.btnsecondary} onClick={() => scrollToSection("contact")}>CONTACT</button>
         </div>  
       </section>
 

@@ -1,3 +1,5 @@
+"use client";
+
 import Style from '../styles/Footer.module.css';
 
 import Image from 'next/image';
@@ -22,13 +24,20 @@ export default function Footer() {
               width={40}
               height={40}
             />
-            <Image
-              src={linkedin}
-              alt=""
-              width={35}
-              height={35}
-              className={Style.linkedin}
-            />
+            <a
+              href='https://www.linkedin.com/in/cedric-auneau'
+              target='_blank'
+              rel='noopener noreferrer'
+              aria-label='Mon profil LinkedIn'
+            >
+              <Image
+                src={linkedin}
+                alt=""
+                width={35}
+                height={35}
+                className={Style.linkedin}
+              />
+            </a>  
           </div>
         </div>
       </div>
