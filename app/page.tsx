@@ -8,7 +8,8 @@ import AboutPersonnage from "../components/AboutPersonnage";
 import Image from "next/image";
 import diplome from "../public/images/Formation.png"
 import shelter from "../public/images/ProjetShelter.png"
-import noPicture from "../public/images/noPicture.png"
+import portfolio from "../public/images/Portfolio.png"
+import ffc from "../public/images/FFC.png"
 
 import { useState, useRef } from "react";
 
@@ -101,6 +102,9 @@ export default function Home() {
       <section className={Style.projectsContainer} id="projects">
         <h2 className="animated-border">Mes projets</h2>
         <div className={Style.projectsRight}>
+          <div className={Style.btnLeft}>  
+            <button className={Style.projectBtn} onClick={() => scrollToSection("contact")}>Contact</button> 
+          </div>    
           <div className={Style.projectsContent}>
             <div className={Style.aboutContentTable}>
               <div className={Style.projectsBtnContainer}>
@@ -112,7 +116,7 @@ export default function Home() {
                 {/* Contenu dynamique en fonction du bouton actif */}
                 {activeProject === 0 &&
                   <div className={Style.projectsTableText}>
-                    <Image src={shelter} alt="SHELTER" className={Style.projectsImg} />
+                    <Image src={shelter} alt="SHELTER" className={Style.projectsImgShelter} />
                     <div className={Style.textDescription}>
                       <p>SHELTER est un projet de jeu sur mobile de survie à choix binaire inspiré de REIGNS dans un monde post apocalypse en collaboration avec 3 autres élèves de LaCapsule.</p>
                       <button className="btnprimary">découvrir</button>
@@ -121,7 +125,9 @@ export default function Home() {
                 }
                 {activeProject === 1 &&
                   <div className={Style.projectsTableText}>
-                    <Image src={noPicture} alt="Portfolio" className={Style.projectsImg} />
+                    <div className={Style.projectImageWrapper}>
+                      <Image src={portfolio} alt="Portfolio" className={Style.projectsImg} />
+                    </div>  
                     <div className={Style.textDescription}>
                       <p>Mon Portfolio est un projet en soi, je suis particuliérement fiére du designe.</p>
                       <p>J'éspere que la majorité sera du même avis.</p>
@@ -131,7 +137,9 @@ export default function Home() {
                 }
                 {activeProject === 2 &&
                   <div className={Style.projectsTableText}>
-                    <Image src={noPicture} alt="FFC" className={Style.projectsImg} />
+                    <div className={Style.projectImageWrapper}>
+                      <Image src={ffc} alt="FFC" className={Style.projectsImg} />
+                    </div>
                     <div className={Style.textDescription}>
                       <p>Le site de mon club de foot formateur, il me tenai a coeur d'offrir se site a l'association. </p>
                       <p>Dans un soucis d'urgence le site est fonctionelle mais encore en dévelopement.</p>
@@ -140,7 +148,7 @@ export default function Home() {
                   </div>
                 }
             </div>  
-          </div>    
+          </div>
         </div>  
       </section>
 

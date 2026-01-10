@@ -201,8 +201,9 @@ span {
 }
 
 .about-description {
-  font-size: 1.15rem;
-  line-height: 1.5;
+  font-size: 1.2rem;
+    line-height: 1.5;
+    opacity: .85;
   border: none;
 }
 
