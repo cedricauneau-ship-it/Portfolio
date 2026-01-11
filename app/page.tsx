@@ -11,7 +11,7 @@ import shelter from "../public/images/ProjetShelter.png"
 import portfolio from "../public/images/Portfolio.png"
 import ffc from "../public/images/FFC.png"
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export default function Home() {
 
@@ -33,14 +33,19 @@ export default function Home() {
     window.open("mailto:auneau.dev@gmail.com?subject=Contact%20Portfolio&", "_blank");
   };
 
+  useEffect(() => {
+    const home = document.getElementById("home");
+    home?.scrollIntoView({ behavior: "auto" });
+  }, []);
+
   return (
     <>
       {/* Section d'accueil */}
       <section className={Style.homeContainer} id="home">
         <div className={Style.btnContainer}>
-          <button className={Style.btnsecondary} onClick={() => scrollToSection("about")}>savoir qui je suis</button>
-          <button className={Style.btnsecondary} onClick={() => scrollToSection("projects")}>MES PROJETS</button>
-          <button className={Style.btnsecondary} onClick={() => scrollToSection("contact")}>CONTACT</button>
+          <button className={Style.btnsecondary} onClick={() => scrollToSection("about")}>Savoir qui je suis</button>
+          <button className={Style.btnsecondary} onClick={() => scrollToSection("projects")}>Mes projets</button>
+          <button className={Style.btnsecondary} onClick={() => scrollToSection("contact")}>Contact</button>
         </div>  
       </section>
 
@@ -66,7 +71,7 @@ export default function Home() {
                 }
                 {active === 1 &&
                   <div className={Style.aboutTableText}>
-                    <h3>Se que je maîtrise actuellement :</h3>
+                    <h3>Ce que je maîtrise actuellement :</h3>
                     <div className={Style.skillsGrid}>
                       <span style={{ backgroundColor: "#FF8A00" }}>HTML</span>
                       <span style={{ backgroundColor: "#FF8A00" }}>CSS</span>
@@ -118,8 +123,8 @@ export default function Home() {
                   <div className={Style.projectsTableText}>
                     <Image src={shelter} alt="SHELTER" className={Style.projectsImgShelter} />
                     <div className={Style.textDescription}>
-                      <p>SHELTER est un projet de jeu sur mobile de survie à choix binaire inspiré de REIGNS dans un monde post apocalypse en collaboration avec 3 autres élèves de LaCapsule.</p>
-                      <button className="btnprimary">découvrir</button>
+                      <p>SHELTER est un projet de jeu mobile de survie à choix binaires, inspiré de REIGNS, se déroulant dans un monde post-apocalyptique, réalisé en collaboration avec trois autres élèves de La Capsule.</p>
+                      <button className="btnprimary">Découvrir</button>
                     </div>
                   </div>
                 }
@@ -129,8 +134,8 @@ export default function Home() {
                       <Image src={portfolio} alt="Portfolio" className={Style.projectsImg} />
                     </div>  
                     <div className={Style.textDescription}>
-                      <p>Mon Portfolio est un projet en soi, je suis particuliérement fiére du designe.</p>
-                      <p>J'éspere que la majorité sera du même avis.</p>
+                      <p>Mon portfolio est un projet à part entière. Je suis particulièrement fier de son design.</p>
+                      <p>J’espère que la majorité sera du même avis.</p>
                       <button className="btnprimary">Vous êtes dessus</button>
                     </div>
                   </div>
@@ -141,9 +146,9 @@ export default function Home() {
                       <Image src={ffc} alt="FFC" className={Style.projectsImg} />
                     </div>
                     <div className={Style.textDescription}>
-                      <p>Le site de mon club de foot formateur, il me tenai a coeur d'offrir se site a l'association. </p>
-                      <p>Dans un soucis d'urgence le site est fonctionelle mais encore en dévelopement.</p>
-                      <button className="btnprimary">découvrir</button>
+                      <p>Le site de mon club de football formateur. Il me tenait à cœur d’offrir ce site à l’association. </p>
+                      <p>Dans un souci d’urgence, le site est fonctionnel, mais encore en développement.</p>
+                      <button className="btnprimary">Découvrir</button>
                     </div>
                   </div>
                 }
@@ -158,8 +163,8 @@ export default function Home() {
       <section className={Style.contactContainer} id="contact">
         <div className={Style.contactContent}>
           <div className={Style.contactText}>
-            <p>Des questions, un projet ? Ou juste envie de discuter ?</p>
-            <p>Vous pouvez me contacter via le réseau Linkdin ou par email.</p>
+            <p>Des questions, un projet ? Ou simplement envie de discuter ?</p>
+            <p>Vous pouvez me contacter via le réseau LinkedIn ou par e-mail.</p>
           </div>
           <button className={Style.contactButton} onClick={sendEmail}>Me contacter</button>
         </div>

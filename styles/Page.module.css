@@ -33,7 +33,6 @@
   color: white;
   cursor: pointer;
   transition: .5s;
-  text-transform: uppercase;
   animation: pulse 2.5s ease-in-out infinite;
 }
 
@@ -411,13 +410,14 @@
     color: white;
     font-size: 1.5rem;
     font-weight: bold;
-    text-transform: uppercase;
     letter-spacing: 1px;
     transition: .5s;
+    animation: pulse 2.5s ease-in-out infinite;
 }
 
 .contactButton:hover {
     cursor: pointer;
     transition: transform 0.5s ease;
     transform: scale(1.25);
+    animation: none;
 }
