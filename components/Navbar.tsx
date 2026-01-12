@@ -29,7 +29,7 @@ export default function Navbar() {
             <Image src={lion} alt="Logo" width={50} height={50} className={Style.logo}/>
             <span className={Style.name}>Cédric Auneau</span>
         </div>
-        <div className={Style.rightSection}>
+        <div className={Style.middleSection}>
             <button className="btnprimary" onClick={() => scrollToSection("home")}>Accueil</button>
             <Image src={enveloppe} alt="Enveloppe" 
               width={45} 
@@ -38,6 +38,7 @@ export default function Navbar() {
               onClick={() => sendEmail()}
             />
         </div>
+        <span className={Style.dev}>Développeur FullStack</span>
     </nav>
   );
 }

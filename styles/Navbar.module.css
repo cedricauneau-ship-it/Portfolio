@@ -37,26 +37,27 @@
     text-transform: uppercase;
 }
 
-.rightSection {
+.middleSection {
     display: flex;
     align-items: center;
     gap: 1.5rem;
 }
 
-.rightSection a {
-    font-size: 1.3rem;
-    font-weight: bold;
-    text-decoration: none;
-    color: white;
-    transition: color 0.3s ease;
-}
-
-.rightSection a:hover {
-    color: #0070f3;
-}
-
 .enveloppe:hover {
     cursor: pointer;
-    transition: transform 0.3s ease;
-    transform: scale(1.1);
+    transition: transform 0.5s ease;
+    transform: scale(1.2);
+}
+
+.dev {
+    background: linear-gradient(135deg,#FF8A00,#E13A8B,#19C3D3);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    border: none;
+    padding: 0.2rem 0.5rem;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }

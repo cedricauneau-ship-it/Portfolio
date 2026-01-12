@@ -112,7 +112,7 @@ span {
 }
 
 .separatorMenu {
-  width: 75%;
+  width: 80%;
   height: 4px;
   background: linear-gradient(135deg,#FF8A00,#E13A8B,#19C3D3);
   margin: 0 auto;
@@ -202,8 +202,8 @@ span {
 
 .about-description {
   font-size: 1.2rem;
-    line-height: 1.5;
-    opacity: .85;
+  line-height: 1.5;
+  opacity: .85;
   border: none;
 }
 
