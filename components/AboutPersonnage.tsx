@@ -1,5 +1,7 @@
 "use client";
 
+import Style from "./AboutPersonnage.module.css"
+
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
@@ -55,10 +57,10 @@ export default function AboutPersonnage({
   }, [scrollContainerRef]);
 
   return (
-    <section className="about-wrapper">
+    <section className={Style.aboutwrapper}>
       
       {/* TEXTE */}
-      <div className="about-content">
+      <div className={Style.aboutcontent}>
         {sections.map((s, i) => (
           <div
             key={s.id}
@@ -66,22 +68,22 @@ export default function AboutPersonnage({
               sectionRefs.current[i] = el;
             }}
             data-image={s.image}
-            className="about-section"
+            className={Style.aboutsection}
           >
             <h3>{s.title}</h3>
-            <span className="about-description">{s.text}</span>
+            <span className={Style.aboutdescription}>{s.text}</span>
           </div>
         ))}
       </div>
 
       {/* IMAGE STICKY */}
-      <div className="about-visual">
+      <div className={Style.aboutvisual}>
         <Image
           src={activeImage}
           alt=""
           width={200}
           height={200}
-          className="about-image"
+          className={Style.aboutimage}
           priority
         />
       </div>

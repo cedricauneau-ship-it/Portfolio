@@ -1,0 +1,55 @@
+.aboutwrapper {
+  display: grid;
+  grid-template-columns: 1.65fr 1fr;
+  width: 100%;
+}
+
+.aboutvisual {
+  position: sticky;
+  top: 95px;
+  height: fit-content;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 2rem;
+  background: transparent;
+}
+
+.aboutimage {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  border-radius: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.75);
+}
+
+.aboutcontent {
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutsection {
+  min-height: 40vh;
+  margin-bottom: 2rem;
+}
+
+.aboutsection h3 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.aboutdescription {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  opacity: .85;
+  border: none;
+}
+
+@media (max-width: 900px) {
+  .about-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .about-visual {
+    position: relative;
+    top: 0;
+    margin-bottom: 40px;
+  }
+}

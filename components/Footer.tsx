@@ -1,6 +1,6 @@
 "use client";
 
-import Style from '../styles/Footer.module.css';
+import Style from './Footer.module.css';
 
 import Image from 'next/image';
 import linkedin from '../public/images/linkedin.png';

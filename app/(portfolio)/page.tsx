@@ -1,16 +1,16 @@
 "use client";
 /* eslint-disable react/no-unescaped-entities */
 
-import Style from "../styles/Page.module.css"
+import Style from "./Page.module.css"
 
-import AboutPersonnage from "../components/AboutPersonnage";
-import ImageModal from "../components/ImageModal";
+import AboutPersonnage from "@/components/AboutPersonnage";
+import ImageModal from "@/components/ImageModal";
 
 import Image from "next/image";
-import diplome from "../public/images/Formation.png"
-import shelter from "../public/images/ProjetShelter.png"
-import portfolio from "../public/images/Portfolio.png"
-import ffc from "../public/images/FFC.png"
+import diplome from "@/public/images/Formation.png"
+import shelter from "@/public/images/ProjetShelter.png"
+import portfolio from "@/public/images/Portfolio.png"
+import ffc from "@/public/images/FFC.png"
 
 import { useState, useRef, useEffect } from "react";
 
@@ -58,9 +58,9 @@ export default function Home() {
             </div> 
             <div className="separatorMenu"></div> 
             <div className={Style.btnContainer}>
-              <button className={Style.btnsecondary} onClick={() => scrollToSection("about")}>Savoir qui je suis</button>
-              <button className={Style.btnsecondary} onClick={() => scrollToSection("projects")}>Mes projets</button>
-              <button className={Style.btnsecondary} onClick={() => scrollToSection("contact")}>Contact</button>
+              <button className="btnsecondary" onClick={() => scrollToSection("about")}>Savoir qui je suis</button>
+              <button className="btnsecondary" onClick={() => scrollToSection("projects")}>Mes projets</button>
+              <button className="btnsecondary" onClick={() => scrollToSection("contact")}>Contact</button>
             </div> 
           </div>  
         </div>  
@@ -110,7 +110,9 @@ export default function Home() {
                       <p>La Capsule est un organisme de formation au sein duquel j’ai obtenu mon diplôme de Concepteur Développeur d’applications web et mobile.</p>
                       <div className={Style.aboutFomationLink}>
                         <p>Pour en savoir plus sur l’organisme de formation, je vous invite à consulter leur site web :</p>
-                        <button className={Style.btnsecondary} onClick={linkCapsule}>LaCapsule.academy</button>
+                        <div className={Style.aboutLinkContainer}>
+                          <button className="btnsecondary" onClick={linkCapsule}>LaCapsule.academy</button>
+                        </div>
                       </div>
                     </div>
                     <ImageModal src={diplome} alt="Mon Diplome"/>
@@ -118,8 +120,12 @@ export default function Home() {
                 }
             </div>  
           </div>
-          <div className={Style.btnRight}>  
-            <button className={Style.projectBtn} onClick={() => scrollToSection("projects")}>Mes projets</button> 
+          <div className={Style.btnRight}>
+            <div className="btnSecondaryContainer">
+              <div className="btnSecondaryContent">    
+                <button className="btnsecondary" onClick={() => scrollToSection("projects")}>Mes projets</button>
+              </div>  
+            </div>   
           </div>
         </div>  
       </section>
@@ -130,8 +136,12 @@ export default function Home() {
       <section className={Style.projectsContainer} id="projects">
         <h2 className="animated-border">Mes projets</h2>
         <div className={Style.projectsRight}>
-          <div className={Style.btnLeft}>  
-            <button className={Style.projectBtn} onClick={() => scrollToSection("contact")}>Contact</button> 
+          <div className={Style.btnLeft}>
+            <div className="btnSecondaryContainer">
+              <div className="btnSecondaryContent"> 
+                <button className="btnsecondary" onClick={() => scrollToSection("contact")}>Contact</button>
+              </div>  
+            </div> 
           </div>    
           <div className={Style.projectsContent}>
             <div className={Style.aboutContentTable}>
@@ -146,7 +156,14 @@ export default function Home() {
                     <Image src={shelter} alt="SHELTER" className={Style.projectsImgShelter} />
                     <div className={Style.textDescription}>
                       <p>SHELTER est un projet de jeu mobile de survie à choix binaires, inspiré de REIGNS, se déroulant dans un monde post-apocalyptique, réalisé en collaboration avec trois autres élèves de La Capsule.</p>
-                      <button className="btnprimary">Découvrir</button>
+                      <a
+                        href="/projets/shelter"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btnprimary"
+                      >
+                        Découvrir
+                      </a>
                     </div>
                   </div>
                 }
@@ -188,7 +205,7 @@ export default function Home() {
             <p>Des questions, un projet ? Ou simplement envie de discuter ?</p>
             <p>Vous pouvez me contacter via le réseau LinkedIn ou par e-mail.</p>
           </div>
-          <button className={Style.contactButton} onClick={sendEmail}>Me contacter</button>
+          <button className={Style.btnsecondary} onClick={sendEmail}>Me contacter</button>
         </div>
       </section>
 

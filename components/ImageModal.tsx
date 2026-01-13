@@ -1,8 +1,9 @@
 "use client";
 
+import Styles from "./ImageModal.module.css";
+
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import Styles from "../Styles/ImageModal.module.css";
 
 const CloseIcon = () => (
   <svg

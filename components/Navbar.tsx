@@ -1,6 +1,6 @@
 "use client";
 
-import Style from "../styles/Navbar.module.css";
+import Style from "./Navbar.module.css";
 
 import Image from "next/image";
 import lion from "../public/images/logoLion.png";
