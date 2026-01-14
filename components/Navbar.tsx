@@ -15,10 +15,6 @@ export default function Navbar() {
     }
   };
 
-  const sendEmail = () => {
-    window.open("mailto:auneau.dev@gmail.com?subject=Contact%20Portfolio&", "_blank");
-  }; 
-
   return (
     <nav className={Style.container}>
         <div className={Style.leftSection}>
@@ -61,15 +57,20 @@ export default function Navbar() {
                 height={50}
                 className={Style.logoLink}
               />
-            </a> 
+            </a>
+            <a
+              href="mailto:auneau.dev@gmail.com?subject=Contact%20Portfolio"
+              rel='noopener noreferrer'
+              aria-label='Me Contacter'
+            >     
             <Image
               src="/icons/enveloppe.svg"
               alt="Enveloppe" 
               width={75} 
               height={50} 
               className={Style.logoLink}
-              onClick={() => sendEmail()}
             />
+           </a>  
         </div>
         <span className={Style.dev}>Développeur FullStack</span>
     </nav>

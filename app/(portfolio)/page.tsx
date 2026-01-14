@@ -29,10 +29,6 @@ export default function Home() {
   };
 
   {/* Fonction de boutton */}
-  const sendEmail = () => {
-    window.open("mailto:auneau.dev@gmail.com?subject=Contact%20Portfolio&", "_blank");
-  };
-
   const linkCapsule = () => {
     window.open("https://www.lacapsule.academy", "_blank", "noopener,noreferrer");
   }
@@ -318,7 +314,12 @@ export default function Home() {
             <p>Des questions, un projet ? Ou simplement envie de discuter ?</p>
             <p>Vous pouvez me contacter via le réseau LinkedIn ou par e-mail.</p>
           </div>
-          <button className={`${Style.btnsecondary} ${"pulse"}`} onClick={sendEmail}>Me contacter</button>
+          <a
+            href="mailto:auneau.dev@gmail.com?subject=Contact%20Portfolio"
+            className={`${Style.btnsecondary} ${"pulse"}`}
+          >
+            Me contacter
+          </a>
         </div>
       </section>
 
