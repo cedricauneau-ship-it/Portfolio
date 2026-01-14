@@ -48,8 +48,27 @@ p {
   color: rgb(235, 235, 235);
 }
 
-span {
-  border: 2px solid black;
+/* Animation de réspiration */
+
+@keyframes Pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+
+  50% {
+    transform: scale(1.15);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+.pulse {
+  animation: Pulse 2.5s ease-in-out infinite;
 }
 
 /* Button Styles */
@@ -72,6 +91,7 @@ span {
   cursor: pointer;
   transition: transform 0.5s ease;
   transform: scale(1.1);
+  color: black;
 }
 
 .btnSecondaryContainer {

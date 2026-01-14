@@ -3,8 +3,6 @@
 import Style from './Footer.module.css';
 
 import Image from 'next/image';
-import linkedin from '../public/images/linkedin.png';
-import github from '../public/images/github.png';
 
 export default function Footer() {
   return (
@@ -19,10 +17,11 @@ export default function Footer() {
           <h3 className={Style.footerTitle}>Réseaux</h3>
           <div className={Style.logoContainer}>
             <Image
-              src={github}
+              src="icons/github.svg"
               alt=""
-              width={40}
-              height={40}
+              width={50}
+              height={50}
+              className={Style.logoLink}
             />
             <a
               href='https://www.linkedin.com/in/cedric-auneau'
@@ -31,18 +30,20 @@ export default function Footer() {
               aria-label='Mon profil LinkedIn'
             >
               <Image
-                src={linkedin}
+                src="/icons/linkedin.svg"
                 alt=""
-                width={35}
-                height={35}
-                className={Style.linkedin}
+                width={50}
+                height={50}
+                className={Style.logoLink}
               />
             </a>  
           </div>
         </div>
       </div>
       <div className={Style.footerDivider}></div>
-      <p className={Style.footerDescription}>© Copyright {new Date().getFullYear()} - Créer par Cédric Auneau</p>
+      <div className={Style.footerEndText}>
+        <p>© Copyright {new Date().getFullYear()} - Créer par Cédric Auneau</p>
+      </div>
     </footer>
   );
 }

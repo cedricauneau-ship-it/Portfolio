@@ -1,10 +1,10 @@
+import Style from "./Page.module.css"
+
 export default function FfcPage() {
   return (
-    <section>
-      <h1>FFC</h1>
-      <p>
-        Présentation détaillée du projet FFC.
-      </p>
+    <section className={Style.homeContainer}>
+      <h1 className={Style.title}>Page FFC</h1>
+      <h1 className={Style.title}>En développement</h1>
     </section>
   );
 }

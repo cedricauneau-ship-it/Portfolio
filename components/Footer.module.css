@@ -13,6 +13,7 @@
 .footerContainer {
     display: flex;
     width: 90%;
+    height: 80%;
     justify-content: space-between;
     padding: 3rem 0;
 }
@@ -24,16 +25,15 @@
 }
 
 .footerTitle {
-    font-size: 1.2rem;
-    letter-spacing: 1px;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
     font-weight: bold;
     text-transform: uppercase;
-    margin-bottom: 2rem;
 }
 
 .footerDescription {
-    font-size: 0.8rem;
-    line-height: 0.5rem;
+    font-size: 1rem;
+    line-height: 1rem;
 }
 
 .footerSocials {
@@ -47,19 +47,38 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 10px;
     cursor: pointer;
-    gap: 15px;
+    gap: 20px;
+    width: 100%;
 }
 
-.linkedin {
+.logoContainer a {
+    display: flex;
+    align-items: center;
+}
+
+.logoLink {
     background-color: white;
-    border-radius: 50%;
+    border-radius: 10px;
+    padding: 0.1rem;
+    transition: 0.3s;
+}
+
+.logoLink:hover {
+    transition: 0.3s;
+    scale: calc(1.1);
 }
 
 .footerDivider {
     width: 90%;
-    height: 0.2px;
+    height: 0.5%;
     background-color: gray;
-    margin: 1rem 0;
+}
+
+.footerEndText {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 19.5%;
 }

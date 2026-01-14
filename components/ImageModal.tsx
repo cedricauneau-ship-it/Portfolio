@@ -63,6 +63,8 @@ export default function ImageModal({ src, alt }: Props) {
       <Image
         src={src}
         alt={alt}
+        width={1200}
+        height={700}
         className={Styles.thumbnail}
         onClick={() => setOpen(true)}
       />
@@ -87,6 +89,8 @@ export default function ImageModal({ src, alt }: Props) {
           <Image
             src={src}
             alt={alt}
+            width={1200}
+            height={700}
             className={Styles.tableImage}
             onClick={(e) => e.stopPropagation()}
           />

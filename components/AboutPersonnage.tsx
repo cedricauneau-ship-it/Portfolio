@@ -14,13 +14,13 @@ const sections = [
     id: "a",
     title: "Le personnage",
     text: "Passionné par le développement web, j’ai choisi ce domaine pour son équilibre entre logique, créativité et résolution de problèmes. Chaque projet est pour moi une occasion d’apprendre, d’expérimenter et d’améliorer mes pratiques, que ce soit en matière d’architecture, de design ou d’optimisation. Motivé et investi, je cherche aujourd’hui à transformer cette passion en une expérience professionnelle solide.",
-    image: "/images/DevCofee.png",
+    image: "/images/about/DevCofee.png",
   },
   {
     id: "b",
     title: "Mes objectifs",
     text: "Continuer à apprendre, expérimenter et progresser chaque jour fait partie de mes priorités. Je souhaite évoluer dans un environnement stimulant, où je pourrai renforcer mes compétences techniques tout en développant une vision plus globale des projets. Mon objectif est de devenir un développeur capable de comprendre aussi bien les enjeux techniques que les besoins des utilisateurs.",
-    image: "/images/DevPresentation.png",
+    image: "/images/about/DevPresentation.png",
   },
 ];
 
