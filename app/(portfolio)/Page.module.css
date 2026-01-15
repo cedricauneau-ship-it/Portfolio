@@ -82,6 +82,7 @@
     white-space: nowrap;
     opacity: 0;
     text-transform: uppercase;
+    animation-fill-mode: both;
 }
 
 /* Bienvenue 👋 */
@@ -94,7 +95,7 @@
 /* sur mon portfolio */
 .word2 {
     font-size: 2.2rem;
-    opacity: 0.85;
+    opacity: 0;
     animation: slideCycle 7s ease-in-out infinite;
     animation-delay: 3.5s;
 }
