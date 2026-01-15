@@ -25,8 +25,8 @@ export default function Navbar() {
             <Image
               src="/icons/home.svg"
               alt="Home"
-              width={75}
-              height={50}
+              width={90}
+              height={40}
               className={Style.logoLink}
               onClick={() => scrollToSection("home")}
             />
@@ -39,8 +39,8 @@ export default function Navbar() {
               <Image
                 src="/icons/github.svg"
                 alt="GitHub"
-                width={75}
-                height={50}
+                width={90}
+                height={40}
                 className={Style.logoLink}
               />  
             </a>
@@ -53,8 +53,8 @@ export default function Navbar() {
               <Image
                 src="/icons/linkedin.svg"
                 alt=""
-                width={75}
-                height={50}
+                width={90}
+                height={40}
                 className={Style.logoLink}
               />
             </a>
@@ -66,8 +66,8 @@ export default function Navbar() {
             <Image
               src="/icons/enveloppe.svg"
               alt="Enveloppe" 
-              width={75} 
-              height={50} 
+              width={90} 
+              height={40} 
               className={Style.logoLink}
             />
            </a>  

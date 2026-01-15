@@ -1,46 +1,27 @@
-/* Bienvenue → sort à droite → revient de droite */
-@keyframes swapOutIn {
-  0%, 25% {
-    transform: translateX(0);
+@keyframes slideCycle {
+  0% {
+    opacity: 0;
+    transform: translate(-70%, -50%);
+  }
+
+  10% {
     opacity: 1;
+    transform: translate(-50%, -50%);
   }
 
-  35% {
-    transform: translateX(40px);
-    opacity: 0;
-  }
-
-  65% {
-    transform: translateX(40px);
-    opacity: 0;
-  }
-
-  75%, 100% {
-    transform: translateX(0);
+  40% {
     opacity: 1;
+    transform: translate(-50%, -50%);
   }
-}
 
-/* sur mon portfolio → arrive de gauche → sort à gauche */
-@keyframes swapInOut {
-  0%, 30% {
-    transform: translateX(-40px);
+  50% {
     opacity: 0;
-  }
-
-  40%, 60% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-
-  70% {
-    transform: translateX(-40px);
-    opacity: 0;
+    transform: translate(-30%, -50%);
   }
 
   100% {
-    transform: translateX(-40px);
     opacity: 0;
+    transform: translate(-30%, -50%);
   }
 }
 
@@ -96,20 +77,26 @@
 /* Base commune */
 .word {
     position: absolute;
-    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
     white-space: nowrap;
+    opacity: 0;
+    text-transform: uppercase;
 }
 
 /* Bienvenue 👋 */
 .word1 {
-    font-size: 3.7rem;
-    animation: swapOutIn 7s ease-in-out infinite;
+    font-size: 3.4rem;
+    letter-spacing: 0.35rem;
+    animation: slideCycle 7s ease-in-out infinite;
 }
 
 /* sur mon portfolio */
 .word2 {
-    font-size: 2.9rem;
-    animation: swapInOut 7s ease-in-out infinite;
+    font-size: 2.2rem;
+    opacity: 0.85;
+    animation: slideCycle 7s ease-in-out infinite;
+    animation-delay: 3.5s;
 }
 
 .btnContainer {

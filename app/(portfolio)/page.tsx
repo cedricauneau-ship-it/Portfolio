@@ -134,7 +134,7 @@ export default function Home() {
         <div className={Style.homeContent}>
           <div className={Style.homeTable}>
             <div className={Style.homeTitle}>
-              <h1 className={`${Style.word} ${Style.word1}`}>Bienvenue 👋</h1>
+              <h1 className={`${Style.word} ${Style.word1}`}>Bienvenue</h1>
               <h1 className={`${Style.word} ${Style.word2}`}>sur mon portfolio</h1>
             </div> 
             <div className="separatorMenu"></div> 
