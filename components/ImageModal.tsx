@@ -4,6 +4,8 @@ import Styles from "./ImageModal.module.css";
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import type { StaticImageData } from "next/image";
+
 
 const CloseIcon = () => (
   <svg
