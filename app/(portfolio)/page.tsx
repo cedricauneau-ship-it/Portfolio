@@ -17,6 +17,12 @@ export default function Home() {
   {/* Tableau projets section active */}
   const [activeProject, setActiveProject] = useState<number | null>(0);
 
+  {/* Centrage des boutons sur mobile */}
+  const aboutBtnRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const projectBtnRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const hasInteracted = useRef(false);
+
+
   {/* Observer du scroll pour changement d'Img */}
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
@@ -33,11 +39,41 @@ export default function Home() {
     window.open("https://www.lacapsule.academy", "_blank", "noopener,noreferrer");
   }
 
-  {/* Centre la page a l'arriver sur la section "home" */}
+  {/* Centre sur l'accueil au chargement */}
   useEffect(() => {
     const home = document.getElementById("home");
     home?.scrollIntoView({ behavior: "auto" });
   }, []);
+
+
+  {/* Centre les bouton actifs sur mobile */}
+  useEffect(() => {
+    if (!hasInteracted.current) return;
+
+    const btn = aboutBtnRefs.current[active ?? 0];
+    if (!btn) return;
+
+    btn.scrollIntoView({
+      behavior: "smooth",
+      inline: "center",
+      block: "nearest",
+    });
+  }, [active]);
+
+  useEffect(() => {
+    if (!hasInteracted.current) return;
+
+    const btn = projectBtnRefs.current[activeProject ?? 0];
+    if (!btn) return;
+
+    btn.scrollIntoView({
+      behavior: "smooth",
+      inline: "center",
+      block: "nearest",
+    });
+  }, [activeProject]);
+
+
 
   {/* Mes Compétences */}
   const skills = [
@@ -98,11 +134,11 @@ export default function Home() {
       description2: "Framework",
     },
     {
-      name: "MONGODB",
-      icon: "/icons/mongodb.svg",
-      color: "#47A248",
-      description: "MongoDB",
-      description2: "Base de donnée",
+      name: "FIGMA",
+      icon: "/icons/figma.svg",
+      color: "#F24E1E",
+      description: "Figma",
+      description2: "Design",
     },
     {
       name: "GIT",
@@ -119,11 +155,11 @@ export default function Home() {
       description2: "Plateforme Cloud",
     },
     {
-      name: "FIGMA",
-      icon: "/icons/figma.svg",
-      color: "#F24E1E",
-      description: "Figma",
-      description2: "Design",
+      name: "MONGODB",
+      icon: "/icons/mongodb.svg",
+      color: "#47A248",
+      description: "MongoDB",
+      description2: "Base de donnée",
     },
   ]
 
@@ -156,10 +192,39 @@ export default function Home() {
           <div className={Style.aboutContent}>
             <div className={Style.aboutContentTable}>
               <div className={Style.aboutBtnContainer}>
-                <button className={active === 0 ? "btntertiaryActive" : "btntertiary"} onClick={() => setActive(0)}>Qui suis-je ?</button>
-                <button className={active === 1 ? "btntertiaryActive" : "btntertiary"} onClick={() => setActive(1)}>Mes compétences</button>
-                <button className={active === 2 ? "btntertiaryActive" : "btntertiary"} onClick={() => setActive(2)}>Ma formation</button>
-              </div>
+              <button
+                ref={(el) => {aboutBtnRefs.current[0] = el}}
+                className={active === 0 ? "btntertiaryActive" : "btntertiary"}
+                onClick={() => {
+                  hasInteracted.current = true;
+                  setActive(0);
+                }}
+              >
+                Qui suis-je ?
+              </button>
+
+              <button
+                ref={(el) => {aboutBtnRefs.current[1] = el}}
+                className={active === 1 ? "btntertiaryActive" : "btntertiary"}
+                onClick={() => {
+                  hasInteracted.current = true;
+                  setActive(1);
+}}
+              >
+                Mes compétences
+              </button>
+
+              <button
+                ref={(el) => {aboutBtnRefs.current[2] = el}}
+                className={active === 2 ? "btntertiaryActive" : "btntertiary"}
+                onClick={() => {
+                  hasInteracted.current = true;
+                  setActive(2);
+}}
+              >
+                Ma formation
+              </button>
+            </div>
               <div className="separatorMenu"></div>
                 {active === 0 && 
                   <div className={Style.aboutTableText} ref={scrollRef}>
@@ -230,9 +295,44 @@ export default function Home() {
           <div className={Style.projectsContent}>
             <div className={Style.aboutContentTable}>
               <div className={Style.projectsBtnContainer}>
-                <button className={activeProject === 0 ? "btntertiaryActive" : "btntertiary"} onClick={() => setActiveProject(0)}>SHELTER</button>
-                <button className={activeProject === 1 ? "btntertiaryActive" : "btntertiary"} onClick={() => setActiveProject(1)}>Portfolio</button>
-                <button className={activeProject === 2 ? "btntertiaryActive" : "btntertiary"} onClick={() => setActiveProject(2)}>Site FFC</button>
+                <button
+                  ref={(el) => {
+                    projectBtnRefs.current[0] = el;
+                  }}
+                  className={activeProject === 0 ? "btntertiaryActive" : "btntertiary"}
+                  onClick={() => {
+                    hasInteracted.current = true;
+                    setActiveProject(0);
+                  }}
+                >
+                  SHELTER
+                </button>
+
+                <button
+                  ref={(el) => {
+                    projectBtnRefs.current[1] = el;
+                  }}
+                  className={activeProject === 1 ? "btntertiaryActive" : "btntertiary"}
+                  onClick={() => {
+                    hasInteracted.current = true;
+                    setActiveProject(1);
+                  }}
+                >
+                  Portfolio
+                </button>
+
+                <button
+                  ref={(el) => {
+                    projectBtnRefs.current[2] = el;
+                  }}
+                  className={activeProject === 2 ? "btntertiaryActive" : "btntertiary"}
+                  onClick={() => {
+                    hasInteracted.current = true;
+                    setActiveProject(2);
+                  }}
+                >
+                  Site FFC
+                </button>
               </div>
               <div className="separatorMenu"></div>
                 {activeProject === 0 &&

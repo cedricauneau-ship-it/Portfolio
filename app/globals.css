@@ -248,3 +248,16 @@ p {
     background-position: 300% 50%;
   }
 }
+
+@media (max-width: 768px) {
+
+  h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .separatorMenu {
+    height: 2px;
+  }
+}

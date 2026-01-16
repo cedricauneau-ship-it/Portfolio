@@ -42,7 +42,7 @@ const CloseIcon = () => (
 );
 
 type Props = {
-  src: any;
+  src: string | StaticImageData;
   alt: string;
 };
 

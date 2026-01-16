@@ -16,13 +16,20 @@ export default function Footer() {
         <div className={Style.footerSocials}>
           <h3 className={Style.footerTitle}>Réseaux</h3>
           <div className={Style.logoContainer}>
-            <Image
-              src="icons/github.svg"
-              alt=""
-              width={50}
-              height={50}
-              className={Style.logoLink}
-            />
+            <a
+              href="https://github.com/cedricauneau-ship-it"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label='Mon profil GitHub'
+            > 
+              <Image
+                src="/icons/github.svg"
+                alt=""
+                width={50}
+                height={50}
+                className={Style.logoLink}
+              />
+            </a>  
             <a
               href='https://www.linkedin.com/in/cedric-auneau'
               target='_blank'

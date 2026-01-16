@@ -82,3 +82,108 @@
     width: 100%;
     height: 19.5%;
 }
+
+/* Tablette */
+
+@media (max-width: 1024px) {
+  .footer {
+    height: auto;
+    padding: 3rem 0 2rem;
+  }
+
+  .footerContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    height: auto;
+    padding: 2rem 0;
+  }
+
+  .footerProfile,
+  .footerSocials {
+    align-items: center;
+    text-align: center;
+  }
+
+  .footerDescription {
+    line-height: 1.4rem;
+  }
+}
+
+/* Tablette */
+
+@media (max-width: 768px) {
+  .footer {
+    height: 50vh;
+    padding: 0;
+  }
+
+  .footerTitle {
+    font-size: 1.5rem;
+  }
+
+  .footerDescription {
+    font-size: 1.2rem;
+  }
+
+  .logoContainer {
+    gap: 3rem;
+  }
+
+  .logoLink {
+    height: 65px;
+    width: 65px;
+  }
+
+  .footerEndText {
+    height: auto;
+    margin-top: 0.5rem;
+  }
+
+  .footerEndText p {
+    font-size: 1rem;
+    margin: 0;
+  }
+}
+
+@media (max-width: 550px) {
+  .footer {
+    height: 46vh;
+  }
+
+  .footerContainer{
+    gap: 1rem;
+    padding: auto;
+  }
+
+  .footerTitle {
+    font-size: 1.3rem;
+  }
+
+  .footerDescription {
+    font-size: 1rem;
+  }
+
+  .logoContainer {
+    gap: 3rem;
+  }
+
+  .logoLink {
+    height: 45px;
+    width: 45px;
+  }
+}
+
+@media (max-width: 320px) {
+  .footerTitle {
+    font-size: 1.1rem;
+  }
+
+  .footerDescription {
+    font-size: 0.9rem;
+  }
+
+  .footerEndText p {
+    font-size: 0.9rem;
+  }
+}

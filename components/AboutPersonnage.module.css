@@ -43,13 +43,45 @@
 }
 
 @media (max-width: 900px) {
-  .about-wrapper {
+  .aboutwrapper {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
-  .about-visual {
+  .aboutvisual {
     position: relative;
     top: 0;
-    margin-bottom: 40px;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .aboutimage {
+    width: 80%;
+    max-width: 300px;
+    max-height: max-content;
+  }
+
+  .aboutsection {
+    min-height: auto;
+  }
+
+  .aboutsection h3 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .aboutdescription {
+    text-align: center;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .aboutvisual {
+    display: none;
+  }
+
+  .aboutsection h3 {
+    margin-top: 1rem;
   }
 }
