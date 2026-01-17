@@ -569,6 +569,60 @@
 }
 
 /* Tablette */
+@media (max-width: 1025px) {
+  .homeContent {
+    width: 33%;
+    margin-right: 5rem;
+  }
+
+  .word1{
+    font-size: 2.5rem;
+  }
+
+  .word2 {
+    font-size: 1.7rem;
+  }
+
+  .btnContainer {
+    width: 93%;
+  }
+
+  .aboutContent {
+    width: 58%;
+    margin-left: 2rem;
+  }
+
+  .aboutBtnContainer {
+    margin: 0 0.3rem;
+    width: 98%;
+    gap: 0.5rem;
+  }
+
+  .aboutLinkContainer {
+    width: 65%;
+  }
+
+  .btnRight {
+    margin-right: 2.7rem;
+  }
+
+  .projectsRight{
+    width: 100%;
+  }
+
+  .btnLeft {
+    margin-right: 1rem;
+  }
+
+  .projectsContent {
+    margin: 0 1rem;
+    width: 62%;
+  }
+
+  .projectsImg {
+    object-fit: contain;
+  }
+}
 
 @media (max-width: 768px) {
 

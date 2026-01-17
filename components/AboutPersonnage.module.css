@@ -42,6 +42,17 @@
   border: none;
 }
 
+@media (max-width: 1025px) {
+  .aboutvisual {
+    margin-right: 1rem;
+  }
+  .aboutimage {
+    width: 85%;
+    max-width: 300px;
+    max-height: max-content;
+  }
+}
+
 @media (max-width: 900px) {
   .aboutwrapper {
     grid-template-columns: 1fr;

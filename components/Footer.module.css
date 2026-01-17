@@ -85,14 +85,13 @@
 
 /* Tablette */
 
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
   .footer {
     height: auto;
-    padding: 3rem 0 2rem;
   }
 
   .footerContainer {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     gap: 3rem;
     height: auto;
@@ -103,6 +102,11 @@
   .footerSocials {
     align-items: center;
     text-align: center;
+  }
+
+  .footerDivider {
+    height: 1px;
+    margin: 1rem 0;
   }
 
   .footerDescription {

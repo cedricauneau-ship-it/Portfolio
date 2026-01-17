@@ -249,6 +249,12 @@ p {
   }
 }
 
+@media (max-width: 1025px) {
+  .btnSecondaryContainer {
+    width: 30vw;
+  }
+}
+
 @media (max-width: 768px) {
 
   h2 {

@@ -114,6 +114,20 @@
 }
 
 /* Responsive */
+@media (max-width: 1025px) {
+  .container{
+    padding: 1rem 1.5rem;
+  }
+
+  .name {
+    font-size: 1.5rem;
+  }
+
+  .middleSection {
+    gap: 2rem;
+  }
+}
+
 @media (max-width: 768px) {
   .middleSection {
     display: none;
