@@ -569,7 +569,7 @@
 }
 
 /* Tablette */
-@media (max-width: 1025px) {
+@media (max-width: 1200px) {
   .homeContent {
     width: 33%;
     margin-right: 5rem;

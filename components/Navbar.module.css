@@ -114,7 +114,7 @@
 }
 
 /* Responsive */
-@media (max-width: 1025px) {
+@media (max-width: 1200px) {
   .container{
     padding: 1rem 1.5rem;
   }

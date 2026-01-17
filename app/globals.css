@@ -249,7 +249,7 @@ p {
   }
 }
 
-@media (max-width: 1025px) {
+@media (max-width: 1200px) {
   .btnSecondaryContainer {
     width: 30vw;
   }
