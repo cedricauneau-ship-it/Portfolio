@@ -1,13 +1,460 @@
-.projectPage {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    background-color: rgb(120, 101, 101);
+.projectPage h1,
+.projectPage h2,
+.projectPage h3,
+.projectPage span,
+.projectPage a {
+  color: #f2f4f8;
 }
 
-.title {
-    font-size: 5rem;
-    font-weight: bold;
+.projectPage {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background:
+  radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.04),
+    transparent 70%
+  ),
+  #1a1f2e;
+  color: #f5f5f5;
+}
+
+.projectPage p {
+  margin: 0;
+  color: #f5f5f5dd;
+}
+
+/* Diviseur de Section */
+.sectionDivider {
+  width: 64px;
+  height: 1px;
+  margin: 4rem auto;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+}
+
+/* Section Hero */
+.projectHero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 2rem;
+  min-height: 85vh;
+}
+
+.projectHero h1 {
+  color: #ffffffec;
+  font-size: clamp(1.6rem, 5vw, 3.2rem);
+  letter-spacing: 0.2em;
+  text-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  margin-bottom: 1rem;
+}
+
+.projectHero p {
+  font-size: clamp(1rem, 2.2vw, 1.3rem);
+  line-height: 1.6;
+  color: rgba(245, 247, 250, 0.75);
+  max-width: 520px;
+  text-align: center;  
+}
+
+.projectSkills {
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.skillContainer {
+  width: 64px;
+  height: 64px;
+  padding: 4px;
+  box-sizing: border-box;
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(6px);
+  position: relative;
+}
+
+/* Bordure couleur */
+.skillContainer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+
+  box-shadow:
+    0 0 0 1.5px var(--skill-color),
+    0 0 14px color-mix(in srgb, var(--skill-color), transparent 70%);
+
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.skillContainer::after {
+  content: attr(data-label);
+
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+
+  background: rgba(20, 24, 35, 0.95);
+  color: #f2f4f8;
+
+  padding: 6px 10px;
+  border-radius: 8px;
+
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Hover */
+.skillContainer:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Icône recolorée */
+.skillIcon {
+  width: 46px;
+  height: 46px;
+  padding: 2.5px;
+
+  background-color: var(--skill-color);
+  border-radius: 8px;
+
+  mix-blend-mode: multiply;
+
+  z-index: 1;
+}
+
+.projectPreview {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+/* Wrapper */
+.phoneWrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+/* Phone body */
+.phone {
+  position: relative;
+  width: 220px;
+  aspect-ratio: 9 / 15;
+  background: #0f0f12;
+  border-radius: 30px;
+  padding: 14px;
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.75),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+}
+
+/* Notch */
+.notch {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 16px;
+  background: #000;
+  border-radius: 0 0 12px 12px;
+  z-index: 2;
+}
+
+/* Screen */
+.screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #000; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageIcon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+}
+
+.btnContainer {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 10rem;
+}
+
+.btnLink {
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  position: relative;
+  cursor: pointer;
+}
+
+.btnLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: #ffffff;
+  transition: width 0.3s ease;
+}
+
+.btnLink:hover::after {
+  width: 100%;
+}
+
+/* Section Intro */
+.projectIntro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6rem 2rem;
+}
+
+.projectIntro h2 {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  margin-bottom: 2rem;
+  color: #ffffffec;
+}
+
+.projectIntro p {
+  font-size: clamp(1rem, 2.2vw, 1.3rem);
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: rgba(245, 247, 250, 0.8);
+  text-align: center;
+}
+
+/* Section Role */
+.projectRole {
+  padding: 6rem 2rem;
+}
+
+.projectRole h2 {
+  text-align: center;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  margin-bottom: 2rem;
+  color: #ffffffec;
+}
+
+.roleTimeline {
+  max-width: 720px;
+  margin: 3rem auto 0;
+  position: relative;
+}
+
+/* ligne verticale */
+.roleTimeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 12px;
+  width: 1px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.roleStep {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.roleDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #f2f4f8;
+  margin-top: 0.4rem;
+  flex-shrink: 0;
+}
+
+.roleContent h3 {
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.4rem;
+  color: rgba(245, 247, 250, 0.95);
+}
+
+.roleContent p {
+  font-size: clamp(0.9rem, 1.8vw, 1.3rem);
+  line-height: 1.6;
+  color: rgba(245, 247, 250, 0.8);
+}
+
+/* Section Features */
+.projectFeatures {
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.featuresGrid {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin-inline: auto;
+}
+
+.featureCard {
+  padding: 1.8rem;
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(6px);
+}
+
+.featureCard h3 {
+  margin-bottom: 0.8rem;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(245, 247, 250, 0.9);
+}
+
+.featureCard p {
+  font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+  line-height: 1.6;
+  color: rgba(245, 247, 250, 0.75);
+}
+
+
+/* Section Learning */
+.projectLearnings {
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.projectLearnings h2 {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.learningsContent {
+  max-width: 775px;
+  margin: 0 auto;
+}
+
+.learningsContent p {
+  font-size: clamp(1rem, 2.2vw, 1.3rem);
+  margin-bottom: 1.6rem;
+  line-height: 1.7;
+  color: rgba(245, 247, 250, 0.75);
+}
+
+/* Section CTA */
+.projectCTA {
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.projectCTA h2 {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.projectCTA p {
+  font-size: clamp(1rem, 2.2vw, 1.3rem);
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+  color: rgba(245, 247, 250, 0.75);
+}
+
+.ctaActions {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+/* CTA principal */
+.ctaPrimary {
+  padding: 0.9rem 2.6rem;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  color: #f2f4f8;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.ctaPrimary:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .projectHero {
+    min-height: auto;
+    padding: 2rem;
+  }
+
+  .btnContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 3rem 0;
+    gap: 5rem;
+  }
+
+  .projectIntro {
+    padding: 4rem 1.5rem;
+  }
+
+  .projectIntro h2 {
+    text-align: center;
+  }
 }

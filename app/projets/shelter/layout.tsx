@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import Footer from "@/components/Footer";
+import FooterClient from "@/components/FooterClient";
 
 export const metadata: Metadata = {
   title: "Auneau Cédric - Shelter",
@@ -16,7 +16,7 @@ export default function ProjetsLayout({
     <>
         <header></header>
         <main>{children}</main>
-        <footer><Footer /></footer>
+        <footer><FooterClient /></footer>
     </>    
   );
 }

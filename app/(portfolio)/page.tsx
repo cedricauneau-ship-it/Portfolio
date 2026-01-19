@@ -209,7 +209,7 @@ export default function Home() {
                 onClick={() => {
                   hasInteracted.current = true;
                   setActive(1);
-}}
+                }}
               >
                 Mes compétences
               </button>
@@ -220,7 +220,7 @@ export default function Home() {
                 onClick={() => {
                   hasInteracted.current = true;
                   setActive(2);
-}}
+                }}
               >
                 Ma formation
               </button>
