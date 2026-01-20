@@ -337,13 +337,15 @@ export default function Home() {
               <div className="separatorMenu"></div>
                 {activeProject === 0 &&
                   <div className={Style.projectsTableText}>
-                    <Image
-                      src="/images/projects/ProjetShelter.png"
-                      alt="SHELTER"
-                      width={1200}
-                      height={700}
-                      className={Style.projectsImgShelter}
-                    />
+                    <div className={Style.projectImageWrapper}>
+                      <Image
+                        src="/images/projects/ProjetShelter.png"
+                        alt="SHELTER"
+                        width={1200}
+                        height={700}
+                        className={Style.projectsImg}
+                      />
+                    </div>  
                     <div className={Style.textDescription}>
                       <p>SHELTER est un projet de jeu mobile de survie à choix binaires, inspiré de REIGNS, se déroulant dans un monde post-apocalyptique, réalisé en collaboration avec trois autres élèves de La Capsule.</p>
                       <a
@@ -371,7 +373,9 @@ export default function Home() {
                     <div className={Style.textDescription}>
                       <p>Mon portfolio est un projet à part entière.</p>
                       <p>Réaliser en JavaScript et TypeScript, les backgrounds sont générer par l'IA.</p>
-                      <button className={Style.btnStatic}>Vous êtes dessus</button>
+                      <span className={Style.btnStatic}>
+                        Vous êtes dessus
+                      </span>
                     </div>
                   </div>
                 }
@@ -389,14 +393,9 @@ export default function Home() {
                     <div className={Style.textDescription}>
                       <p>Le site de mon club de football formateur. Il me tenait à cœur d’offrir une vue numérique à l’association. </p>
                       <p>Le projet est en cours de développement</p>
-                      <a
-                        href="/projets/ffc"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`${"btnprimary"} ${"pulse"}`}
-                      >
-                        Découvrir
-                      </a>
+                      <span className={Style.btnStatic}>
+                        En développement
+                      </span>
                     </div>
                   </div>
                 }
@@ -416,7 +415,7 @@ export default function Home() {
           </div>
           <a
             href="mailto:auneau.dev@gmail.com?subject=Contact%20Portfolio"
-            className={`${Style.btnsecondary} ${"pulse"}`}
+            className={`${Style.btnContact} ${"pulse"}`}
           >
             Me contacter
           </a>

@@ -44,7 +44,6 @@ h3 {
 p {
   font-size: 1rem;
   line-height: 1.6;
-  margin-bottom: 1rem;
   color: rgb(235, 235, 235);
 }
 
@@ -77,22 +76,30 @@ p {
   padding: 12px 30px;
   border-radius: 10px;
   border: none;
+
   cursor: pointer;
-  /* background: linear-gradient(135deg,#19C3D3,#E13A8B,#FF8A00); */
+
   background: linear-gradient(135deg,#FF8A00,#E13A8B,#19C3D3);
   color: white;
+
   font-size: 1rem;
   font-weight: bold;
   letter-spacing: 1px;
-  transition: .3s;
+
+  width: fit-content;    
+  display: inline-flex;    
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .btnprimary:hover {
-  cursor: pointer;
-  transition: transform 0.5s ease;
   transform: scale(1.1);
   color: black;
 }
+
 
 .btnSecondaryContainer {
   display: flex;
@@ -189,6 +196,7 @@ p {
   height: 4px;
   background: linear-gradient(135deg,#FF8A00,#E13A8B,#19C3D3);
   margin: 0 auto;
+  padding: 0.1rem 0;
 }
 
 /* Animation de bordure */

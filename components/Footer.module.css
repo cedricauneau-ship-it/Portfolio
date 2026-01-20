@@ -1,193 +1,107 @@
 .footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-    height: 36vh;
-    background-color: #0B0F18;
-    color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  padding: 4rem 2rem 2rem;
+  background-color: #0B0F18;
+  color: #ffffff;
+  text-align: center;
 }
 
+/* Conteneur principal */
 .footerContainer {
-    display: flex;
-    width: 90%;
-    height: 80%;
-    justify-content: space-between;
-    padding: 3rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  width: 100%;
+  max-width: 1100px;
+  gap: 4rem;
+}
+
+/* Colonnes */
+.footerProfile,
+.footerSocials {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
 }
 
 .footerProfile {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.footerTitle {
-    font-size: 1.5rem;
-    letter-spacing: 2px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.footerDescription {
-    font-size: 1rem;
-    line-height: 1rem;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .footerSocials {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    align-items: center;
+  align-items: center;
 }
 
+/* Titres */
+.footerTitle {
+  font-size: 1.3rem;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Texte */
+.footerDescription {
+  font-size: 0.95rem;
+  line-height: 1.4rem;
+  opacity: 0.85;
+}
+
+/* Réseaux */
 .logoContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    gap: 20px;
-    width: 100%;
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
 }
 
 .logoContainer a {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
+/* Icônes */
 .logoLink {
-    background-color: white;
-    border-radius: 10px;
-    padding: 0.1rem;
-    transition: 0.3s;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 0.3rem;
+  transition: transform 0.25s ease;
 }
 
 .logoLink:hover {
-    transition: 0.3s;
-    scale: calc(1.1);
+  transform: scale(1.08);
 }
 
+/* Séparateur */
 .footerDivider {
-    width: 90%;
-    height: 0.5%;
-    background-color: gray;
+  width: 100%;
+  max-width: 1100px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+  margin: 3rem 0 1.5rem;
 }
 
+/* Bas de footer */
 .footerEndText {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    width: 100%;
-    height: 19.5%;
+  font-size: 0.9rem;
+  opacity: 0.7;
 }
 
-/* Tablette */
-
-@media (max-width: 1200px) {
-  .footer {
-    height: auto;
-  }
-
+/* RESPONSIVE */
+@media (max-width: 768px) {
   .footerContainer {
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     gap: 3rem;
-    height: auto;
-    padding: 2rem 0;
   }
 
-  .footerProfile,
-  .footerSocials {
+  .footerProfile {
     align-items: center;
     text-align: center;
-  }
-
-  .footerDivider {
-    height: 1px;
-    margin: 1rem 0;
-  }
-
-  .footerDescription {
-    line-height: 1.4rem;
-  }
-}
-
-/* Tablette */
-
-@media (max-width: 768px) {
-  .footer {
-    height: 50vh;
-    padding: 0;
-  }
-
-  .footerTitle {
-    font-size: 1.5rem;
-  }
-
-  .footerDescription {
-    font-size: 1.2rem;
-  }
-
-  .logoContainer {
-    gap: 3rem;
-  }
-
-  .logoLink {
-    height: 65px;
-    width: 65px;
-  }
-
-  .footerEndText {
-    height: auto;
-    margin-top: 0.5rem;
-  }
-
-  .footerEndText p {
-    font-size: 1rem;
-    margin: 0;
-  }
-}
-
-@media (max-width: 550px) {
-  .footer {
-    height: 46vh;
-  }
-
-  .footerContainer{
-    gap: 1rem;
-    padding: auto;
-  }
-
-  .footerTitle {
-    font-size: 1.3rem;
-  }
-
-  .footerDescription {
-    font-size: 1rem;
-  }
-
-  .logoContainer {
-    gap: 3rem;
-  }
-
-  .logoLink {
-    height: 45px;
-    width: 45px;
-  }
-}
-
-@media (max-width: 320px) {
-  .footerTitle {
-    font-size: 1.1rem;
-  }
-
-  .footerDescription {
-    font-size: 0.9rem;
-  }
-
-  .footerEndText p {
-    font-size: 0.9rem;
   }
 }
