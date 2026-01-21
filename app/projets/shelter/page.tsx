@@ -302,7 +302,10 @@ export default function ShelterProject() {
         </p>
 
         <div className={Style.ctaActions}>
-          <a href="#contact" className={Style.ctaPrimary}>
+          <a
+           href="mailto:auneau.dev@gmail.com?subject=Contact%20Portfolio"
+           className={Style.ctaPrimary}
+          >
             Me contacter
           </a>
 
