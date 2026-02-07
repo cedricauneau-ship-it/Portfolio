@@ -462,17 +462,27 @@ border-radius: 10px;
   gap: 1.5rem;
 }
 
-.btnStatic {
-  padding: 12px 30px;
-  border-radius: 10px;
-  border: none;
+.linkContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
 
-  background: linear-gradient(135deg,#FF8A00,#E13A8B,#19C3D3);
+.btnStatic {
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: #323232 2px solid;
+
+  background: #0B0F18;
   color: white;
   text-transform: uppercase;
   font-size: 1rem;
   font-weight: bold;
   letter-spacing: 1px;
+}
+
+.btnStatic:hover {
+  background: #0b0f18a4;
 }
 
 /* =========================
@@ -691,6 +701,10 @@ border-radius: 10px;
     max-height: 325px;
   }
 
+  .linkContainer {
+    justify-content: space-evenly;
+  }
+
   /* CONTACT 768px */
   .contactContainer {
     min-height: 55vh;
@@ -801,6 +815,13 @@ border-radius: 10px;
   .projectsBtnContainer button {
     flex-shrink: 0;
     white-space: nowrap;
+  }
+
+  .linkContainer {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    gap: 1.5rem;
   }
 
   /* CONTACT 480px */

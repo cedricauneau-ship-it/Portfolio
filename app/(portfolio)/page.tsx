@@ -305,7 +305,7 @@ export default function Home() {
                     setActiveProject(0);
                   }}
                 >
-                  SHELTER
+                  Site FFC
                 </button>
 
                 <button
@@ -331,74 +331,90 @@ export default function Home() {
                     setActiveProject(2);
                   }}
                 >
-                  Site FFC
-                </button>
+                  SHELTER
+                </button>          
               </div>
               <div className="separatorMenu"></div>
-                {activeProject === 0 &&
-                  <div className={Style.projectsTableText}>
-                    <div className={Style.projectImageWrapper}>
-                      <Image
-                        src="/images/projects/ProjetShelter.png"
-                        alt="SHELTER"
-                        width={1200}
-                        height={700}
-                        className={Style.projectsImg}
-                      />
-                    </div>  
-                    <div className={Style.textDescription}>
-                      <p>SHELTER est un projet de jeu mobile de survie à choix binaires, inspiré de REIGNS, se déroulant dans un monde post-apocalyptique, réalisé en collaboration avec trois autres élèves de La Capsule.</p>
+
+              {activeProject === 0 &&
+                <div className={Style.projectsTableText}>
+                  <div className={Style.projectImageWrapper}>
+                    <Image
+                      src="/images/projects/FFC.png"
+                      alt="FFC"
+                      width={1200}
+                      height={700}
+                      className={Style.projectsImg}
+                    />
+                  </div>
+                  <div className={Style.textDescription}>
+                    <p>Le site de mon club de football formateur. Il me tenait à cœur d’offrir une vue numérique à l’association. </p>
+                    <p>Le projet est finalisé et accessible en ligne.</p>
+                    <div className={Style.linkContainer}>
                       <a
-                        href="/projets/shelter"
+                        href="https://www.fontenayenparisisfootballclub.fr"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={Style.btnStatic}
+                      >
+                        FFC.fr
+                      </a>
+                      <a
+                        href="/projets/ffc"
                         target="_blank"
                         rel="noopener noreferrer"
                         className={`${"btnprimary"} ${"pulse"}`}
                       >
                         Découvrir
                       </a>
-                    </div>
-                  </div>
-                }
-                {activeProject === 1 &&
-                  <div className={Style.projectsTableText}>
-                    <div className={Style.projectImageWrapper}>
-                      <Image
-                        src="/images/projects/Portfolio.png"
-                        alt="Portfolio"
-                        width={1200}
-                        height={700}
-                        className={Style.projectsImg}
-                      />
                     </div>  
-                    <div className={Style.textDescription}>
-                      <p>Mon portfolio est un projet à part entière.</p>
-                      <p>Réaliser en JavaScript et TypeScript, les backgrounds sont générer par l'IA.</p>
-                      <span className={Style.btnStatic}>
-                        Vous êtes dessus
-                      </span>
-                    </div>
                   </div>
-                }
-                {activeProject === 2 &&
-                  <div className={Style.projectsTableText}>
-                    <div className={Style.projectImageWrapper}>
-                      <Image
-                        src="/images/projects/FFC.png"
-                        alt="FFC"
-                        width={1200}
-                        height={700}
-                        className={Style.projectsImg}
+                </div>
+              }
+
+              {activeProject === 1 &&
+                <div className={Style.projectsTableText}>
+                  <div className={Style.projectImageWrapper}>
+                    <Image
+                      src="/images/projects/Portfolio.png"
+                      alt="Portfolio"
+                      width={1200}
+                      height={700}
+                      className={Style.projectsImg}
                       />
-                    </div>
-                    <div className={Style.textDescription}>
-                      <p>Le site de mon club de football formateur. Il me tenait à cœur d’offrir une vue numérique à l’association. </p>
-                      <p>Le projet est en cours de développement</p>
-                      <span className={Style.btnStatic}>
-                        En développement
-                      </span>
-                    </div>
+                  </div>  
+                  <div className={Style.textDescription}>
+                    <p>Mon portfolio est un projet à part entière.</p>
+                    <p>Projet réalisé avec Next.js, React et TypeScript. Les backgrounds sont générés par l’IA.</p>
                   </div>
-                }
+                </div>
+              }
+
+              {activeProject === 2 &&
+                <div className={Style.projectsTableText}>
+                  <div className={Style.projectImageWrapper}>
+                    <Image
+                      src="/images/projects/ProjetShelter.png"
+                      alt="SHELTER"
+                      width={1200}
+                      height={700}
+                      className={Style.projectsImg}
+                    />
+                  </div>  
+                  <div className={Style.textDescription}>
+                    <p>SHELTER est un projet de jeu mobile de survie à choix binaires, inspiré de REIGNS, se déroulant dans un monde post-apocalyptique, réalisé en collaboration avec trois autres élèves de La Capsule.</p>
+                    <a
+                      href="/projets/shelter"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`${"btnprimary"} ${"pulse"}`}
+                    >
+                      Découvrir
+                    </a>
+                  </div>
+                </div>
+              }
+
             </div>  
           </div>
         </div>  
