@@ -5,11 +5,16 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Auneau Cédric - Portfolio",
-  description: "Portfolio de Cédric Auneau, développeur full-stack web et mobile.",
+  title: "Cédric Auneau – Développeur Web & Mobile Fullstack",
+  description:
+    "Portfolio de Cédric Auneau, développeur web et mobile fullstack. Projets, compétences, contact et expériences.",
 };
 
-export default function PortfolioLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function PortfolioLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="fr">
       <body>
