@@ -1,18 +1,18 @@
 .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 3rem;
-    background-color: #0B0F18;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  background-color: #0B0F18;
 }
 
 .leftSection {
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-    font-weight: bold;
-    color: black;
-    gap: 1rem;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  gap: 1rem;
 }
 
 .logo {
@@ -20,23 +20,23 @@
 }
 
 .name {
-    background: linear-gradient(135deg,#19C3D3,#E13A8B,#FF8A00);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: white;
-    font-weight: bold;
-    border: none;
-    padding: 0.2rem 0.5rem;
-    font-size: 1.5rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+  background: linear-gradient(135deg,#19C3D3,#E13A8B,#FF8A00);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 0.2rem 0.5rem;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .middleSection {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
 }
 
 .middleSection a {
