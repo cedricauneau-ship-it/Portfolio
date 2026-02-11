@@ -133,7 +133,7 @@ p {
 }
 
 .btnsecondary {
-  width: 75%;
+  width: 100%;
   font-size: 1.3rem;
   font-weight: bold;
   padding: 20px 45px;
@@ -142,14 +142,14 @@ p {
   background: #0B0F18;
   color: white;
   cursor: pointer;
-  transition: .5s;
+  transition: .3s;
 }
 
 .btnsecondary:hover {
   animation: none;
   cursor: pointer;
-  transition: transform 0.5s ease;
-  transform: scale(1.2);
+  transition: transform 0.3s ease;
+  transform: scale(1.07);
   color: #0070f3;
 }
 

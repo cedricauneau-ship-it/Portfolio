@@ -114,7 +114,7 @@
   align-items: center;
 
   margin: auto 0;
-  width: 100%;
+  width: 80%;
   gap: 1rem;
 }
 
@@ -860,8 +860,10 @@ border-radius: 10px;
   }
 
   .aboutContent {
-    height: calc(100vh - var(--navbar-height) - 4rem);
-    max-height: none;
+    height: auto;
+    min-height: calc(100vh - var(--navbar-height) - 6rem);
+    display: flex;
+    align-items: center;
   }
 
   .aboutContentTable {
@@ -869,6 +871,8 @@ border-radius: 10px;
   }
 
   .aboutTableText {
-    height: 100%;
+    max-height: 100%;
+    overflow-y: auto;
   }
 }
+
