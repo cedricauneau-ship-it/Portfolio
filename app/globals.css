@@ -201,6 +201,7 @@ p {
   height: 4px;
   background: linear-gradient(135deg,#FF8A00,#E13A8B,#19C3D3);
   margin: 0 auto;
+  margin-bottom: 1rem;
   padding: 0.1rem 0;
 }
 
