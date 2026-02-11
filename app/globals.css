@@ -47,6 +47,11 @@ p {
   color: rgb(235, 235, 235);
 }
 
+:root {
+  --navbar-height: 90px;
+}
+
+
 /* Animation de réspiration */
 
 @keyframes Pulse {
@@ -128,7 +133,7 @@ p {
 }
 
 .btnsecondary {
-  width: 87%;
+  width: 75%;
   font-size: 1.3rem;
   font-weight: bold;
   padding: 20px 45px;
