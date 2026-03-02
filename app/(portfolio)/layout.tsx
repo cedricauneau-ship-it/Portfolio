@@ -3,6 +3,7 @@ import "../globals.css";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SideMenu from "@/components/SideMenu";
 
 export const metadata: Metadata = {
   title: "Cédric Auneau – Développeur Web & Mobile Fullstack",
@@ -18,9 +19,12 @@ export default function PortfolioLayout({
   return (
     <html lang="fr">
       <body>
-        <header><Navbar /></header>
-        <main>{children}</main>
-        <footer><Footer /></footer>
+        <Navbar />
+        <SideMenu />
+          <main>
+            {children}
+          </main>
+        <Footer />
       </body>
     </html>
   );

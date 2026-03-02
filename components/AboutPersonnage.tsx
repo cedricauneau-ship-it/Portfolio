@@ -12,7 +12,7 @@ type Props = {
 const sections = [
   {
     id: "a",
-    title: "Le personnage",
+    title: "Cédric Auneau",
     text: "Passionné par le développement web, j’ai choisi ce domaine pour son équilibre entre logique, créativité et résolution de problèmes. Chaque projet est pour moi une occasion d’apprendre, d’expérimenter et d’améliorer mes pratiques, que ce soit en matière d’architecture, de design ou d’optimisation. Motivé et investi, je cherche aujourd’hui à transformer cette passion en une expérience professionnelle solide.",
     image: "/images/about/DevCofee.png",
   },
@@ -30,6 +30,8 @@ export default function AboutPersonnage({
   const [activeImage, setActiveImage] = useState(sections[0].image);
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
 
+  const [activeSection, setActiveSection] = useState(sections[0].id);
+
   useEffect(() => {
     const root = scrollContainerRef.current;
     if (!root) return;
@@ -37,15 +39,18 @@ export default function AboutPersonnage({
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
+          const id = entry.target.getAttribute("data-id");
+          const img = entry.target.getAttribute("data-image");
+
           if (entry.isIntersecting) {
-            const img = entry.target.getAttribute("data-image");
+            if (id) setActiveSection(id);
             if (img) setActiveImage(img);
           }
         });
       },
       {
         root,
-        threshold: 0.8,
+        threshold: 0.5,
       }
     );
 
@@ -68,6 +73,7 @@ export default function AboutPersonnage({
               sectionRefs.current[i] = el;
             }}
             data-image={s.image}
+            data-id={s.id}
             className={Style.aboutsection}
           >
             <h3>{s.title}</h3>

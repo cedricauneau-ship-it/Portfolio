@@ -149,7 +149,7 @@ p {
   animation: none;
   cursor: pointer;
   transition: transform 0.3s ease;
-  transform: scale(1.07);
+  transform: scale(1.1);
   color: #0070f3;
 }
 
@@ -197,7 +197,7 @@ p {
 }
 
 .separatorMenu {
-  width: 80%;
+  width: 25%;
   height: 4px;
   background: linear-gradient(135deg,#FF8A00,#E13A8B,#19C3D3);
   margin: 0 auto;

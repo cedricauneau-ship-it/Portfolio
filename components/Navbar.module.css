@@ -1,9 +1,32 @@
-.container {
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 3rem;
   background-color: #0B0F18;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  z-index: 1000;
+  background-color: #0B0F18;
+
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+/* visible par défaut */
+.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* cachée après le hero */
+.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
 }
 
 .leftSection {
@@ -17,6 +40,7 @@
 
 .logo {
   border-radius: 50%;
+  filter: brightness(0.9);
 }
 
 .name {
@@ -129,6 +153,14 @@
 }
 
 @media (max-width: 768px) {
+  .navbar {
+    transform: translateY(0);
+    opacity: 1;
+    position: sticky;
+    top: 0;
+    padding: 1rem;
+  }
+
   .middleSection {
     display: none;
   }
@@ -146,7 +178,7 @@
   }
 
   .name {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
   }
 }
 

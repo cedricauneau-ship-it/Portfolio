@@ -1,47 +1,83 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Style from "./Navbar.module.css";
 import Image from "next/image";
 
 export default function Navbar() {
+  const [isMobile, setIsMobile] = useState(false);
+  const [isOnHome, setIsOnHome] = useState(true);
+  const [isOnContact, setIsOnContact] = useState(false);
   const [open, setOpen] = useState(false);
+
+  // Détection mobile réactive
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 768px)");
+
+    const handleChange = () => setIsMobile(mq.matches);
+
+    handleChange(); // init
+    mq.addEventListener("change", handleChange);
+
+    return () => mq.removeEventListener("change", handleChange);
+  }, []);
+
+  // Observer desktop uniquement
+  useEffect(() => {
+    if (isMobile) return;
+
+    const homeSection = document.getElementById("home");
+    const contactSection = document.getElementById("contact");
+
+    if (!homeSection || !contactSection) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.target.id === "home") {
+            setIsOnHome(entry.isIntersecting);
+          }
+
+          if (entry.target.id === "contact") {
+            setIsOnContact(entry.isIntersecting);
+          }
+        });
+      },
+      {
+        rootMargin: "-90px 0px 0px 0px",
+        threshold: 0.3,
+      }
+    );
+
+    observer.observe(homeSection);
+    observer.observe(contactSection);
+
+    return () => observer.disconnect();
+  }, [isMobile]);
+
+  // 🔑 Règle finale d’affichage
+  const showNavbar = isMobile || isOnHome || isOnContact || open;
 
   const scrollToSection = (id: string) => {
     setOpen(false);
-    const section = document.getElementById(id);
-    section?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <nav className={Style.container}>
+    <nav
+      className={`${Style.navbar} ${
+        showNavbar ? Style.visible : Style.hidden
+      }`}
+    >
       <div className={Style.leftSection}>
-        <Image src="/images/ui/logoLion.png" alt="Logo" width={42} height={42} className={Style.logo} />
-        <span className={Style.name}>Cédric Auneau</span>
-      </div>
-
-      {/* Desktop menu */}
-      <div className={Style.middleSection}>
         <Image
-          src="/icons/home.svg"
-          alt="Home"
-          width={40}
+          src="/images/ui/DevCAtest.png"
+          alt="Logo"
+          width={50}
           height={40}
-          className={Style.logoLink}
-          onClick={() => scrollToSection("home")}
+          className={Style.logo}
         />
-
-        <a href="https://github.com/cedricauneau-ship-it" target="_blank" rel="noopener noreferrer">
-          <Image src="/icons/github.svg" alt="GitHub" width={40} height={40} className={Style.logoLink} />
-        </a>
-
-        <a href="https://www.linkedin.com/in/cedric-auneau" target="_blank" rel="noopener noreferrer">
-          <Image src="/icons/linkedin.svg" alt="LinkedIn" width={40} height={40} className={Style.logoLink} />
-        </a>
-
-        <a href="mailto:auneau.dev@gmail.com">
-          <Image src="/icons/enveloppe.svg" alt="Contact" width={40} height={40} className={Style.logoLink} />
-        </a>
+        <span className={Style.name}>Cédric Auneau</span>
       </div>
 
       <span className={Style.dev}>Développeur FullStack</span>
@@ -57,13 +93,19 @@ export default function Navbar() {
         <span />
       </button>
 
-      {/* Mobile menu */}
+      {/* Menu mobile */}
       {open && (
         <div className={Style.mobileMenu}>
           <button onClick={() => scrollToSection("home")}>Accueil</button>
-          <button onClick={() => scrollToSection("about")}>Apprendre a me conaitre</button>
-          <button onClick={() => scrollToSection("projects")}>Mes projets</button>
-          <button onClick={() => scrollToSection("contact")}>Me contacter</button>
+          <button onClick={() => scrollToSection("about")}>
+            Apprendre à me connaître
+          </button>
+          <button onClick={() => scrollToSection("projects")}>
+            Mes projets
+          </button>
+          <button onClick={() => scrollToSection("contact")}>
+            Me contacter
+          </button>
         </div>
       )}
     </nav>

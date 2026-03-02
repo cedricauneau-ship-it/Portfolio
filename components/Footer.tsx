@@ -49,7 +49,7 @@ export default function Footer() {
       </div>
       <div className={Style.footerDivider}></div>
       <div className={Style.footerEndText}>
-        <p>© Copyright {new Date().getFullYear()} - Créer par Cédric Auneau</p>
+        <p>© Copyright {new Date().getFullYear()} - Créé par Cédric Auneau</p>
       </div>
     </footer>
   );

@@ -26,8 +26,11 @@
 }
 
 .aboutsection {
-  min-height: 40vh;
-  margin-bottom: 1.5rem;
+  min-height: 52vh; /* clé du comportement */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s ease;
+  margin-top: 1rem;
 }
 
 .aboutsection h3 {
