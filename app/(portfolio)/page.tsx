@@ -452,7 +452,7 @@ export default function Home() {
             </ul>
             <div className={Style.offrePrice}>
               <span className={Style.from}>À partir de</span>
-              <span className={Style.amount}> 900 €</span>
+              <span className={Style.amount}> 1200 €</span>
             </div>
           </div>
 
@@ -471,7 +471,7 @@ export default function Home() {
             </ul>
             <div className={Style.offrePrice}>
               <span className={Style.from}>À partir de</span>
-              <span className={Style.amount}> 1300 €</span>
+              <span className={Style.amount}> 1800 €</span>
             </div>
           </div>
 
@@ -490,7 +490,7 @@ export default function Home() {
             </ul>
             <div className={Style.offrePrice}>
               <span className={Style.from}>À partir de</span>
-              <span className={Style.amount}> 70 € / mois</span>
+              <span className={Style.amount}> 90 € / mois</span>
             </div>
           </div>
         </div>

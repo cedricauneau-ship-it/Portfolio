@@ -13,13 +13,13 @@ const sections = [
   {
     id: "a",
     title: "Cédric Auneau",
-    text: "Passionné par le développement web, j’ai choisi ce domaine pour son équilibre entre logique, créativité et résolution de problèmes. Chaque projet est pour moi une occasion d’apprendre, d’expérimenter et d’améliorer mes pratiques, que ce soit en matière d’architecture, de design ou d’optimisation. Motivé et investi, je cherche aujourd’hui à transformer cette passion en une expérience professionnelle solide.",
+    text: "J’ai débuté le développement web en formation, mais c’est en livrant le site de mon club de football — un vrai client, une vraie mise en ligne — que j’ai compris ce que je voulais faire professionnellement. Identifier un besoin, construire une solution, la déployer : c’est cette chaîne complète qui me motive. Formé à La Capsule (Concepteur Développeur d’applications web et mobile), je travaille sur la stack JS/TS — React, Next.js, Node.js — avec l’objectif de proposer mes services en freelance à des associations, indépendants et petites structures.",
     image: "/images/about/DevCofee.png",
   },
   {
     id: "b",
     title: "Mes objectifs",
-    text: "Continuer à apprendre, expérimenter et progresser chaque jour fait partie de mes priorités. Je souhaite évoluer dans un environnement stimulant, où je pourrai renforcer mes compétences techniques tout en développant une vision plus globale des projets. Mon objectif est de devenir un développeur capable de comprendre aussi bien les enjeux techniques que les besoins des utilisateurs.",
+    text: "Mon objectif à court terme : décrocher mes premières missions freelance en développant une relation de confiance avec des clients qui ont besoin d’un interlocuteur technique accessible et fiable. Sur le plan technique, je continue à progresser sur l’architecture des applications et les bonnes pratiques — TypeScript strict, performance, accessibilité. Des sujets qui font la différence entre un site livré et un site maintenable.",
     image: "/images/about/DevPresentation.png",
   },
 ];
