@@ -116,9 +116,9 @@
 
 .aboutContainer h2 {
   margin-top: 2rem;
-  font-size: 2.5rem;
-  padding: .5rem 1rem;
-  border-radius: 15px;
+  font-size: clamp(1.7rem, 2.5vw, 2.4rem);
+  padding: .4rem 1rem;
+  border-radius: 12px;
   border: 1.5px solid rgba(255,255,255,.25);
   background: rgba(0,0,0,.3);
 }
@@ -139,6 +139,9 @@
   border-radius: 15px;
   backdrop-filter: blur(2.5px);
   height: 75vh;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .aboutContentTable {
@@ -147,8 +150,10 @@
   gap: 1rem;
   background: rgba(255,255,255,0.08);
   border-radius: 10px;
-  height: auto;
+  flex: 1;
+  min-height: 0;
   padding: 0 1.5rem;
+  overflow: hidden;
 }
 
 .aboutBtnContainer {
@@ -168,7 +173,8 @@
   align-items: center;
 
   width: 95%;
-  height: 75%;
+  flex: 1;
+  min-height: 0;
   margin: auto;
 
   overflow-y: auto;
@@ -345,9 +351,9 @@ border-radius: 10px;
 
 .projectsContainer h2 {
   margin-top: 2rem;
-  font-size: 2.5rem;
-  padding: .5rem 1rem;
-  border-radius: 15px;
+  font-size: clamp(1.7rem, 2.5vw, 2.4rem);
+  padding: .4rem 1rem;
+  border-radius: 12px;
   border: 1.5px solid rgba(255,255,255,.25);
   background: rgba(0,0,0,.3);
 }
@@ -362,11 +368,14 @@ border-radius: 10px;
   width: 58%;
   max-width: 1100px;
   height: 75vh;
-  min-height: 480px; 
+  min-height: 480px;
   margin: 1.5rem 3rem 2rem 0;
   padding: 1rem;
   background: #0b0f18cc;
   border-radius: 15px;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .projectsContent .separatorMenu {
@@ -382,11 +391,13 @@ border-radius: 10px;
   justify-content: flex-start;
 
   width: 100%;
-  height: 100%;
+  flex: 1;
+  min-height: 0;
 
   border: 2px solid #0B0F18;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.078);
+  overflow: hidden;
 }
 
 .projectsBtnContainer {
@@ -404,12 +415,14 @@ border-radius: 10px;
   display: flex;
   align-items: center;
   gap: 2rem;
-  height: calc(100% - 130px);
+  flex: 1;
+  min-height: 0;
+  padding: 0.5rem 1rem;
 }
 
 .projectsTableText p {
-  font-size: 1.25rem;
-  line-height: 2.25rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
   opacity: 0.85;
 }
 
@@ -420,18 +433,15 @@ border-radius: 10px;
 
 .projectImageWrapper {
   width: 55%;
-  height: 100%;
 
   display: flex;
   align-items: center;
   justify-content: center;
-
-  overflow: hidden;
 }
 
 .projectsImg {
   max-width: 100%;
-  max-height: 100%;
+  max-height: clamp(180px, 38vh, 340px);
 
   width: auto;
   height: auto;
@@ -442,7 +452,9 @@ border-radius: 10px;
 
 .textDescription {
   width: 45%;
-  height: 100%;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -510,9 +522,9 @@ border-radius: 10px;
 
 .offresContainer h2 {
   margin-top: 2rem;
-  font-size: 2.5rem;
-  padding: .5rem 1rem;
-  border-radius: 15px;
+  font-size: clamp(1.7rem, 2.5vw, 2.4rem);
+  padding: .4rem 1rem;
+  border-radius: 12px;
   border: 1.5px solid rgba(255,255,255,.25);
   background: rgba(0,0,0,.3);
 }
@@ -526,6 +538,8 @@ border-radius: 10px;
   gap: 2.5rem;
 
   margin-top: 1.5rem;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
 }
 
 /* =========================
@@ -694,9 +708,9 @@ border-radius: 10px;
 
 .devisContainer h2 {
   margin-top: 2rem;
-  font-size: 2.5rem;
-  padding: .5rem 1rem;
-  border-radius: 15px;
+  font-size: clamp(1.7rem, 2.5vw, 2.4rem);
+  padding: .4rem 1rem;
+  border-radius: 12px;
   border: 1.5px solid rgba(255,255,255,.25);
   background: rgba(0,0,0,.3);
 }
@@ -950,18 +964,60 @@ border-radius: 10px;
   /* ABOUT */
   .aboutContent {
     width: 80%;
-    height: 100vh;
-    margin: 0 0 3rem 3rem;
+    height: 75vh;
+    min-height: 480px;
+    margin: 1.5rem auto 2rem;
   }
 
   /* PROJECTS */
   .projectsRight {
-    justify-content: flex-end;
+    justify-content: center;
   }
 
   .projectsContent {
     width: 80%;
-    margin: 0 3rem 3rem 0;
+    height: 75vh;
+    min-height: 480px;
+    margin: 1.5rem auto 2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .aboutContent {
+    height: auto;
+    min-height: unset;
+  }
+
+  .projectsContent {
+    height: auto;
+    min-height: unset;
+  }
+
+  /* Quand le parent est height:auto, flex:1 sur les enfants
+     n'a plus de référence — on repasse en height:auto naturel */
+  .aboutContentTable {
+    flex: unset;
+    min-height: unset;
+    overflow: visible;
+  }
+
+  .aboutTableText {
+    flex: unset;
+    height: clamp(280px, 45vh, 420px);
+    min-height: unset;
+    overflow-y: auto;
+  }
+
+  .projectsTableText {
+    flex: unset;
+    min-height: unset;
+  }
+
+  .textDescription {
+    flex: unset;
+    min-height: unset;
+    overflow-y: visible;
+    height: auto;
   }
 
   /* Offre */
@@ -1005,8 +1061,9 @@ border-radius: 10px;
 
   .aboutContent {
     width: 90%;
-    height: 65vh;
-    margin: 0;
+    height: auto;
+    min-height: unset;
+    margin: 1rem auto 2rem;
   }
 
   .btnRight {
@@ -1041,8 +1098,10 @@ border-radius: 10px;
   }
 
   .projectsContent {
-    width: 95%;
+    width: 90%;
     height: auto;
+    min-height: unset;
+    margin: 1rem auto 2rem;
   }
 
   .projectsTableText {
@@ -1119,13 +1178,14 @@ border-radius: 10px;
 
   /* Section About 480px */
   .aboutContainer h2 {
-    margin-top: 7rem;
-    margin-bottom: 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
   }
 
   .aboutContent {
     width: 95%;
-    height: 70vh;
+    height: auto;
+    min-height: unset;
   }
 
   .aboutContentTable {
@@ -1153,8 +1213,8 @@ border-radius: 10px;
 
   /* Section Projet 480px */
   .projectsContainer h2 {
-    margin-top: 7rem;
-    margin-bottom: 0rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   .projectsImg {
@@ -1216,18 +1276,6 @@ border-radius: 10px;
     min-height: auto;
   }
   
-}
-
-@media (max-width: 1024px) {
-  .offresGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 640px) {
-  .offresGrid {
-    grid-template-columns: 1fr;
-  }
 }
 
 

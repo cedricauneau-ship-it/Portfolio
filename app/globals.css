@@ -12,7 +12,7 @@ body {
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: geist;
 }
 
 header {
@@ -30,8 +30,8 @@ a {
 }
 
 h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
+  font-size: clamp(1.7rem, 2.5vw, 2.4rem);
+  margin-bottom: 1.2rem;
   text-transform: uppercase;
   color: rgb(235, 235, 235);
 }
@@ -73,6 +73,7 @@ p {
 
 .pulse {
   animation: Pulse 2.5s ease-in-out infinite;
+  will-change: transform;
 }
 
 /* Button Styles */
@@ -210,8 +211,8 @@ p {
 .animated-border {
   position: relative;
   display: inline-block;
-  padding: 14px 32px;
-  font-size: 2.4rem;
+  padding: 10px 24px;
+  font-size: clamp(1.7rem, 2.5vw, 2.4rem);
   font-weight: 700;
   color: white;
   z-index: 1;

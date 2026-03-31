@@ -10,7 +10,7 @@ export default function Footer() {
       <div className={Style.footerContainer}>
         <div className={Style.footerProfile}>
           <h3 className={Style.footerTitle}>Cédric Auneau</h3>
-          <p className={Style.footerDescription}>Un développeur full-stack qui crée et gère</p>
+          <p className={Style.footerDescription}>Développeur full-stack qui crée et gère</p>
           <p className={Style.footerDescription}>des applications et sites web et mobile.</p>
         </div>
         <div className={Style.footerSocials}>

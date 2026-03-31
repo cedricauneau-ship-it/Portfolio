@@ -1,5 +1,3 @@
-"use client";
-
 import Style from "./Page.module.css"
 
 import Image from "next/image";
