@@ -328,21 +328,8 @@ export default function Home() {
                     setActiveProject(1);
                   }}
                 >
-                  Portfolio
-                </button>
-
-                <button
-                  ref={(el) => {
-                    projectBtnRefs.current[2] = el;
-                  }}
-                  className={activeProject === 2 ? "btntertiaryActive" : "btntertiary"}
-                  onClick={() => {
-                    hasInteracted.current = true;
-                    setActiveProject(2);
-                  }}
-                >
                   SHELTER
-                </button>          
+                </button>
               </div>
               <div className="separatorMenu"></div>
 
@@ -350,10 +337,10 @@ export default function Home() {
                 <div className={Style.projectsTableText}>
                   <div className={Style.projectImageWrapper}>
                     <Image
-                      src="/images/projects/introFFC.png"
+                      src="/images/projects/introFFC.webp"
                       alt="FFC"
-                      width={700}
-                      height={700}
+                      width={1920}
+                      height={600}
                       className={Style.projectsImg}
                     />
                   </div>
@@ -386,41 +373,49 @@ export default function Home() {
                 <div className={Style.projectsTableText}>
                   <div className={Style.projectImageWrapper}>
                     <Image
-                      src="/images/projects/introPortfolio.png"
-                      alt="Portfolio"
-                      width={1200}
-                      height={700}
-                      className={Style.projectsImg}
-                      />
-                  </div>  
-                  <div className={Style.textDescription}>
-                    <p>Mon portfolio est un projet à part entière.</p>
-                    <p>Projet réalisé avec Next.js, React et TypeScript. Les backgrounds sont générés par l’IA.</p>
-                  </div>
-                </div>
-              }
-
-              {activeProject === 2 &&
-                <div className={Style.projectsTableText}>
-                  <div className={Style.projectImageWrapper}>
-                    <Image
-                      src="/images/projects/ProjetShelter.png"
+                      src="/images/projects/ProjetShelter.webp"
                       alt="SHELTER"
-                      width={1200}
-                      height={700}
+                      width={1920}
+                      height={600}
                       className={Style.projectsImg}
                     />
-                  </div>  
+                  </div>
                   <div className={Style.textDescription}>
-                    <p>SHELTER est un projet de jeu mobile de survie à choix binaires, inspiré de REIGNS, se déroulant dans un monde post-apocalyptique, réalisé en collaboration avec trois autres élèves de La Capsule.</p>
-                    <a
-                      href="/projets/shelter"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`${"btnprimary"} ${"pulse"}`}
-                    >
-                      Découvrir
-                    </a>
+                    <p>
+                      SHELTER est un jeu mobile narratif de survie à choix binaires
+                      dans un univers post-apocalyptique.
+                    </p>
+                    <p>
+                      Né d’un projet collaboratif durant ma formation, l’application a été
+                      reprise et reconstruite en solo pour une V2.
+                    </p>
+                    <p>
+                      Test fermé en cours. Disponible sur Google Play le 13 mai.
+                    </p>
+                    <div className={Style.linkContainer}>
+                      <a
+                        href="/projets/shelter"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`${"btnprimary"} ${"pulse"}`}
+                      >
+                        Découvrir
+                      </a>
+
+                      {/*
+                        TODO : activer le bouton Play Store une fois le test fermé Google Play terminé.
+                        Remplacer href="#" par l'URL définitive de la fiche Play Store.
+
+                      <a
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={Style.btnStatic}
+                      >
+                        Voir sur Google Play
+                      </a>
+                      */}
+                    </div>
                   </div>
                 </div>
               }
@@ -610,4 +605,3 @@ export default function Home() {
     </>
   );
 }
-

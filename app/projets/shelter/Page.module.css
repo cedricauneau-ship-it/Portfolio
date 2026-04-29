@@ -64,7 +64,7 @@
   line-height: 1.6;
   color: rgba(245, 247, 250, 0.75);
   max-width: 520px;
-  text-align: center;  
+  text-align: center;
 }
 
 .projectSkills {
@@ -200,7 +200,7 @@
   height: 100%;
   border-radius: 20px;
   overflow: hidden;
-  background: #000; 
+  background: #000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -209,7 +209,7 @@
 .imageIcon {
   width: 100%;
   height: 100%;
-  object-fit: contain; 
+  object-fit: contain;
 }
 
 .btnContainer {
@@ -259,10 +259,153 @@
 .projectIntro p {
   font-size: clamp(1rem, 2.2vw, 1.3rem);
   max-width: 680px;
-  margin: 0 auto;
+  margin: 0 auto 1.2rem;
   line-height: 1.6;
   color: rgba(245, 247, 250, 0.8);
   text-align: center;
+}
+
+/* Section Architecture */
+.projectArchitecture {
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.projectArchitecture h2 {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  margin-bottom: 2rem;
+  color: #ffffffec;
+}
+
+.projectArchitecture .archIntro {
+  font-size: clamp(1rem, 2.2vw, 1.3rem);
+  max-width: 680px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+  color: rgba(245, 247, 250, 0.8);
+}
+
+.archDiagram {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.archNode {
+  flex: 1 1 260px;
+  max-width: 320px;
+  padding: 1.8rem 1.6rem;
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+
+  text-align: left;
+  position: relative;
+}
+
+.archTag {
+  display: inline-block;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  color: rgba(245, 247, 250, 0.75);
+  margin-bottom: 1rem;
+}
+
+.archNode h3 {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.6rem;
+  color: rgba(245, 247, 250, 0.95);
+}
+
+.archStack {
+  font-size: clamp(0.85rem, 1.4vw, 1rem);
+  color: rgba(245, 247, 250, 0.7);
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.archList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.archList li {
+  position: relative;
+  padding-left: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  line-height: 1.5;
+  color: rgba(245, 247, 250, 0.78);
+}
+
+.archList li::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgba(245, 247, 250, 0.45);
+  font-weight: 700;
+}
+
+.archArrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  position: relative;
+  min-width: 80px;
+}
+
+.archArrow span {
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(245, 247, 250, 0.55);
+
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  white-space: nowrap;
+}
+
+.archArrow::before,
+.archArrow::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: calc(50% - 30px);
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+}
+
+.archArrow::before {
+  left: 0;
+}
+
+.archArrow::after {
+  right: 0;
 }
 
 /* Section Role */
@@ -442,6 +585,26 @@
   transform: translateY(-2px);
 }
 
+/* CTA secondaire (Play Store) */
+.ctaSecondary {
+  padding: 0.9rem 2.6rem;
+  border-radius: 999px;
+
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  color: #f2f4f8;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.ctaSecondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
 @media (max-width: 768px) {
   .projectHero {
     min-height: auto;
@@ -463,5 +626,52 @@
 
   .projectIntro h2 {
     text-align: center;
+  }
+
+  .archDiagram {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .archNode {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .archArrow {
+    width: 100%;
+    min-height: 40px;
+  }
+
+  .archArrow::before,
+  .archArrow::after {
+    display: none;
+  }
+
+  .archArrow span {
+    position: relative;
+  }
+
+  .archArrow span::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    width: 1px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateX(-50%);
+  }
+
+  .archArrow span::after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    width: 1px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateX(-50%);
   }
 }

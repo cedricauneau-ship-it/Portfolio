@@ -5,29 +5,14 @@ import Image from "next/image";
 export default function ShelterProject() {
   const skills = [
     {
-      name: "React",
+      name: "TypeScript",
+      icon: "/icons/typescript.svg",
+      color: "#3178C6",
+    },
+    {
+      name: "React Native",
       icon: "/icons/react.svg",
       color: "#61DAFB",
-    },
-    {
-      name: "JavaScript",
-      icon: "/icons/javascript.svg",
-      color: "#F7DF1E",
-    },
-    {
-      name: "Express",
-      icon: "/icons/express.svg",
-      color: "#ffffffde",
-    },
-    {
-      name: "Git",
-      icon: "/icons/git.svg",
-      color: "#F05032",
-    },
-    {
-      name: "Node",
-      icon: "/icons/nodedotjs.svg",
-      color: "#5FA04E",
     },
     {
       name: "Expo",
@@ -35,14 +20,39 @@ export default function ShelterProject() {
       color: "#ffffffde",
     },
     {
-      name: "Redux",
+      name: "Redux Toolkit",
       icon: "/icons/redux.svg",
       color: "#764ABC",
     },
     {
-      name: "MongoDB",
-      icon: "/icons/mongodb.svg",
-      color: "#47A248",
+      name: "Node",
+      icon: "/icons/nodedotjs.svg",
+      color: "#5FA04E",
+    },
+    {
+      name: "Express",
+      icon: "/icons/express.svg",
+      color: "#ffffffde",
+    },
+    {
+      name: "Prisma",
+      icon: "/icons/prisma.svg",
+      color: "#5A67D8",
+    },
+    {
+      name: "PostgreSQL",
+      icon: "/icons/postgresql.svg",
+      color: "#4169E1",
+    },
+    {
+      name: "JWT",
+      icon: "/icons/jwt.svg",
+      color: "#FB015B",
+    },
+    {
+      name: "Jest",
+      icon: "/icons/jest.svg",
+      color: "#C21325",
     },
   ]
 
@@ -77,7 +87,7 @@ export default function ShelterProject() {
         </p>
 
         <p>
-          Projet collaboratif
+          Application complète React Native + API TypeScript
         </p>
 
         <div className={Style.projectSkills}>
@@ -132,11 +142,88 @@ export default function ShelterProject() {
         <h2>Présentation du projet</h2>
 
         <p>
-          Shelter est un projet collaboratif de jeu mobile narratif de survie.
-          Le joueur évolue dans un univers post-apocalyptique à travers une succession de choix binaires
-          impactant directement la progression du scénario et la survie du personnage.
+          Shelter est un jeu mobile narratif de survie dans un univers post-apocalyptique,
+          basé sur un système de choix binaires impactant directement la progression
+          du scénario et l’état du personnage (faim, moral, santé, sécurité, nourriture).
         </p>
 
+        <p>
+          Né d’un projet collaboratif, le jeu a été entièrement repris et reconstruit
+          en V2 en solo : passage à TypeScript de bout en bout, refonte du backend
+          autour de Prisma + PostgreSQL, mise en place d’une authentification JWT
+          avec Google Sign-In, et ajout d’un ensemble de fonctionnalités produit
+          (succès, classement, parrainage, premium, publicités récompensées).
+        </p>
+
+      </section>
+
+      <div className={Style.sectionDivider} />
+
+      <section className={Style.projectArchitecture}>
+        <h2>Architecture technique</h2>
+
+        <p className={Style.archIntro}>
+          Stack full TypeScript, séparation stricte client / serveur,
+          logique de jeu côté backend pour garder une source de vérité unique.
+        </p>
+
+        <div className={Style.archDiagram}>
+
+          <div className={Style.archNode}>
+            <span className={Style.archTag}>Mobile</span>
+            <h3>Frontend</h3>
+            <p className={Style.archStack}>
+              React Native · Expo SDK 54 · TypeScript
+            </p>
+            <ul className={Style.archList}>
+              <li>Redux Toolkit + redux-persist</li>
+              <li>React Navigation (stack + tabs)</li>
+              <li>Expo AV / Haptics / Updates</li>
+              <li>Google Sign-In · AdMob</li>
+              <li>fetchWithAuth (refresh token auto)</li>
+            </ul>
+          </div>
+
+          <div className={Style.archArrow} aria-hidden="true">
+            <span>HTTPS / JSON</span>
+          </div>
+
+          <div className={Style.archNode}>
+            <span className={Style.archTag}>API</span>
+            <h3>Backend</h3>
+            <p className={Style.archStack}>
+              Node · Express · TypeScript
+            </p>
+            <ul className={Style.archList}>
+              <li>Modules : auth · users · games · achievements · feedbacks</li>
+              <li>JWT + refresh token · Google OAuth</li>
+              <li>Helmet · CORS · rate limit</li>
+              <li>json-rules-engine (logique de jeu)</li>
+              <li>Cache cartes en mémoire</li>
+              <li>Tests Jest + Supertest</li>
+            </ul>
+          </div>
+
+          <div className={Style.archArrow} aria-hidden="true">
+            <span>Prisma</span>
+          </div>
+
+          <div className={Style.archNode}>
+            <span className={Style.archTag}>Data</span>
+            <h3>Base de données</h3>
+            <p className={Style.archStack}>
+              PostgreSQL · Prisma ORM
+            </p>
+            <ul className={Style.archList}>
+              <li>Users · Games · Cards · Achievements</li>
+              <li>Referrals (système de parrainage)</li>
+              <li>Feedbacks · UserAchievements</li>
+              <li>Migrations versionnées</li>
+              <li>Seed reproductible</li>
+            </ul>
+          </div>
+
+        </div>
       </section>
 
       <div className={Style.sectionDivider} />
@@ -149,10 +236,11 @@ export default function ShelterProject() {
           <div className={Style.roleStep}>
             <span className={Style.roleDot} />
             <div className={Style.roleContent}>
-              <h3>Initialisation du projet</h3>
+              <h3>Refonte complète en V2</h3>
               <p>
-                Mise en place et structuration du projet afin de poser
-                des bases solides pour le développement.
+                Reprise du projet collaboratif initial et reconstruction
+                de zéro côté backend, avec migration JavaScript vers TypeScript
+                et MongoDB vers PostgreSQL via Prisma.
               </p>
             </div>
           </div>
@@ -160,10 +248,11 @@ export default function ShelterProject() {
           <div className={Style.roleStep}>
             <span className={Style.roleDot} />
             <div className={Style.roleContent}>
-              <h3>Configuration des frameworks</h3>
+              <h3>API REST modulaire</h3>
               <p>
-                Intégration et configuration des frameworks nécessaires
-                au développement du jeu.
+                Architecture Express découpée par domaine (auth, users, games,
+                achievements, feedbacks) avec services, routes et middlewares
+                isolés pour faciliter les évolutions et les tests.
               </p>
             </div>
           </div>
@@ -171,10 +260,11 @@ export default function ShelterProject() {
           <div className={Style.roleStep}>
             <span className={Style.roleDot} />
             <div className={Style.roleContent}>
-              <h3>Interface et logique de jeu</h3>
+              <h3>Authentification et sécurité</h3>
               <p>
-                Intégration de l’interface utilisateur et gestion
-                des échanges de données entre le frontend et le backend.
+                JWT avec refresh token, Google Sign-In, hash bcrypt,
+                Helmet, CORS strict et rate limiting différencié sur
+                les routes sensibles et générales.
               </p>
             </div>
           </div>
@@ -182,10 +272,11 @@ export default function ShelterProject() {
           <div className={Style.roleStep}>
             <span className={Style.roleDot} />
             <div className={Style.roleContent}>
-              <h3>Ambiance sonore</h3>
+              <h3>Moteur de jeu côté serveur</h3>
               <p>
-                Gestion et intégration des éléments sonores et bruitages
-                pour renforcer l’immersion.
+                Logique de partie (cartes, scénarios, jauges, jours)
+                pilotée par json-rules-engine, avec un cache cartes en
+                mémoire pour éviter une requête DB à chaque tour.
               </p>
             </div>
           </div>
@@ -193,10 +284,34 @@ export default function ShelterProject() {
           <div className={Style.roleStep}>
             <span className={Style.roleDot} />
             <div className={Style.roleContent}>
-              <h3>Travail collaboratif</h3>
+              <h3>App React Native (Expo)</h3>
               <p>
-                Collaboration au sein de l’équipe avec une communication
-                régulière et une organisation partagée.
+                Navigation typée, state global Redux Toolkit + redux-persist,
+                écrans auth / jeu / profil / classement / boutique / succès,
+                gestion son et haptique, animations et sliders custom.
+              </p>
+            </div>
+          </div>
+
+          <div className={Style.roleStep}>
+            <span className={Style.roleDot} />
+            <div className={Style.roleContent}>
+              <h3>Monétisation et rétention</h3>
+              <p>
+                Intégration AdMob (publicités récompensées), achat premium
+                via Google Play, système de parrainage, progression XP / niveaux
+                et succès débloquables côté serveur.
+              </p>
+            </div>
+          </div>
+
+          <div className={Style.roleStep}>
+            <span className={Style.roleDot} />
+            <div className={Style.roleContent}>
+              <h3>Tests et déploiement</h3>
+              <p>
+                Tests d’API avec Jest + Supertest, build mobile via EAS
+                et préparation du test fermé sur Google Play Console.
               </p>
             </div>
           </div>
@@ -209,50 +324,70 @@ export default function ShelterProject() {
 
         <div className={Style.featuresGrid}>
           <div className={Style.featureCard}>
-            <h3>Choix binaires</h3>
+            <h3>Auth JWT + Google</h3>
             <p>
-              Les décisions du joueur influencent directement
-              la progression narrative et la survie du personnage.
+              Connexion email / mot de passe ou Google Sign-In, tokens
+              JWT avec refresh token persistés côté client et révoqués
+              côté serveur.
             </p>
           </div>
 
           <div className={Style.featureCard}>
-            <h3>Narration à embranchements</h3>
+            <h3>Moteur de jeu typé</h3>
             <p>
-              Le scénario évolue selon les choix effectués,
-              offrant des parcours narratifs multiples.
+              Cartes, scénarios et jauges (faim, moral, santé, sécurité,
+              nourriture) gérés côté serveur via json-rules-engine pour
+              empêcher toute triche client.
             </p>
           </div>
 
           <div className={Style.featureCard}>
-            <h3>Interface mobile</h3>
+            <h3>Classement global</h3>
             <p>
-              Une interface pensée pour le mobile,
-              fluide et immersive.
+              Leaderboard temps réel basé sur le meilleur score, avec
+              positionnement du joueur et pagination côté API.
             </p>
           </div>
 
           <div className={Style.featureCard}>
-            <h3>Progression joueur</h3>
+            <h3>Succès et progression</h3>
             <p>
-              Suivi de l’état du joueur et de sa progression
-              tout au long de l’expérience.
+              Système de succès débloquables, XP et niveaux calculés
+              côté serveur, restitués dans l’app et persistés en base.
             </p>
           </div>
 
           <div className={Style.featureCard}>
-            <h3>Ambiance sonore</h3>
+            <h3>Premium et parrainage</h3>
             <p>
-              Intégration de bruitages et sons
-              pour renforcer l’immersion.
+              Achat premium via Google Play (vérification du purchase token),
+              codes parrain uniques et suivi des parties des filleuls.
             </p>
           </div>
 
           <div className={Style.featureCard}>
-            <h3>Sauvegarde de progression</h3>
+            <h3>Pubs récompensées</h3>
             <p>
-              Conservation de l’état et des choix du joueur
-              afin de reprendre la partie à tout moment.
+              Intégration React Native Google Mobile Ads pour proposer
+              des bonus en partie, désactivées pour les joueurs premium.
+            </p>
+          </div>
+
+          <div className={Style.featureCard}>
+            <h3>Sécurité API</h3>
+            <p>
+              Helmet, CORS restreint, rate limiting (10 req / 15 min sur
+              auth, 100 sur les routes générales) et middleware d’erreurs
+              centralisé.
+            </p>
+          </div>
+
+          <div className={Style.featureCard}>
+            <h3>Reprise de partie</h3>
+            <p>
+              Une partie en cours par utilisateur, sauvegardée côté
+              serveur (cartes utilisées, jauges, jour, scénarios actifs)
+              et reprise depuis n’importe quel appareil.
             </p>
           </div>
 
@@ -267,23 +402,34 @@ export default function ShelterProject() {
 
         <div className={Style.learningsContent}>
           <p>
-            La structuration du projet dès son initialisation m’a permis
-            d’anticiper son évolution et de faciliter le travail en équipe.
+            Penser une API en modules par domaine (auth, users, games,
+            achievements, feedbacks) rend le code plus lisible, plus testable
+            et limite les régressions quand de nouvelles fonctionnalités arrivent.
           </p>
 
           <p>
-            Le travail collaboratif m’a appris à m’organiser, à communiquer
-            efficacement et à adapter mon travail aux contraintes du groupe.
+            Déplacer la logique de jeu côté serveur (cartes, jauges, succès)
+            et n’exposer au client que des actions à valider évite la triche
+            et garde une seule source de vérité.
           </p>
 
           <p>
-            Le développement orienté mobile m’a permis de mieux comprendre
-            l’importance de l’UX et des performances sur ce type de support.
+            Migrer de MongoDB à PostgreSQL via Prisma m’a appris à modéliser
+            sérieusement les relations (User, Game, Card, parrainages, succès)
+            et à m’appuyer sur les migrations pour faire évoluer la base
+            sans tout casser.
           </p>
 
           <p>
-            L’intégration des éléments sonores m’a montré l’impact du son
-            sur l’immersion et l’expérience utilisateur.
+            Sécuriser une API publique demande plus que du JWT : Helmet,
+            CORS strict, rate limiting différencié, gestion centralisée
+            des erreurs et vérification serveur des achats Google Play.
+          </p>
+
+          <p>
+            Sortir une app mobile en production (build EAS, signing, test fermé
+            Google Play, AdMob, Google Sign-In) implique autant de travail
+            de configuration et de conformité que de code applicatif.
           </p>
         </div>
 
@@ -306,6 +452,20 @@ export default function ShelterProject() {
           >
             Me contacter
           </a>
+
+          {/*
+            TODO : activer le bouton Play Store une fois le test fermé Google Play terminé.
+            Remplacer href="#" par l'URL définitive de la fiche Play Store.
+
+          <a
+            href="#"
+            className={Style.ctaSecondary}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Voir sur Google Play
+          </a>
+          */}
 
         </div>
 
