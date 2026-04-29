@@ -432,67 +432,105 @@ export default function Home() {
         <h2 className="animated-border">Mes offres</h2>
 
         <div className={Style.offresGrid}>
-          {/* Offre 1 */}
+          {/* Pack 1 */}
           <div className={`${Style.offreCard} ${Style.cardBlue}`}>
-            <h3>Présence en ligne</h3>
+            <span className={Style.packLabel}>Pack 1</span>
+            <h3>Site Présence</h3>
             <p className={Style.offreIntro}>
-              Pour associations, indépendants et petites structures souhaitant une présence claire et efficace sur le web.
+              Pour les associations qui partent de zéro
+              ou souhaitent moderniser un site obsolète.
             </p>
             <ul>
-              <li>Site vitrine moderne et responsive</li>
-              <li>Structure claire et navigation intuitive</li>
-              <li>Optimisation des performances et du référencement de base</li>
-              <li>Mise en ligne et accompagnement</li>
-              <li>Solution simple, fiable et évolutive</li>
+              <li>4 à 5 pages : Accueil, L’asso, Activités, Actualités, Contact</li>
+              <li>Système d’actualités éditable par les bénévoles (CMS Sanity)</li>
+              <li>Formulaire de contact + lien vers l’adhésion (HelloAsso)</li>
+              <li>Responsive, performant, accessibilité WCAG de base</li>
+              <li>Hébergement Vercel + nom de domaine la 1ʳᵉ année</li>
+              <li>1 mois de garantie + 30 min de prise en main en visio</li>
             </ul>
+            <div className={Style.offreMeta}>
+              <span><strong>Délai :</strong> 3 semaines</span>
+            </div>
             <div className={Style.offrePrice}>
-              <span className={Style.from}>À partir de</span>
-              <span className={Style.amount}> 1200 €</span>
+              <span className={Style.from}>Forfait</span>
+              <span className={Style.amount}>1 800 € HT</span>
             </div>
           </div>
 
-          {/* Offre 2 */}
+          {/* Pack 2 */}
           <div className={`${Style.offreCard} ${Style.cardRose}`}>
-            <h3>Projet sur mesure</h3>
+            <span className={Style.packLabel}>Pack 2</span>
+            <h3>Site Engagement</h3>
             <p className={Style.offreIntro}>
-              Pour des besoins spécifiques nécessitant une solution adaptée et évolutive.
+              Pour les associations structurées qui veulent
+              recruter, communiquer et collecter en ligne.
             </p>
             <ul>
-              <li>Application web ou site complexe</li>
-              <li>Fonctionnalités personnalisées selon le besoin</li>
-              <li>Stack moderne (React, Next.js, TypeScript)</li>
-              <li>Architecture propre et maintenable</li>
-              <li>Conseils techniques et accompagnement</li>
+              <li>Tout ce qui est inclus dans le Pack 1</li>
+              <li>Page recrutement bénévoles avec formulaire dédié</li>
+              <li>Intégration agenda Google / iCal des événements</li>
+              <li>Espace presse / médias téléchargeables</li>
+              <li>Intégration HelloAsso (dons, adhésions, billetterie)</li>
+              <li>Galerie photos par événement</li>
+              <li>2 mois de garantie + 1 h de prise en main en visio</li>
             </ul>
+            <div className={Style.offreMeta}>
+              <span><strong>Délai :</strong> 4 semaines</span>
+            </div>
             <div className={Style.offrePrice}>
-              <span className={Style.from}>À partir de</span>
-              <span className={Style.amount}> 1800 €</span>
+              <span className={Style.from}>Forfait</span>
+              <span className={Style.amount}>2 900 € HT</span>
             </div>
           </div>
 
-          {/* Offre 3 */}
-          <div className={`${Style.offreCard} ${Style.cardOrange}`}>
-            <h3>Suivi & évolution</h3>
+          {/* Suivi & maintenance */}
+          <div className={`${Style.offreCard} ${Style.cardOrange} ${Style.cardFullWidth}`}>
+            <span className={Style.packLabel}>Long terme</span>
+            <h3>Suivi &amp; maintenance</h3>
             <p className={Style.offreIntro}>
-              Pour assurer la pérennité, la sécurité et l’évolution de votre projet dans le temps.
+              Une fois votre site livré et la période de garantie passée,
+              vous avez le choix : continuer seul, ou rester accompagné.
+              Deux formules au choix, selon votre besoin.
             </p>
-            <ul>
-              <li>Maintenance technique et mises à jour</li>
-              <li>Améliorations fonctionnelles continues</li>
-              <li>Corrections et optimisations</li>
-              <li>Support et accompagnement</li>
-              <li>Relation sur le long terme</li>
-            </ul>
-            <div className={Style.offrePrice}>
-              <span className={Style.from}>À partir de</span>
-              <span className={Style.amount}> 90 € / mois</span>
+
+            <div className={Style.maintenanceTiers}>
+              <div className={Style.maintenanceTier}>
+                <div className={Style.maintenanceTierHead}>
+                  <h4>Tranquillité</h4>
+                  <span className={Style.maintenanceTierPrice}>360 € HT / an</span>
+                </div>
+                <ul>
+                  <li>Je vérifie chaque semaine que votre site est bien en ligne et sécurisé</li>
+                  <li>Je m’occupe des mises à jour techniques pour vous</li>
+                  <li>Une petite modification par mois (texte, photo, horaire...)</li>
+                  <li>Vous m’écrivez par e-mail, je réponds sous 48 h</li>
+                </ul>
+              </div>
+
+              <div className={Style.maintenanceTier}>
+                <div className={Style.maintenanceTierHead}>
+                  <h4>Accompagnement</h4>
+                  <span className={Style.maintenanceTierPrice}>960 € HT / an</span>
+                </div>
+                <ul>
+                  <li>Tout ce qui est inclus dans la formule Tranquillité</li>
+                  <li>2 à 3 h par mois pour faire évoluer votre site (nouvelle page, nouveau formulaire...)</li>
+                  <li>Vos questions sans limite, par e-mail ou en visio</li>
+                  <li>Réponse sous 24 h</li>
+                  <li>Un point d’une demi-heure tous les 3 mois pour faire le bilan</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className={Style.offreMeta}>
+              <span><strong>Engagement :</strong> 1 an, renouvelable</span>
             </div>
           </div>
         </div>
         <p className={Style.offresOutro}>
-          Chaque projet est unique. Les tarifs sont donnés à titre indicatif et peuvent évoluer selon les besoins.<br />
-          Les formules ci-dessus servent de cadre,
-          mais un échange est indispensable pour définir la solution la plus adaptée.
+          Prix HT. Tout est inclus du premier échange à la mise en ligne,
+          hors contenus (textes, photos) et services tiers payants.
+          Avant tout devis, on prend le temps d’un appel pour cadrer votre besoin.
         </p>
 
       </section>
@@ -508,23 +546,22 @@ export default function Home() {
             Chaque projet est unique.
             Cette demande de devis permet de mieux comprendre votre besoin
             afin de préparer un échange clair et pertinent.
-            <br />
             Elle ne vous engage à rien.
           </p>
 
           {!submitted ? (
           <form className={Style.devisForm} onSubmit={sendEmail}>
 
-            {/* Type de projet */}
+            {/* Prestation souhaitée */}
             <div className={Style.formGroup}>
-              <label htmlFor="type">Type de projet</label>
+              <label htmlFor="type">Quelle prestation vous intéresse ?</label>
               <select id="type" name="type" required>
                 <option value="">Sélectionnez une option</option>
-                <option value="site vitrine">Site vitrine</option>
-                <option value="app web">Application web</option>
-                <option value="refonte / amélioration">Refonte / amélioration</option>
-                <option value="maintenance / suivi">Maintenance / suivi</option>
-                <option value="autre">Autre</option>
+                <option value="Pack 1 - Site Présence">Pack 1 — Site Présence (1 500 €)</option>
+                <option value="Pack 2 - Site Engagement">Pack 2 — Site Engagement (2 900 €)</option>
+                <option value="Suivi et maintenance">Suivi &amp; maintenance (360 ou 960 € / an)</option>
+                <option value="Refonte d'un site existant">Refonte d’un site existant (à définir)</option>
+                <option value="Autre">Autre (à définir)</option>
               </select>
             </div>
 
@@ -533,9 +570,10 @@ export default function Home() {
               <label htmlFor="budget">Budget estimé</label>
               <select id="budget" name="budget" required>
                 <option value="">Sélectionnez une option</option>
-                <option value="<1000">Moins de 1 000 €</option>
-                <option value="1000-2000">1 000 – 2 000 €</option>
-                <option value="2000-5000">2 000 – 5 000 €</option>
+                <option value="<1500">Moins de 1 500 €</option>
+                <option value="1500-3000">1 500 – 3 000 €</option>
+                <option value="3000-5000">3 000 – 5 000 €</option>
+                <option value=">5000">Plus de 5 000 €</option>
                 <option value="à définir">À définir ensemble</option>
               </select>
             </div>
@@ -557,8 +595,9 @@ export default function Home() {
               <label htmlFor="delay">Délai souhaité (optionnel)</label>
               <select id="delay" name="delay">
                 <option value="non précisé">Non précisé</option>
-                <option value="urgent">Dès que possible</option>
-                <option value="1-2 mois">1 à 2 mois</option>
+                <option value="rapide">Le plus vite possible (3 à 4 semaines)</option>
+                <option value="1-2 mois">Dans 1 à 2 mois</option>
+                <option value="3-6 mois">Dans 3 à 6 mois</option>
                 <option value="flexible">Flexible</option>
               </select>
             </div>

@@ -581,12 +581,16 @@
   max-width: 1200px;
 
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2.5rem;
 
   margin-top: 1.5rem;
   padding: 0 1.5rem;
   box-sizing: border-box;
+}
+
+.cardFullWidth {
+  grid-column: 1 / -1;
 }
 
 /* =========================
@@ -629,6 +633,24 @@
   border-color: #FF8A00;
 }
 
+.packLabel {
+  display: inline-block;
+  align-self: flex-start;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  padding: 0.3rem 0.7rem;
+  margin-bottom: 0.8rem;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.85);
+}
+
 .offreCard h3 {
   font-size: 1.6rem;
   margin-bottom: 1rem;
@@ -640,6 +662,77 @@
   line-height: 1.6;
   opacity: 0.85;
   margin-bottom: 1.5rem;
+}
+
+.offreMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+
+  margin-top: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.offreMeta strong {
+  font-weight: 600;
+  color: white;
+  margin-right: 0.3rem;
+}
+
+/* =========================
+   SUIVI & MAINTENANCE (cards récurrentes)
+========================= */
+.maintenanceTiers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.maintenanceTier {
+  margin-top: 0;
+  padding: 1rem 1.1rem;
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.maintenanceTierHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.maintenanceTierHead h4 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: white;
+  letter-spacing: 0.02em;
+}
+
+.maintenanceTierPrice {
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  white-space: nowrap;
+}
+
+.maintenanceTier p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0.85;
+  margin: 0;
 }
 
 .offreCard ul {
@@ -695,7 +788,8 @@
 ========================= */
 .offresOutro {
   max-width: 1000px;
-  margin: 3.5rem auto 0;
+  margin: 2rem auto 0;
+  margin-bottom: 2rem;
 
   text-align: center;
   font-size: 1.2rem;
@@ -707,9 +801,9 @@
 /* =========================
    RESPONSIVE
 ========================= */
-@media (max-width: 1024px) {
-  .offresGrid {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 768px) {
+  .maintenanceTiers {
+    grid-template-columns: 1fr;
   }
 }
 
