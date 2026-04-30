@@ -15,14 +15,24 @@ export const metadata: Metadata = {
       "Application complète React Native + API TypeScript. Auth JWT, Google Sign-In, AdMob, parrainage, succès, leaderboard.",
     url: "/projets/shelter",
     type: "article",
+    images: [
+      {
+        url: "/images/og-shelter.png",
+        width: 1200,
+        height: 630,
+        alt: "Shelter - jeu mobile narratif de survie",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shelter · Jeu mobile narratif React Native + TypeScript",
+    description: "Application React Native + API TypeScript Express + Prisma + PostgreSQL.",
+    images: ["/images/og-shelter.png"],
   },
 };
 
-export default function ProjetsLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function ProjetsLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <header></header>
