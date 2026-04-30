@@ -1,0 +1,33 @@
+# Tous les bots web sont autorisés à indexer le site
+User-agent: *
+Allow: /
+
+# Bots spécifiques des assistants IA — autorisés explicitement
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://www.cedric-auneau.dev/sitemap.xml

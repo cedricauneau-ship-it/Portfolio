@@ -1,0 +1,34 @@
+# Cédric Auneau — Développeur Web Freelance
+
+> Développeur fullstack JavaScript / TypeScript freelance basé à Fontenay-en-Parisis (95190, Île-de-France). Spécialisé dans la création de sites web pour associations et petites entreprises.
+
+## À propos
+
+Cédric Auneau, développeur fullstack diplômé de La Capsule (Concepteur Développeur d'Applications Web et Mobile). Il propose ses services en tant que freelance auprès des associations et PME en Île-de-France, avec une approche orientée forfait clé en main et accompagnement long terme.
+
+## Services et tarifs
+
+- **Pack 1 — Site Présence** : 1 500 € HT — Site web associatif 4 à 5 pages, CMS Sanity éditable, formulaire de contact, intégration HelloAsso, hébergement Vercel et nom de domaine inclus la première année. Délai : 3 semaines.
+- **Pack 2 — Site Engagement** : 2 900 € HT — Pack 1 + intégration HelloAsso (dons, adhésions, billetterie), agenda Google / iCal, page recrutement bénévoles, espace presse, galerie photos. Délai : 4 semaines.
+- **Suivi & maintenance — Tranquillité** : 360 € HT / an — Surveillance, mises à jour techniques, 1 modification mensuelle, support 48 h.
+- **Suivi & maintenance — Accompagnement** : 960 € HT / an — Tranquillité + 2 à 3 h d'évolutions par mois, formation continue, support 24 h, point trimestriel.
+
+## Stack technique
+
+JavaScript, TypeScript, React, Next.js, Node.js, Express, Prisma, PostgreSQL, MongoDB, React Native (Expo), Redux Toolkit, Tailwind, Sanity.
+
+## Projets publics
+
+- **Shelter** : Jeu mobile narratif de survie post-apocalyptique. Application React Native + Expo, API TypeScript Express + Prisma + PostgreSQL, authentification JWT et Google Sign-In. https://www.cedric-auneau.dev/projets/shelter
+- **Fontenay-en-Parisis Football Club** : Site officiel du club de football associatif du Val-d'Oise. https://www.fontenayenparisisfootballclub.fr — détails sur https://www.cedric-auneau.dev/projets/ffc
+
+## Contact
+
+- Site : https://www.cedric-auneau.dev
+- E-mail : auneau.dev@gmail.com
+- GitHub : https://github.com/cedricauneau-ship-it
+- LinkedIn : https://www.linkedin.com/in/cedric-auneau
+
+## Zone d'intervention
+
+Île-de-France, principalement Val-d'Oise (95) et alentours. Possibilité de mission à distance en France.
