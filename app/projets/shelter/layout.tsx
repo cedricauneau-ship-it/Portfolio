@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import FooterClient from "@/components/FooterClient";
 
 export const metadata: Metadata = {
-  title: "Shelter · Jeu mobile narratif React Native + TypeScript",
+  title: "Shelter · Jeu mobile React Native + TypeScript",
   description:
     "Shelter, jeu mobile narratif de survie post-apocalyptique. Application React Native + Expo, API TypeScript Express + Prisma + PostgreSQL, authentification JWT et Google Sign-In. Réalisé par Cédric Auneau.",
   alternates: {

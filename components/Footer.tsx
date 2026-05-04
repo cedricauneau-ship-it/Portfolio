@@ -24,7 +24,7 @@ export default function Footer() {
             > 
               <Image
                 src="/icons/github.svg"
-                alt=""
+                alt="Logo GitHub"
                 width={50}
                 height={50}
                 className={Style.logoLink}
@@ -38,7 +38,7 @@ export default function Footer() {
             >
               <Image
                 src="/icons/linkedin.svg"
-                alt=""
+                alt="Logo LinkedIn"
                 width={50}
                 height={50}
                 className={Style.logoLink}
@@ -50,6 +50,17 @@ export default function Footer() {
       <div className={Style.footerDivider}></div>
       <div className={Style.footerEndText}>
         <p>© Copyright {new Date().getFullYear()} - Créé par Cédric Auneau</p>
+        <p>
+          <a 
+            className={Style.footerLink}
+            href="/mentions-legales" 
+            target='_blank'
+            rel='noopener noreferrer'
+            aria-label='Mentions legales'
+          >
+            Mentions légales
+          </a>
+        </p>
       </div>
     </footer>
   );

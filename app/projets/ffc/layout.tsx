@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import FooterClient from "@/components/FooterClient";
 
 export const metadata: Metadata = {
-  title: "Site web du Fontenay-en-Parisis Football Club · Réalisation",
+  title: "Site Fontenay-en-Parisis FC · Réalisation",
   description:
     "Création du site officiel du Fontenay-en-Parisis Football Club, association sportive du Val-d'Oise. Site Next.js, hébergement Vercel, intégration calendrier et résultats. Réalisé par Cédric Auneau.",
   alternates: {

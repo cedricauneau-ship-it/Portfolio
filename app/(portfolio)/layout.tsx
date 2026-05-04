@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import SideMenu from "@/components/SideMenu";
 
 export const metadata: Metadata = {
-  title: "Cédric Auneau · Développeur freelance JavaScript en Île-de-France",
+  title: { absolute: "Cédric Auneau · Développeur freelance JS · Île-de-France" },
   description: "Cédric Auneau, développeur fullstack JavaScript / TypeScript freelance à Fontenay-en-Parisis (95). Création de sites web pour associations et PME. Forfaits clés en main, suivi long terme.",
   alternates: { canonical: "/" },
   openGraph: {
