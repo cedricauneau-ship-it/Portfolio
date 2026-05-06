@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Développeur fullstack JavaScript / TypeScript freelance à Fontenay-en-Parisis (95). Création de sites web pour associations et PME en Île-de-France. Forfaits clés en main, accompagnement long terme.",
+    "Développeur fullstack JavaScript / TypeScript freelance à Fontenay-en-Parisis (95). Création de sites web pour associations, TPE et indépendants en Île-de-France. Forfaits clés en main, accompagnement long terme, workflow productif avec assistance IA.",
 
   keywords: [
     "développeur freelance",
@@ -25,9 +25,13 @@ export const metadata: Metadata = {
     "freelance Next.js",
     "site web association",
     "création site association",
+    "site web TPE",
+    "site web indépendant",
+    "site web professionnel libéral",
     "développeur Fontenay-en-Parisis",
     "développeur Île-de-France",
     "développeur 95",
+    "freelance IA",
     "Cédric Auneau",
   ],
 
@@ -46,7 +50,7 @@ export const metadata: Metadata = {
     siteName: "Cédric Auneau · Développeur Freelance",
     title: "Cédric Auneau · Développeur Web Freelance · Île-de-France",
     description:
-      "Création de sites web pour associations et PME en Île-de-France. Forfaits clés en main, accompagnement long terme.",
+      "Création de sites web pour associations, TPE et indépendants en Île-de-France. Forfaits clés en main, accompagnement long terme.",
     images: [
       {
         url: "/images/og-default.png",
@@ -61,7 +65,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Cédric Auneau · Développeur Web Freelance",
     description:
-      "Création de sites web pour associations et PME en Île-de-France.",
+      "Création de sites web pour associations, TPE et indépendants en Île-de-France.",
     images: ["/images/og-default.png"],
   },
 
@@ -113,6 +117,8 @@ const personJsonLd = {
     "React Native",
     "Expo",
     "Création de sites pour associations",
+    "Création de sites pour TPE et indépendants",
+    "Développement assisté par IA",
   ],
   alumniOf: {
     "@type": "EducationalOrganization",
@@ -126,7 +132,7 @@ const serviceJsonLd = {
   "@type": "ProfessionalService",
   name: "Cédric Auneau · Développeur Web Freelance",
   description:
-    "Création de sites web pour associations et petites entreprises en Île-de-France. Forfaits clés en main, accompagnement long terme.",
+    "Création de sites web pour associations, TPE et indépendants en Île-de-France. Forfaits clés en main, accompagnement long terme, workflow productif avec assistance IA.",
   url: SITE_URL,
   founder: { "@type": "Person", name: "Cédric Auneau" },
   areaServed: { "@type": "AdministrativeArea", name: "Île-de-France" },

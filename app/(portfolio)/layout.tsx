@@ -8,11 +8,11 @@ import SideMenu from "@/components/SideMenu";
 
 export const metadata: Metadata = {
   title: { absolute: "Cédric Auneau · Développeur freelance JS · Île-de-France" },
-  description: "Cédric Auneau, développeur fullstack JavaScript / TypeScript freelance à Fontenay-en-Parisis (95). Création de sites web pour associations et PME. Forfaits clés en main, suivi long terme.",
+  description: "Cédric Auneau, développeur fullstack JavaScript / TypeScript freelance à Fontenay-en-Parisis (95). Création de sites web pour associations, TPE et indépendants en Île-de-France. Forfaits clés en main, suivi long terme, workflow productif avec assistance IA.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "Cédric Auneau · Développeur freelance JavaScript en Île-de-France",
-    description: "Création de sites web pour associations et PME. Forfaits Site Présence, Site Engagement, Suivi & maintenance.",
+    description: "Création de sites web pour associations, TPE et indépendants en Île-de-France. Forfaits Site Présence, Site Engagement, Suivi & maintenance.",
     url: "/",
     type: "website",
     images: [{ url: "/images/og-default.png", width: 1200, height: 630, alt: "Cédric Auneau - Développeur freelance" }],

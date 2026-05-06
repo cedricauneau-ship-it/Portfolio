@@ -437,7 +437,7 @@ export default function Home() {
             <span className={Style.packLabel}>Pack 1</span>
             <h3>Site Présence</h3>
             <p className={Style.offreIntro}>
-              Pour les associations qui partent de zéro
+              Pour les associations, TPE et indépendants qui partent de zéro
               ou souhaitent moderniser un site obsolète.
             </p>
             <ul>
@@ -462,8 +462,8 @@ export default function Home() {
             <span className={Style.packLabel}>Pack 2</span>
             <h3>Site Engagement</h3>
             <p className={Style.offreIntro}>
-              Pour les associations structurées qui veulent
-              recruter, communiquer et collecter en ligne.
+              Pour les structures (associations, TPE, indépendants)
+              qui veulent recruter, communiquer et vendre en ligne.
             </p>
             <ul>
               <li>Tout ce qui est inclus dans le Pack 1</li>
@@ -531,6 +531,7 @@ export default function Home() {
           Prix HT. Tout est inclus du premier échange à la mise en ligne,
           hors contenus (textes, photos) et services tiers payants.
           Avant tout devis, on prend le temps d’un appel pour cadrer votre besoin.
+          Workflow productif intégrant les outils d’IA pour livrer plus vite, sans rogner sur la qualité.
         </p>
 
       </section>
@@ -642,5 +643,17 @@ export default function Home() {
       <div className="separator"></div>
 
     </>
+  );
+}er
+          </a>
+        </div>
+      </section>
+      <div id="contact-sentinel" />
+      <div className="separator"></div>
+
+    </>
+  );
+}
+
   );
 }
