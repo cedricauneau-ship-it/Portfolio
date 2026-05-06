@@ -18,7 +18,7 @@ export default function MentionsLegalesPage() {
           <li><strong>Statut :</strong> Entrepreneur individuel (auto-entrepreneur)</li>
           <li><strong>Adresse :</strong> 11 rue de la plaine de france, 95190 Fontenay-en-parisis</li>
           <li><strong>E-mail :</strong> auneau.dev@gmail.com</li>
-          <li><strong>SIRET :</strong> [À COMPLÉTER — votre numéro SIRET à 14 chiffres]</li>
+          <li><strong>SIRET :</strong> 10453602400011</li>
           <li><strong>TVA :</strong> Non applicable, article 293 B du CGI (franchise en base de TVA)</li>
         </ul>
 
