@@ -644,16 +644,4 @@ export default function Home() {
 
     </>
   );
-}er
-          </a>
-        </div>
-      </section>
-      <div id="contact-sentinel" />
-      <div className="separator"></div>
-
-    </>
-  );
-}
-
-  );
 }
