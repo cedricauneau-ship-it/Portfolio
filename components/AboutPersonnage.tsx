@@ -14,13 +14,13 @@ const sections = [
     id: "a",
     title: "Cédric Auneau",
     text: "J’ai débuté le développement web en formation, mais c’est en livrant le site de mon club de football — un vrai client, une vraie mise en ligne — que j’ai compris ce que je voulais faire professionnellement. Identifier un besoin, construire une solution, la déployer : c’est cette chaîne complète qui me motive. Formé à La Capsule (Concepteur Développeur d’applications web et mobile), je travaille sur la stack JS/TS — React, Next.js, Node.js — avec l’objectif de proposer mes services en freelance à des associations, indépendants et petites structures.",
-    image: "/images/about/DevCofee.png",
+    image: "/images/about/DevCofee.webp",
   },
   {
     id: "b",
     title: "Mes objectifs",
     text: "Mon objectif à court terme : décrocher mes premières missions freelance en développant une relation de confiance avec des clients qui ont besoin d’un interlocuteur technique accessible et fiable. Sur le plan technique, je continue à progresser sur l’architecture des applications et les bonnes pratiques — TypeScript strict, performance, accessibilité. Des sujets qui font la différence entre un site livré et un site maintenable.",
-    image: "/images/about/DevPresentation.png",
+    image: "/images/about/DevPresentation.webp",
   },
 ];
 

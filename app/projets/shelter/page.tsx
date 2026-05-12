@@ -63,7 +63,7 @@ export default function ShelterProject() {
     },
     {
       name: "Game",
-      icon: "/images/projects/Shelter/Game.png",
+      icon: "/images/projects/Shelter/Game.webp",
     },
     {
       name: "GameOver",

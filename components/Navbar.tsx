@@ -71,7 +71,7 @@ export default function Navbar() {
     >
       <div className={Style.leftSection}>
         <Image
-          src="/images/ui/DevCAtest.png"
+          src="/images/ui/DevCAtest.webp"
           alt="Logo"
           width={50}
           height={40}

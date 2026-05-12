@@ -288,7 +288,7 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                    <ImageModal src="/images/about/Formation.png" alt="Mon Diplome"/>
+                    <ImageModal src="/images/about/Formation.webp" alt="Mon Diplome"/>
                   </div>
                 }
             </div>  
