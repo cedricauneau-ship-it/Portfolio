@@ -133,6 +133,17 @@ export default function ShelterProject() {
           ))}
         </div>
 
+        <div className={Style.projectLinks}>
+          <a
+            href="https://play.google.com/store/apps/details?id=com.azulys.shelter"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={Style.projectLinkPrimary}
+          >
+            Voir sur Google Play
+          </a>
+        </div>
+
       </section>
 
       <div className={Style.sectionDivider} />
@@ -453,19 +464,14 @@ export default function ShelterProject() {
             Me contacter
           </a>
 
-          {/*
-            TODO : activer le bouton Play Store une fois le test fermé Google Play terminé.
-            Remplacer href="#" par l'URL définitive de la fiche Play Store.
-
           <a
-            href="#"
+            href="https://play.google.com/store/apps/details?id=com.azulys.shelter"
             className={Style.ctaSecondary}
             target="_blank"
             rel="noopener noreferrer"
           >
             Voir sur Google Play
           </a>
-          */}
 
         </div>
 

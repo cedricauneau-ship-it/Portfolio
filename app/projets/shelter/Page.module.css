@@ -242,6 +242,35 @@
   width: 100%;
 }
 
+/* Liens projet (hero) */
+.projectLinks {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.projectLinkPrimary {
+  padding: 0.9rem 2.6rem;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  color: #f2f4f8;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.projectLinkPrimary:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px);
+}
+
 /* Section Intro */
 .projectIntro {
   display: flex;

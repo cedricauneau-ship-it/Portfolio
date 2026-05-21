@@ -389,10 +389,15 @@ export default function Home() {
                       Né d’un projet collaboratif durant ma formation, l’application a été
                       reprise et reconstruite en solo pour une V2.
                     </p>
-                    <p>
-                      Test fermé en cours. Disponible sur Google Play le 13 mai.
-                    </p>
                     <div className={Style.linkContainer}>
+                      <a
+                        href="https://play.google.com/store/apps/details?id=com.azulys.shelter"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={Style.btnStatic}
+                      >
+                        Google Play
+                      </a>
                       <a
                         href="/projets/shelter"
                         target="_blank"
@@ -401,20 +406,6 @@ export default function Home() {
                       >
                         Découvrir
                       </a>
-
-                      {/*
-                        TODO : activer le bouton Play Store une fois le test fermé Google Play terminé.
-                        Remplacer href="#" par l'URL définitive de la fiche Play Store.
-
-                      <a
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={Style.btnStatic}
-                      >
-                        Voir sur Google Play
-                      </a>
-                      */}
                     </div>
                   </div>
                 </div>
