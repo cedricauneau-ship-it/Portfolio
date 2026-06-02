@@ -1,0 +1,219 @@
+From 0ebf8e999e6703a4ef518f17999e8ccf7063dfd2 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?C=C3=A9dric?= <auneau.dev@gmail.com>
+Date: Tue, 2 Jun 2026 16:56:47 +0000
+Subject: [PATCH] =?UTF-8?q?offres=20:=20suppression=20packs=20asso,=203=20?=
+ =?UTF-8?q?cartes=20TJM,=20formulaire=20simplifi=C3=A9,=20descriptions=20p?=
+ =?UTF-8?q?rojets=20all=C3=A9g=C3=A9es?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ app/(portfolio)/page.tsx | 146 +++++++--------------------------------
+ 1 file changed, 26 insertions(+), 120 deletions(-)
+
+diff --git a/app/(portfolio)/page.tsx b/app/(portfolio)/page.tsx
+index b6ad0d6..712914b 100644
+--- a/app/(portfolio)/page.tsx
++++ b/app/(portfolio)/page.tsx
+@@ -345,8 +345,8 @@ export default function Home() {
+                     />
+                   </div>
+                   <div className={Style.textDescription}>
+-                    <p>Refonte complète du site officiel du Fontenay-en-Parisis Football Club — mission menée de bout en bout en solo : cadrage, développement, déploiement et maintenance.</p>
+-                    <p>Stack : Next.js · TypeScript · CSS Modules · Vercel. Intégrations Scorenco (résultats) et Sociablekit (fil Facebook). Site multi-pages en production avec agenda, classement et 6 catégories d’équipes.</p>
++                    <p>Refonte complète du site officiel — cadrage, développement, déploiement et maintenance, en solo.</p>
++                    <p className={Style.stackLine}>Next.js · TypeScript · Vercel</p>
+                     <div className={Style.linkContainer}>
+                       <a
+                         href="https://www.fontenayenparisisfootballclub.fr"
+@@ -382,15 +382,9 @@ export default function Home() {
+                   </div>
+                   <div className={Style.textDescription}>
+                     <p>
+-                      SHELTER est un jeu mobile narratif de survie à choix binaires
+-                      dans un univers post-apocalyptique, publié sur Google Play.
+-                    </p>
+-                    <p>
+-                      Architecture fullstack TypeScript de bout en bout : React Native + Expo côté mobile,
+-                      API Node.js/Express côté serveur, PostgreSQL via Prisma.
+-                      Auth JWT + refresh token, moteur de jeu côté serveur, leaderboard,
+-                      monétisation AdMob + achat in-app vérifié, tests Jest/Supertest.
++                      Jeu mobile narratif de survie publié sur Google Play — architecture fullstack TypeScript conçue et livrée en solo.
+                     </p>
++                    <p className={Style.stackLine}>React Native · Node.js · PostgreSQL · JWT</p>
+                     <div className={Style.linkContainer}>
+                       <a
+                         href="https://play.google.com/store/apps/details?id=com.azulys.shelter"
+@@ -425,132 +419,47 @@ export default function Home() {
+         <h2 className="animated-border">Mes offres</h2>
+ 
+         <div className={Style.offresGrid}>
+-          {/* TJM / Sur mesure */}
+           <div className={`${Style.offreCard} ${Style.cardBlue} ${Style.cardFullWidth}`}>
+-            <span className={Style.packLabel}>Mission</span>
+-            <h3>Développement sur mesure</h3>
++            <span className={Style.packLabel}>Développement</span>
++            <h3>Application web fullstack</h3>
+             <p className={Style.offreIntro}>
+-              Pour les startups, PME et agences qui ont besoin d’un développeur
+-              fullstack TypeScript en renfort ponctuel ou sur la durée.
++              React, Next.js, Node.js, Express, TypeScript — interfaces, APIs, intégrations tierces, mise en production.
+             </p>
+-            <ul>
+-              <li>Développement React / Next.js / Node.js / Express</li>
+-              <li>Applications mobiles React Native</li>
+-              <li>Intégrations API, refonte codebase, mise en production</li>
+-              <li>Remote ou sur site en Île-de-France</li>
+-              <li>Disponible immédiatement</li>
+-            </ul>
+-            <div className={Style.offreMeta}>
+-              <span><strong>Mode :</strong> TJM ou forfait selon le projet</span>
+-            </div>
+             <div className={Style.offrePrice}>
+               <span className={Style.from}>TJM</span>
+               <span className={Style.amount}>350 € HT / jour</span>
+             </div>
+           </div>
+ 
+-          {/* Pack 1 */}
+-          <div className={`${Style.offreCard} ${Style.cardBlue}`}>
+-            <span className={Style.packLabel}>Pack 1</span>
+-            <h3>Site Présence</h3>
+-            <p className={Style.offreIntro}>
+-              Pour les associations, TPE et indépendants qui partent de zéro
+-              ou souhaitent moderniser un site obsolète.
+-            </p>
+-            <ul>
+-              <li>4 à 5 pages : Accueil, L’asso, Activités, Actualités, Contact</li>
+-              <li>Système d’actualités éditable par les bénévoles (CMS Sanity)</li>
+-              <li>Formulaire de contact + lien vers l’adhésion (HelloAsso)</li>
+-              <li>Responsive, performant, accessibilité WCAG de base</li>
+-              <li>Hébergement Vercel + nom de domaine la 1ʳᵉ année</li>
+-              <li>1 mois de garantie + 30 min de prise en main en visio</li>
+-            </ul>
+-            <div className={Style.offreMeta}>
+-              <span><strong>Délai :</strong> 3 semaines</span>
+-            </div>
+-            <div className={Style.offrePrice}>
+-              <span className={Style.from}>Forfait</span>
+-              <span className={Style.amount}>1 800 € HT</span>
+-            </div>
+-          </div>
+-
+-          {/* Pack 2 */}
+           <div className={`${Style.offreCard} ${Style.cardRose}`}>
+-            <span className={Style.packLabel}>Pack 2</span>
+-            <h3>Site Engagement</h3>
++            <span className={Style.packLabel}>Mobile</span>
++            <h3>Application React Native</h3>
+             <p className={Style.offreIntro}>
+-              Pour les structures (associations, TPE, indépendants)
+-              qui veulent recruter, communiquer et vendre en ligne.
++              Application mobile iOS et Android avec React Native et Expo, connectée à une API TypeScript.
+             </p>
+-            <ul>
+-              <li>Tout ce qui est inclus dans le Pack 1</li>
+-              <li>Page recrutement bénévoles avec formulaire dédié</li>
+-              <li>Intégration agenda Google / iCal des événements</li>
+-              <li>Espace presse / médias téléchargeables</li>
+-              <li>Intégration HelloAsso (dons, adhésions, billetterie)</li>
+-              <li>Galerie photos par événement</li>
+-              <li>2 mois de garantie + 1 h de prise en main en visio</li>
+-            </ul>
+-            <div className={Style.offreMeta}>
+-              <span><strong>Délai :</strong> 4 semaines</span>
+-            </div>
+             <div className={Style.offrePrice}>
+-              <span className={Style.from}>Forfait</span>
+-              <span className={Style.amount}>2 900 € HT</span>
++              <span className={Style.from}>TJM</span>
++              <span className={Style.amount}>350 € HT / jour</span>
+             </div>
+           </div>
+ 
+-          {/* Suivi & maintenance */}
+-          <div className={`${Style.offreCard} ${Style.cardOrange} ${Style.cardFullWidth}`}>
+-            <span className={Style.packLabel}>Long terme</span>
+-            <h3>Suivi &amp; maintenance</h3>
++          <div className={`${Style.offreCard} ${Style.cardOrange}`}>
++            <span className={Style.packLabel}>Backend</span>
++            <h3>API &amp; intégration</h3>
+             <p className={Style.offreIntro}>
+-              Une fois votre site livré et la période de garantie passée,
+-              vous avez le choix : continuer seul, ou rester accompagné.
+-              Deux formules au choix, selon votre besoin.
++              Conception d’API REST, intégrations tierces, refonte de codebase existante, migration de base de données.
+             </p>
+-
+-            <div className={Style.maintenanceTiers}>
+-              <div className={Style.maintenanceTier}>
+-                <div className={Style.maintenanceTierHead}>
+-                  <h4>Tranquillité</h4>
+-                  <span className={Style.maintenanceTierPrice}>360 € HT / an</span>
+-                </div>
+-                <ul>
+-                  <li>Je vérifie chaque semaine que votre site est bien en ligne et sécurisé</li>
+-                  <li>Je m’occupe des mises à jour techniques pour vous</li>
+-                  <li>Une petite modification par mois (texte, photo, horaire...)</li>
+-                  <li>Vous m’écrivez par e-mail, je réponds sous 48 h</li>
+-                </ul>
+-              </div>
+-
+-              <div className={Style.maintenanceTier}>
+-                <div className={Style.maintenanceTierHead}>
+-                  <h4>Accompagnement</h4>
+-                  <span className={Style.maintenanceTierPrice}>960 € HT / an</span>
+-                </div>
+-                <ul>
+-                  <li>Tout ce qui est inclus dans la formule Tranquillité</li>
+-                  <li>2 à 3 h par mois pour faire évoluer votre site (nouvelle page, nouveau formulaire...)</li>
+-                  <li>Vos questions sans limite, par e-mail ou en visio</li>
+-                  <li>Réponse sous 24 h</li>
+-                  <li>Un point d’une demi-heure tous les 3 mois pour faire le bilan</li>
+-                </ul>
+-              </div>
+-            </div>
+-
+-            <div className={Style.offreMeta}>
+-              <span><strong>Engagement :</strong> 1 an, renouvelable</span>
++            <div className={Style.offrePrice}>
++              <span className={Style.from}>TJM</span>
++              <span className={Style.amount}>350 € HT / jour</span>
+             </div>
+           </div>
+         </div>
+         <p className={Style.offresOutro}>
+-          Prix HT. Tout est inclus du premier échange à la mise en ligne,
+-          hors contenus (textes, photos) et services tiers payants.
+-          Avant tout devis, on prend le temps d’un appel pour cadrer votre besoin.
+-          Workflow productif intégrant les outils d’IA pour livrer plus vite, sans rogner sur la qualité.
++          Tarifs HT. Remote ou sur site en Île-de-France. Disponible immédiatement pour missions courtes ou longues durées.
++          Avant tout engagement, on prend le temps d’un appel pour cadrer le besoin.
++          Vous avez un projet différent ? Contactez-moi, on en discute.
+         </p>
+-
+       </section>
+ 
+       <div className="separator"></div>
+@@ -575,13 +484,10 @@ export default function Home() {
+               <label htmlFor="type">Quelle prestation vous intéresse ?</label>
+               <select id="type" name="type" required>
+                 <option value="">Sélectionnez une option</option>
+-                <option value="Développement sur mesure / mission TJM">Développement sur mesure / mission TJM (350 € HT/j)</option>
+-                <option value="Application mobile React Native">Application mobile React Native (à définir)</option>
+-                <option value="Intégration API / développement backend">Intégration API / développement backend (à définir)</option>
+-                <option value="Pack 1 - Site Présence">Pack 1 — Site Présence (1 800 € HT)</option>
+-                <option value="Pack 2 - Site Engagement">Pack 2 — Site Engagement (2 900 € HT)</option>
+-                <option value="Suivi et maintenance">Suivi &amp; maintenance (360 ou 960 € / an)</option>
+-                <option value="Refonte d'un site existant">Refonte d'un site existant (à définir)</option>
++                <option value="Application web fullstack">Application web fullstack (React, Next.js, Node.js)</option>
++                <option value="Application mobile React Native">Application mobile React Native</option>
++                <option value="API et intégration backend">API &amp; intégration backend</option>
++                <option value="Renfort équipe / mission TJM">Renfort équipe / mission TJM</option>
+                 <option value="Autre">Autre (à définir)</option>
+               </select>
+             </div>
+-- 
+2.43.0
+
