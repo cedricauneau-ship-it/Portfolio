@@ -1,0 +1,222 @@
+From ca88dfa188978d4407cf3a1c7bd94466c74ec435 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?C=C3=A9dric?= <auneau.dev@gmail.com>
+Date: Tue, 2 Jun 2026 16:16:42 +0000
+Subject: [PATCH 1/2] =?UTF-8?q?refonte=20positionnement=20:=20fullstack=20?=
+ =?UTF-8?q?TS,=20suppression=20objectifs=20perso,=20offre=20TJM,=20ic?=
+ =?UTF-8?q?=C3=B4ne=20Malt=20footer?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ app/(portfolio)/layout.tsx     | 14 +++++------
+ app/(portfolio)/page.tsx       | 45 ++++++++++++++++++++++++++++------
+ components/AboutPersonnage.tsx |  6 ++---
+ components/Footer.tsx          | 16 +++++++++++-
+ public/icons/malt.svg          |  1 +
+ 5 files changed, 63 insertions(+), 19 deletions(-)
+ create mode 100644 public/icons/malt.svg
+
+diff --git a/app/(portfolio)/layout.tsx b/app/(portfolio)/layout.tsx
+index 7474bdc..fd43056 100644
+--- a/app/(portfolio)/layout.tsx
++++ b/app/(portfolio)/layout.tsx
+@@ -7,20 +7,20 @@ import Footer from "@/components/Footer";
+ import SideMenu from "@/components/SideMenu";
+ 
+ export const metadata: Metadata = {
+-  title: { absolute: "Cédric Auneau · Développeur freelance JS · Île-de-France" },
+-  description: "Cédric Auneau, développeur fullstack JavaScript / TypeScript freelance à Fontenay-en-Parisis (95). Création de sites web pour associations, TPE et indépendants en Île-de-France. Forfaits clés en main, suivi long terme, workflow productif avec assistance IA.",
++  title: { absolute: "Cédric Auneau · Développeur fullstack TypeScript · React, Next.js, Node.js, React Native" },
++  description: "Développeur fullstack TypeScript freelance en Île-de-France. Web et mobile de bout en bout : React, Next.js, Node.js, React Native. Deux projets en production. Disponible pour missions.",
+   alternates: { canonical: "/" },
+   openGraph: {
+-    title: "Cédric Auneau · Développeur freelance JavaScript en Île-de-France",
+-    description: "Création de sites web pour associations, TPE et indépendants en Île-de-France. Forfaits Site Présence, Site Engagement, Suivi & maintenance.",
++    title: "Cédric Auneau · Développeur fullstack TypeScript · Île-de-France",
++    description: "Développeur fullstack TypeScript freelance · React, Next.js, Node.js, React Native · Web et mobile en production · Île-de-France.",
+     url: "/",
+     type: "website",
+-    images: [{ url: "/images/og-default.png", width: 1200, height: 630, alt: "Cédric Auneau - Développeur freelance" }],
++    images: [{ url: "/images/og-default.png", width: 1200, height: 630, alt: "Cédric Auneau - Développeur fullstack TypeScript freelance" }],
+   },
+   twitter: {
+     card: "summary_large_image",
+-    title: "Cédric Auneau · Développeur freelance JavaScript en Île-de-France",
+-    description: "Création de sites web pour associations et PME en Île-de-France.",
++    title: "Cédric Auneau · Développeur fullstack TypeScript · Île-de-France",
++    description: "Développeur fullstack TypeScript freelance · React, Next.js, Node.js, React Native · Île-de-France.",
+     images: ["/images/og-default.png"],
+   },
+ };
+diff --git a/app/(portfolio)/page.tsx b/app/(portfolio)/page.tsx
+index e15e821..b6ad0d6 100644
+--- a/app/(portfolio)/page.tsx
++++ b/app/(portfolio)/page.tsx
+@@ -345,8 +345,8 @@ export default function Home() {
+                     />
+                   </div>
+                   <div className={Style.textDescription}>
+-                    <p>Le site de mon club de football formateur. Il me tenait à cœur d’offrir une vue numérique à l’association. </p>
+-                    <p>Le projet est finalisé et accessible en ligne.</p>
++                    <p>Refonte complète du site officiel du Fontenay-en-Parisis Football Club — mission menée de bout en bout en solo : cadrage, développement, déploiement et maintenance.</p>
++                    <p>Stack : Next.js · TypeScript · CSS Modules · Vercel. Intégrations Scorenco (résultats) et Sociablekit (fil Facebook). Site multi-pages en production avec agenda, classement et 6 catégories d’équipes.</p>
+                     <div className={Style.linkContainer}>
+                       <a
+                         href="https://www.fontenayenparisisfootballclub.fr"
+@@ -383,11 +383,13 @@ export default function Home() {
+                   <div className={Style.textDescription}>
+                     <p>
+                       SHELTER est un jeu mobile narratif de survie à choix binaires
+-                      dans un univers post-apocalyptique.
++                      dans un univers post-apocalyptique, publié sur Google Play.
+                     </p>
+                     <p>
+-                      Né d’un projet collaboratif durant ma formation, l’application a été
+-                      reprise et reconstruite en solo pour une V2.
++                      Architecture fullstack TypeScript de bout en bout : React Native + Expo côté mobile,
++                      API Node.js/Express côté serveur, PostgreSQL via Prisma.
++                      Auth JWT + refresh token, moteur de jeu côté serveur, leaderboard,
++                      monétisation AdMob + achat in-app vérifié, tests Jest/Supertest.
+                     </p>
+                     <div className={Style.linkContainer}>
+                       <a
+@@ -423,6 +425,30 @@ export default function Home() {
+         <h2 className="animated-border">Mes offres</h2>
+ 
+         <div className={Style.offresGrid}>
++          {/* TJM / Sur mesure */}
++          <div className={`${Style.offreCard} ${Style.cardBlue} ${Style.cardFullWidth}`}>
++            <span className={Style.packLabel}>Mission</span>
++            <h3>Développement sur mesure</h3>
++            <p className={Style.offreIntro}>
++              Pour les startups, PME et agences qui ont besoin d’un développeur
++              fullstack TypeScript en renfort ponctuel ou sur la durée.
++            </p>
++            <ul>
++              <li>Développement React / Next.js / Node.js / Express</li>
++              <li>Applications mobiles React Native</li>
++              <li>Intégrations API, refonte codebase, mise en production</li>
++              <li>Remote ou sur site en Île-de-France</li>
++              <li>Disponible immédiatement</li>
++            </ul>
++            <div className={Style.offreMeta}>
++              <span><strong>Mode :</strong> TJM ou forfait selon le projet</span>
++            </div>
++            <div className={Style.offrePrice}>
++              <span className={Style.from}>TJM</span>
++              <span className={Style.amount}>350 € HT / jour</span>
++            </div>
++          </div>
++
+           {/* Pack 1 */}
+           <div className={`${Style.offreCard} ${Style.cardBlue}`}>
+             <span className={Style.packLabel}>Pack 1</span>
+@@ -549,10 +575,13 @@ export default function Home() {
+               <label htmlFor="type">Quelle prestation vous intéresse ?</label>
+               <select id="type" name="type" required>
+                 <option value="">Sélectionnez une option</option>
+-                <option value="Pack 1 - Site Présence">Pack 1 — Site Présence (1 500 €)</option>
+-                <option value="Pack 2 - Site Engagement">Pack 2 — Site Engagement (2 900 €)</option>
++                <option value="Développement sur mesure / mission TJM">Développement sur mesure / mission TJM (350 € HT/j)</option>
++                <option value="Application mobile React Native">Application mobile React Native (à définir)</option>
++                <option value="Intégration API / développement backend">Intégration API / développement backend (à définir)</option>
++                <option value="Pack 1 - Site Présence">Pack 1 — Site Présence (1 800 € HT)</option>
++                <option value="Pack 2 - Site Engagement">Pack 2 — Site Engagement (2 900 € HT)</option>
+                 <option value="Suivi et maintenance">Suivi &amp; maintenance (360 ou 960 € / an)</option>
+-                <option value="Refonte d'un site existant">Refonte d’un site existant (à définir)</option>
++                <option value="Refonte d'un site existant">Refonte d'un site existant (à définir)</option>
+                 <option value="Autre">Autre (à définir)</option>
+               </select>
+             </div>
+diff --git a/components/AboutPersonnage.tsx b/components/AboutPersonnage.tsx
+index e2da5fd..6968e79 100644
+--- a/components/AboutPersonnage.tsx
++++ b/components/AboutPersonnage.tsx
+@@ -13,13 +13,13 @@ const sections = [
+   {
+     id: "a",
+     title: "Cédric Auneau",
+-    text: "J’ai débuté le développement web en formation, mais c’est en livrant le site de mon club de football — un vrai client, une vraie mise en ligne — que j’ai compris ce que je voulais faire professionnellement. Identifier un besoin, construire une solution, la déployer : c’est cette chaîne complète qui me motive. Formé à La Capsule (Concepteur Développeur d’applications web et mobile), je travaille sur la stack JS/TS — React, Next.js, Node.js — avec l’objectif de proposer mes services en freelance à des associations, indépendants et petites structures.",
++    text: "Je conçois et livre des applications web et mobile de bout en bout — du cadrage technique à la mise en production. Un seul interlocuteur du premier échange à la mise en ligne, en télétravail ou sur site en Île-de-France. Reconverti au développement après une carrière dans d’autres secteurs, j’ai choisi ce métier pour la chaîne complète : identifier un besoin, construire une solution, la déployer.",
+     image: "/images/about/DevCofee.webp",
+   },
+   {
+     id: "b",
+-    title: "Mes objectifs",
+-    text: "Mon objectif à court terme : décrocher mes premières missions freelance en développant une relation de confiance avec des clients qui ont besoin d’un interlocuteur technique accessible et fiable. Sur le plan technique, je continue à progresser sur l’architecture des applications et les bonnes pratiques — TypeScript strict, performance, accessibilité. Des sujets qui font la différence entre un site livré et un site maintenable.",
++    title: "Stack & formation",
++    text: "Stack : React · Next.js · Node.js · Express · TypeScript · React Native · Prisma · PostgreSQL. Diplômé La Capsule — Concepteur Développeur d’Applications Web & Mobile Niveau 6 (2026). Deux projets en production : le site officiel du Fontenay-en-Parisis Football Club et Shelter, jeu mobile narratif publié sur Google Play.",
+     image: "/images/about/DevPresentation.webp",
+   },
+ ];
+diff --git a/components/Footer.tsx b/components/Footer.tsx
+index b5be28c..d2ecf31 100644
+--- a/components/Footer.tsx
++++ b/components/Footer.tsx
+@@ -43,7 +43,21 @@ export default function Footer() {
+                 height={50}
+                 className={Style.logoLink}
+               />
+-            </a>  
++            </a>
++            <a
++              href='https://www.malt.fr/profile/cedricauneau'
++              target='_blank'
++              rel='noopener noreferrer'
++              aria-label='Mon profil Malt'
++            >
++              <Image
++                src="/icons/malt.svg"
++                alt="Logo Malt"
++                width={50}
++                height={50}
++                className={Style.logoLink}
++              />
++            </a>
+           </div>
+         </div>
+       </div>
+diff --git a/public/icons/malt.svg b/public/icons/malt.svg
+new file mode 100644
+index 0000000..134737d
+--- /dev/null
++++ b/public/icons/malt.svg
+@@ -0,0 +1 @@
++<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Malt</title><path d="M20.195 8.581c-.069 0-.285.026-.484.113-.432.181-.597.311-.597.58v5.023c0 .277.26.355.735.355.467 0 .649-.087.649-.355V8.858c0-.173-.113-.277-.303-.277zm3.502 4.903c-.345.087-.45.113-.57.113-.147 0-.2-.044-.2-.2v-2.161h.788c.207 0 .285-.078.285-.285 0-.173-.078-.26-.285-.26h-.787v-.839c0-.259-.087-.363-.268-.363-.173 0-.415.156-.934.597-.528.45-.83.744-.83.951 0 .121.086.199.224.199h.424v2.335c0 .683.337 1.08.925 1.08.39 0 .675-.146 1.012-.406.311-.242.51-.432.51-.596 0-.139-.103-.217-.294-.165zm-15.21-3.078c-.13 0-.285.026-.484.112-.433.19-.597.312-.597.58v3.2c0 .276.26.354.735.354.467 0 .649-.087.649-.355v-3.614c0-.173-.113-.277-.303-.277Zm1.816 0c-.355 0-.675.121-.986.363-.173.138-.32.294-.32.424 0 .112.078.173.19.173.19 0 .251-.078.416-.078.164 0 .25.173.25.476v2.533c0 .277.26.355.735.355.467 0 .649-.087.649-.355v-2.776c0-.657-.39-1.115-.934-1.115zm2.43 0c-.337 0-.692.121-1.003.363-.173.138-.32.294-.32.424 0 .112.078.173.19.173.19 0 .25-.078.432-.078s.268.173.268.476v2.533c0 .277.26.355.735.355.467 0 .649-.087.649-.355v-2.776c0-.657-.39-1.115-.951-1.115zm5.335 0a1.29 1.29 0 0 0-.484.112c-.26.113-.398.2-.467.312-.26-.303-.597-.398-.977-.398-1.116 0-1.911.942-1.911 2.283 0 1.124.605 1.954 1.461 1.954.26 0 .493-.104.77-.363.216-.2.32-.329.32-.45a.14.14 0 0 0-.147-.147c-.121 0-.251.104-.416.104-.354 0-.596-.545-.596-1.35 0-.803.32-1.348.804-1.348.32 0 .562.242.562.657v2.525c0 .277.26.355.735.355.467 0 .649-.087.649-.355v-3.614c0-.173-.113-.277-.303-.277ZM3.499 13.563l-.21.21.619.618c.304.304.79.598 1.244.144.339-.34.26-.695.073-.98-.06.004-1.726.008-1.726.008zm-.963-2.325.21-.21-.608-.607c-.304-.303-.765-.621-1.243-.143-.351.35-.273.692-.087.97Zm2.86.416c-.037.043-1.511 1.524-1.511 1.524h1.154c.43 0 .981-.101.981-.777 0-.496-.296-.683-.624-.747zm-3.244-.031H.981c-.43 0-.981.135-.981.778 0 .479.307.676.641.745.04-.046 1.511-1.523 1.511-1.523zm1.484 3.04-.618-.618-.608.607a2.613 2.613 0 0 1-.137.128c.07.333.266.639.745.639s.676-.307.745-.641c-.043-.037-.085-.073-.127-.115zM2.41 10.15l.608.607.618-.618a2.25 2.25 0 0 1 .128-.118c-.065-.327-.251-.623-.747-.623s-.682.297-.746.625c.046.04.092.08.14.127zm2.742.117c-.455-.454-.94-.16-1.244.144l-2.87 2.87c-.303.303-.621.765-.143 1.243.478.478.94.16 1.243-.143l2.87-2.87c.304-.304.598-.79.144-1.244Z"/></svg>
+\ No newline at end of file
+-- 
+2.43.0
+
+
+From 7ac08aa11390d81ddc1e870e6c4d20f922c355dd Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?C=C3=A9dric?= <auneau.dev@gmail.com>
+Date: Tue, 2 Jun 2026 16:31:07 +0000
+Subject: [PATCH 2/2] =?UTF-8?q?=C3=A0=20propos=20:=20remplace=20Stack=20&?=
+ =?UTF-8?q?=20formation=20par=20Mon=20approche?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ components/AboutPersonnage.tsx | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/components/AboutPersonnage.tsx b/components/AboutPersonnage.tsx
+index 6968e79..10d03a7 100644
+--- a/components/AboutPersonnage.tsx
++++ b/components/AboutPersonnage.tsx
+@@ -18,8 +18,8 @@ const sections = [
+   },
+   {
+     id: "b",
+-    title: "Stack & formation",
+-    text: "Stack : React · Next.js · Node.js · Express · TypeScript · React Native · Prisma · PostgreSQL. Diplômé La Capsule — Concepteur Développeur d’Applications Web & Mobile Niveau 6 (2026). Deux projets en production : le site officiel du Fontenay-en-Parisis Football Club et Shelter, jeu mobile narratif publié sur Google Play.",
++    title: "Mon approche",
++    text: "Pas de sous-traitance, pas de dépendance à un CMS propriétaire, pas de jargon inutile. Tu gardes la main sur ton projet à tout moment. Je livre du code propre, versionné sur GitHub, déployé et documenté — que tu veuilles reprendre le projet toi-même ou le faire évoluer plus tard.",
+     image: "/images/about/DevPresentation.webp",
+   },
+ ];
+-- 
+2.43.0
+

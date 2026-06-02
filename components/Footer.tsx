@@ -43,7 +43,21 @@ export default function Footer() {
                 height={50}
                 className={Style.logoLink}
               />
-            </a>  
+            </a>
+            <a
+              href='https://www.malt.fr/profile/cedricauneau'
+              target='_blank'
+              rel='noopener noreferrer'
+              aria-label='Mon profil Malt'
+            >
+              <Image
+                src="/icons/malt.svg"
+                alt="Logo Malt"
+                width={50}
+                height={50}
+                className={Style.logoLink}
+              />
+            </a>
           </div>
         </div>
       </div>

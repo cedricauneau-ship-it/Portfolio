@@ -13,13 +13,13 @@ const sections = [
   {
     id: "a",
     title: "Cédric Auneau",
-    text: "J’ai débuté le développement web en formation, mais c’est en livrant le site de mon club de football — un vrai client, une vraie mise en ligne — que j’ai compris ce que je voulais faire professionnellement. Identifier un besoin, construire une solution, la déployer : c’est cette chaîne complète qui me motive. Formé à La Capsule (Concepteur Développeur d’applications web et mobile), je travaille sur la stack JS/TS — React, Next.js, Node.js — avec l’objectif de proposer mes services en freelance à des associations, indépendants et petites structures.",
+    text: "Je conçois et livre des applications web et mobile de bout en bout — du cadrage technique à la mise en production. Un seul interlocuteur du premier échange à la mise en ligne, en télétravail ou sur site en Île-de-France. Reconverti au développement après une carrière dans d’autres secteurs, j’ai choisi ce métier pour la chaîne complète : identifier un besoin, construire une solution, la déployer.",
     image: "/images/about/DevCofee.webp",
   },
   {
     id: "b",
-    title: "Mes objectifs",
-    text: "Mon objectif à court terme : décrocher mes premières missions freelance en développant une relation de confiance avec des clients qui ont besoin d’un interlocuteur technique accessible et fiable. Sur le plan technique, je continue à progresser sur l’architecture des applications et les bonnes pratiques — TypeScript strict, performance, accessibilité. Des sujets qui font la différence entre un site livré et un site maintenable.",
+    title: "Mon approche",
+    text: "Pas de sous-traitance, pas de dépendance à un CMS propriétaire, pas de jargon inutile. Tu gardes la main sur ton projet à tout moment. Je livre du code propre, versionné sur GitHub, déployé et documenté — que tu veuilles reprendre le projet toi-même ou le faire évoluer plus tard.",
     image: "/images/about/DevPresentation.webp",
   },
 ];

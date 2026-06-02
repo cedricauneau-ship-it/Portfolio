@@ -7,20 +7,20 @@ import Footer from "@/components/Footer";
 import SideMenu from "@/components/SideMenu";
 
 export const metadata: Metadata = {
-  title: { absolute: "Cédric Auneau · Développeur freelance JS · Île-de-France" },
-  description: "Cédric Auneau, développeur fullstack JavaScript / TypeScript freelance à Fontenay-en-Parisis (95). Création de sites web pour associations, TPE et indépendants en Île-de-France. Forfaits clés en main, suivi long terme, workflow productif avec assistance IA.",
+  title: { absolute: "Cédric Auneau · Développeur fullstack TypeScript · React, Next.js, Node.js, React Native" },
+  description: "Développeur fullstack TypeScript freelance en Île-de-France. Web et mobile de bout en bout : React, Next.js, Node.js, React Native. Deux projets en production. Disponible pour missions.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Cédric Auneau · Développeur freelance JavaScript en Île-de-France",
-    description: "Création de sites web pour associations, TPE et indépendants en Île-de-France. Forfaits Site Présence, Site Engagement, Suivi & maintenance.",
+    title: "Cédric Auneau · Développeur fullstack TypeScript · Île-de-France",
+    description: "Développeur fullstack TypeScript freelance · React, Next.js, Node.js, React Native · Web et mobile en production · Île-de-France.",
     url: "/",
     type: "website",
-    images: [{ url: "/images/og-default.png", width: 1200, height: 630, alt: "Cédric Auneau - Développeur freelance" }],
+    images: [{ url: "/images/og-default.png", width: 1200, height: 630, alt: "Cédric Auneau - Développeur fullstack TypeScript freelance" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cédric Auneau · Développeur freelance JavaScript en Île-de-France",
-    description: "Création de sites web pour associations et PME en Île-de-France.",
+    title: "Cédric Auneau · Développeur fullstack TypeScript · Île-de-France",
+    description: "Développeur fullstack TypeScript freelance · React, Next.js, Node.js, React Native · Île-de-France.",
     images: ["/images/og-default.png"],
   },
 };

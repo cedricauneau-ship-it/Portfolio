@@ -345,8 +345,8 @@ export default function Home() {
                     />
                   </div>
                   <div className={Style.textDescription}>
-                    <p>Le site de mon club de football formateur. Il me tenait à cœur d’offrir une vue numérique à l’association. </p>
-                    <p>Le projet est finalisé et accessible en ligne.</p>
+                    <p>Refonte complète du site officiel du Fontenay-en-Parisis Football Club — mission menée de bout en bout en solo : cadrage, développement, déploiement et maintenance.</p>
+                    <p>Stack : Next.js · TypeScript · CSS Modules · Vercel. Intégrations Scorenco (résultats) et Sociablekit (fil Facebook). Site multi-pages en production avec agenda, classement et 6 catégories d’équipes.</p>
                     <div className={Style.linkContainer}>
                       <a
                         href="https://www.fontenayenparisisfootballclub.fr"
@@ -383,11 +383,13 @@ export default function Home() {
                   <div className={Style.textDescription}>
                     <p>
                       SHELTER est un jeu mobile narratif de survie à choix binaires
-                      dans un univers post-apocalyptique.
+                      dans un univers post-apocalyptique, publié sur Google Play.
                     </p>
                     <p>
-                      Né d’un projet collaboratif durant ma formation, l’application a été
-                      reprise et reconstruite en solo pour une V2.
+                      Architecture fullstack TypeScript de bout en bout : React Native + Expo côté mobile,
+                      API Node.js/Express côté serveur, PostgreSQL via Prisma.
+                      Auth JWT + refresh token, moteur de jeu côté serveur, leaderboard,
+                      monétisation AdMob + achat in-app vérifié, tests Jest/Supertest.
                     </p>
                     <div className={Style.linkContainer}>
                       <a
@@ -423,6 +425,30 @@ export default function Home() {
         <h2 className="animated-border">Mes offres</h2>
 
         <div className={Style.offresGrid}>
+          {/* TJM / Sur mesure */}
+          <div className={`${Style.offreCard} ${Style.cardBlue} ${Style.cardFullWidth}`}>
+            <span className={Style.packLabel}>Mission</span>
+            <h3>Développement sur mesure</h3>
+            <p className={Style.offreIntro}>
+              Pour les startups, PME et agences qui ont besoin d’un développeur
+              fullstack TypeScript en renfort ponctuel ou sur la durée.
+            </p>
+            <ul>
+              <li>Développement React / Next.js / Node.js / Express</li>
+              <li>Applications mobiles React Native</li>
+              <li>Intégrations API, refonte codebase, mise en production</li>
+              <li>Remote ou sur site en Île-de-France</li>
+              <li>Disponible immédiatement</li>
+            </ul>
+            <div className={Style.offreMeta}>
+              <span><strong>Mode :</strong> TJM ou forfait selon le projet</span>
+            </div>
+            <div className={Style.offrePrice}>
+              <span className={Style.from}>TJM</span>
+              <span className={Style.amount}>350 € HT / jour</span>
+            </div>
+          </div>
+
           {/* Pack 1 */}
           <div className={`${Style.offreCard} ${Style.cardBlue}`}>
             <span className={Style.packLabel}>Pack 1</span>
@@ -549,10 +575,13 @@ export default function Home() {
               <label htmlFor="type">Quelle prestation vous intéresse ?</label>
               <select id="type" name="type" required>
                 <option value="">Sélectionnez une option</option>
-                <option value="Pack 1 - Site Présence">Pack 1 — Site Présence (1 500 €)</option>
-                <option value="Pack 2 - Site Engagement">Pack 2 — Site Engagement (2 900 €)</option>
+                <option value="Développement sur mesure / mission TJM">Développement sur mesure / mission TJM (350 € HT/j)</option>
+                <option value="Application mobile React Native">Application mobile React Native (à définir)</option>
+                <option value="Intégration API / développement backend">Intégration API / développement backend (à définir)</option>
+                <option value="Pack 1 - Site Présence">Pack 1 — Site Présence (1 800 € HT)</option>
+                <option value="Pack 2 - Site Engagement">Pack 2 — Site Engagement (2 900 € HT)</option>
                 <option value="Suivi et maintenance">Suivi &amp; maintenance (360 ou 960 € / an)</option>
-                <option value="Refonte d'un site existant">Refonte d’un site existant (à définir)</option>
+                <option value="Refonte d'un site existant">Refonte d'un site existant (à définir)</option>
                 <option value="Autre">Autre (à définir)</option>
               </select>
             </div>
