@@ -14,6 +14,7 @@ Mon portfolio de développeur fullstack JavaScript / TypeScript, construit avec 
 | Langage | TypeScript |
 | Style | CSS Modules |
 | Déploiement | Vercel |
+| Domaine | Cloudflare |
 | SEO | Open Graph · Sitemap · Balises meta |
 
 ---
