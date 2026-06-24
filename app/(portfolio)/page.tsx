@@ -461,46 +461,41 @@ export default function Home() {
         <h2 className="animated-border">Mes offres</h2>
 
         <div className={Style.offresGrid}>
+
           <div className={`${Style.offreCard} ${Style.cardBlue} ${Style.cardFullWidth}`}>
-            <span className={Style.packLabel}>Développement</span>
-            <h3>Application web fullstack</h3>
+            <span className={Style.packLabel}>Mission</span>
+            <h3>Développement fullstack</h3>
             <p className={Style.offreIntro}>
-              React, Next.js, Node.js, Express, TypeScript — interfaces, APIs, intégrations tierces, mise en production.
+              React, Next.js, Node.js, Express, TypeScript, React Native —
+              interfaces, APIs, intégrations tierces, mise en production.
+              Remote ou sur site en Île-de-France.
             </p>
             <div className={Style.offrePrice}>
               <span className={Style.from}>TJM</span>
-              <span className={Style.amount}>350 € HT / jour</span>
+              <span className={Style.amount}>280 € HT / jour</span>
             </div>
           </div>
 
-          <div className={`${Style.offreCard} ${Style.cardRose}`}>
-            <span className={Style.packLabel}>Mobile</span>
-            <h3>Application React Native</h3>
+          <div className={`${Style.offreCard} ${Style.cardRose} ${Style.cardFullWidth}`}>
+            <span className={Style.packLabel}>Associations & TPE</span>
+            <h3>Site web clé en main</h3>
             <p className={Style.offreIntro}>
-              Application mobile iOS et Android avec React Native et Expo, connectée à une API TypeScript.
+              Site vitrine complet livré en 3 semaines — design responsive, 
+              formulaire de contact, intégration HelloAsso, hébergement et 
+              nom de domaine inclus. Maintenance disponible en option.
             </p>
             <div className={Style.offrePrice}>
-              <span className={Style.from}>TJM</span>
-              <span className={Style.amount}>350 € HT / jour</span>
+              <span className={Style.from}>À partir de</span>
+              <span className={Style.amount}>750 € HT</span>
             </div>
           </div>
 
-          <div className={`${Style.offreCard} ${Style.cardOrange}`}>
-            <span className={Style.packLabel}>Backend</span>
-            <h3>API &amp; intégration</h3>
-            <p className={Style.offreIntro}>
-              Conception d’API REST, intégrations tierces, refonte de codebase existante, migration de base de données.
-            </p>
-            <div className={Style.offrePrice}>
-              <span className={Style.from}>TJM</span>
-              <span className={Style.amount}>350 € HT / jour</span>
-            </div>
-          </div>
         </div>
+
         <p className={Style.offresOutro}>
-          Tarifs HT. Remote ou sur site en Île-de-France. Disponible immédiatement pour missions courtes ou longues durées.
-          Avant tout engagement, on prend le temps d’un appel pour cadrer le besoin.
-          Vous avez un projet différent ? Contactez-moi, on en discute.
+          Tarifs HT. Disponible immédiatement. Avant tout engagement, 
+          on prend le temps d'un appel pour cadrer le besoin.
+          Vous avez un projet différent ? Contactez-moi, on en discute.
         </p>
       </section>
 
