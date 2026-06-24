@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio — Cédric Auneau
 
-## Getting Started
+Mon portfolio de développeur fullstack JavaScript / TypeScript, construit avec Next.js.
 
-First, run the development server:
+→ **[Voir le site](https://www.cedric-auneau.dev)**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## Stack technique
+
+| Couche | Technologie |
+|---|---|
+| Framework | Next.js 15 (App Router) |
+| Langage | TypeScript |
+| Style | CSS Modules |
+| Déploiement | Vercel |
+| SEO | Open Graph · Sitemap · Balises meta |
+
+---
+
+## Structure
+
+```
+app/
+├── page.tsx              # Page d'accueil (présentation, projets, offres, contact)
+├── projets/
+│   ├── shelter/          # Page détail projet Shelter
+│   └── ffc/              # Page détail projet FFC
+├── mentions-legales/
+└── layout.tsx
+
+components/               # Composants réutilisables (navigation, sections, formulaire devis)
+public/                   # Assets (images, icônes)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Fonctionnalités
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Présentation du profil et de l'approche
+- Pages détail pour chaque projet (Shelter, FFC)
+- Formulaire de devis intégré
+- SEO optimisé (Open Graph, sitemap, balises meta)
+- Déploiement continu sur Vercel
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Lancer en local
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm install
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Projets présentés
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **[Shelter](https://play.google.com/store/apps/details?id=com.azulys.shelter)** — Jeu mobile React Native + API Node.js/TypeScript · [Backend](https://github.com/cedricauneau-ship-it/ShelterV2-Backend) · [Frontend](https://github.com/cedricauneau-ship-it/ShelterV2-Frontend)
+- **[Fontenay-en-Parisis FC](https://www.fontenayenparisisfootballclub.fr)** — Site associatif Next.js · [Code](https://github.com/cedricauneau-ship-it/FFC-Frontend-V2)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Auteur
+
+**Cédric Auneau** — [cedric-auneau.dev](https://www.cedric-auneau.dev) · [LinkedIn](https://www.linkedin.com/in/cedric-auneau) · auneau.dev@gmail.com
